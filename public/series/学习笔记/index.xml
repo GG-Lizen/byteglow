@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>学习笔记 on ByteGlow</title>
-    <link>http://localhost:1313/series/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+    <link>http://localhost:1313/byteglow/series/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
     <description>Recent content in 学习笔记 on ByteGlow</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 Lizen</copyright>
-    <lastBuildDate>Fri, 20 Jun 2025 16:02:13 +0800</lastBuildDate><atom:link href="http://localhost:1313/series/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Jun 2025 16:02:13 +0800</lastBuildDate><atom:link href="http://localhost:1313/byteglow/series/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>LangChain 简易教程</title>
-      <link>http://localhost:1313/posts/langchain%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/</link>
+      <link>http://localhost:1313/byteglow/posts/langchain%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/</link>
       <pubDate>Thu, 05 Jun 2025 15:26:20 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/langchain%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/</guid>
+      <guid>http://localhost:1313/byteglow/posts/langchain%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>高级RAG</title>
-      <link>http://localhost:1313/posts/%E9%AB%98%E7%BA%A7rag/</link>
+      <link>http://localhost:1313/byteglow/posts/%E9%AB%98%E7%BA%A7rag/</link>
       <pubDate>Fri, 20 Jun 2025 15:24:15 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/%E9%AB%98%E7%BA%A7rag/</guid>
+      <guid>http://localhost:1313/byteglow/posts/%E9%AB%98%E7%BA%A7rag/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>LlamaIndex</title>
-      <link>http://localhost:1313/posts/llamaindex/</link>
+      <link>http://localhost:1313/byteglow/posts/llamaindex/</link>
       <pubDate>Fri, 20 Jun 2025 15:26:15 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/llamaindex/</guid>
+      <guid>http://localhost:1313/byteglow/posts/llamaindex/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>LangGraph</title>
-      <link>http://localhost:1313/posts/langgraph/</link>
+      <link>http://localhost:1313/byteglow/posts/langgraph/</link>
       <pubDate>Fri, 20 Jun 2025 16:02:13 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/langgraph/</guid>
+      <guid>http://localhost:1313/byteglow/posts/langgraph/</guid>
       <description></description>
       
     </item>

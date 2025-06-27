@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Series on ByteGlow</title>
-    <link>http://localhost:1313/series/</link>
+    <link>http://localhost:1313/byteglow/series/</link>
     <description>Recent content in Series on ByteGlow</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 Lizen</copyright>
-    <lastBuildDate>Fri, 20 Jun 2025 16:02:13 +0800</lastBuildDate><atom:link href="http://localhost:1313/series/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Jun 2025 16:02:13 +0800</lastBuildDate><atom:link href="http://localhost:1313/byteglow/series/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>学习笔记</title>
-      <link>http://localhost:1313/series/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <link>http://localhost:1313/byteglow/series/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Fri, 20 Jun 2025 16:02:13 +0800</pubDate>
       
-      <guid>http://localhost:1313/series/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <guid>http://localhost:1313/byteglow/series/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description></description>
       
     </item>
