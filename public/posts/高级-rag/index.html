@@ -1,0 +1,2281 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  
+  <meta http-equiv="content-language" content="en" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title> &middot; Blowfish</title>
+  <meta name="title" content=" &middot; Blowfish" />
+  
+  
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/posts/%E9%AB%98%E7%BA%A7-rag/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.2755fda1868f0bfc1843df512e7b0b0bec55a259db5f8b13dc3c0f7894e519f617c2b66f5915ec207e2a1ffc8b6d1b53dbd8f3dff8892140cb5eacc50a6edfbb.css"
+    integrity="sha512-J1X9oYaPC/wYQ99RLnsLC&#43;xVolnbX4sT3DwPeJTlGfYXwrZvWRXsIH4qH/yLbRtT29jz3/iJIUDLXqzFCm7fuw==" />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.54688f522dbd435cd17577667367d50a06517a06f4b40b8c2f04d9e61afcb5f1b807ce42dfbe1f0d7979b2430f4e253cf548907cf81ab2f7efb0d66e57933d16.js"
+    integrity="sha512-VGiPUi29Q1zRdXdmc2fVCgZRegb0tAuMLwTZ5hr8tfG4B85C374fDXl5skMPTiU89UiQfPgasvfvsNZuV5M9Fg==" data-copy="Copy" data-copied="Copied"></script>
+  
+  
+  
+  <script src="/lib/zoom/zoom.min.f592a181a15d2a5b042daa7f746c3721acf9063f8b6acd175d989129865a37d400ae0e85b640f9ad42cd98d1f8ad30931718cf8811abdcc5fcb264400d1a2b0c.js" integrity="sha512-9ZKhgaFdKlsELap/dGw3Iaz5Bj&#43;Las0XXZiRKYZaN9QArg6FtkD5rULNmNH4rTCTFxjPiBGr3MX8smRADRorDA=="></script>
+  
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:url" content="http://localhost:1313/posts/%E9%AB%98%E7%BA%A7-rag/">
+  <meta property="og:site_name" content="Blowfish">
+  <meta property="og:title" content="Blowfish">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Blowfish">
+
+    
+  
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Posts",
+    "name": "",
+    "headline": "",
+    
+    
+    "inLanguage": "en",
+    "url" : "http:\/\/localhost:1313\/posts\/%E9%AB%98%E7%BA%A7-rag\/",
+    "author" : {
+      "@type": "Person",
+      "name": ""
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "2440"
+  }]
+  </script>
+
+
+  
+  
+  
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+  
+  
+  
+  <meta name="theme-color"/>
+  
+  
+
+  
+  
+</head>
+<body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a
+      >
+    </div>
+    
+    
+      <div class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3 padding-main-menu">
+    
+    <div class="flex flex-1 items-center justify-between">
+        <nav class="flex space-x-3">
+
+            
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">Blowfish</a>
+            
+
+        </nav>
+        <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+
+            
+            
+            
+  <a
+  href="/posts/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="Posts">
+    Blog
+  </p>
+</a>
+
+
+
+            
+            
+  <a
+  href=""
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="">
+    Topics
+  </p>
+</a>
+
+
+
+            
+            
+  <a
+  href="https://github.com/nunocoracao/blowfish"
+  target="_blank"
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+    <span class="mr-1">
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+
+    </span>
+  
+  <p class="text-base font-medium" title="">
+    GitHub
+  </p>
+</a>
+
+
+
+            
+            
+  <a
+  href="https://github.com/nunocoracao/blowfish"
+  target="_blank"
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+    <span >
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+
+    </span>
+  
+  <p class="text-base font-medium" title="">
+    
+  </p>
+</a>
+
+
+
+            
+            
+
+            
+
+
+            
+            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+
+            
+            
+            <div
+                class=" flex items-center">
+                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                    <div class="flex items-center justify-center dark:hidden">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                    </div>
+                    <div class="items-center justify-center hidden dark:flex">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                    </div>
+                </button>
+            </div>
+            
+
+        </nav>
+        <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+
+            <span></span>
+
+            
+
+
+            
+            <button id="search-button-mobile" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+            
+            
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+                <div class="flex items-center justify-center dark:hidden">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                </div>
+                <div class="items-center justify-center hidden dark:flex">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                </div>
+            </button>
+            
+
+        </div>
+    </div>
+    <div class="-my-2 md:hidden">
+
+        <label id="menu-button" class="block">
+            
+            <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+
+  </span>
+
+
+            </div>
+            <div id="menu-wrapper" class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 padding-top-[5px]">
+                <ul
+                    class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+
+                    <li id="menu-close-button">
+                        <span
+                            class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+</span>
+                    </li>
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href="/posts/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="Posts">
+      Blog
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href=""
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      Topics
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href="https://github.com/nunocoracao/blowfish"
+    
+      target="_blank"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+      <div class="mr-2">
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+
+      </div>
+    
+    <p class="text-bg font-bg" title="">
+      GitHub
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href="https://github.com/nunocoracao/blowfish"
+    
+      target="_blank"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+      <div >
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+
+      </div>
+    
+    <p class="text-bg font-bg" title="">
+      
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                </ul>
+                
+                
+
+            </div>
+        </label>
+    </div>
+</div>
+
+
+
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+
+
+  <article>
+    
+
+
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="0001-01-01T00:00:00&#43;00:00">1 January 0001</time><span class="px-2 text-primary-500">&middot;</span><span>2440 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">12 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+
+        
+          
+          
+<div class="flex author">
+  
+  <div class="place-self-center">
+    
+    
+    <div class="text-2xl sm:text-lg">
+</div>
+  </div>
+</div>
+
+        
+
+        
+
+        
+          <div class="mb-5"></div>
+        
+
+      
+
+    </header>
+
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+
+
+        <div class="article-content max-w-prose mb-20">
+          
+<h1 class="relative group">高级 RAG 
+    <div id="高级-rag" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%ab%98%e7%ba%a7-rag" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p>高级 RAG是在基本RAG流程基础上添加了很多新步骤（子步骤）。以下是本文将讨论的增强点列表，但总体列表并不仅限于这些。</p>
+<ul>
+<li><strong>Data Indexing Optimizations（数据索引优化）</strong>：使用滑动窗口进行文本分块和有效利用元数据等技术来创建更易于搜索和更有条理的索引。</li>
+<li><strong>Query Enhancement（查询增强）</strong>：使用同义词或更广泛的术语修改或扩展初始用户查询，以改进相关文档的检索。</li>
+<li>Hybrid Search：将传统的基于关键字的搜索与使用嵌入向量的语义搜索相结合，以处理各种查询复杂性。</li>
+<li><strong>Fine Tuning Embedding Model（微调嵌入模型）</strong>：调整预先训练的模型以更好地理解特定领域的细微差别，提高检索到的文档的准确性和相关性。</li>
+<li><strong>Re-ranking and Filtering（重新排序和过滤）</strong>：根据相关性调整检索到的文档的顺序，并过滤掉不太相关的结果以优化最终输出。</li>
+</ul>
+
+<h2 class="relative group">1. Data Indexing Optimizations（数据索引优化） 
+    <div id="1-data-indexing-optimizations数据索引优化" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-data-indexing-optimizations%e6%95%b0%e6%8d%ae%e7%b4%a2%e5%bc%95%e4%bc%98%e5%8c%96" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">1.1 <strong>用于文本分块的滑动窗口</strong> 
+    <div id="11-用于文本分块的滑动窗口" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#11-%e7%94%a8%e4%ba%8e%e6%96%87%e6%9c%ac%e5%88%86%e5%9d%97%e7%9a%84%e6%bb%91%e5%8a%a8%e7%aa%97%e5%8f%a3" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>索引文本的一种简单方法是将文本拆分为 n 个部分，将它们转换为嵌入向量，然后将它们存储在向量数据库中。滑动窗口方法创建重叠的文本块，以确保在块的边界处不会丢失任何上下文信息。</p>
+<pre tabindex="0"><code>import nltk
+from nltk.tokenize import sent_tokenize
+nltk.download(&#39;punkt&#39;)  # Ensure the punkt tokenizer is downloaded
+nltk.download(&#39;punkt_tab&#39;)
+def sliding_window(text, window_size=3):
+    &#34;&#34;&#34;
+    Generate text chunks using a sliding window approach.
+    Args:
+    text (str): The input text to chunk.
+    window_size (int): The number of sentences per chunk.
+    Returns:
+    list of str: A list of text chunks.
+    &#34;&#34;&#34;
+    sentences = sent_tokenize(text)
+    print(sentences)
+    return [&#39; &#39;.join(sentences[i:i+window_size]) for i in range(len(sentences) - window_size + 1)]
+# Example usage
+text = &#34;This is the first sentence. Here comes the second sentence. And here is the third one. Finally, the fourth sentence.&#34;
+chunks = sliding_window(text, window_size=3)
+for chunk in chunks:
+    print(chunk)
+    print(&#34;-----&#34;)
+    # here, you can convert the chunk to embedding vector
+    # and, save it to a vector database
+</code></pre>
+<h3 class="relative group">1.2 <strong>元数据利用</strong> 
+    <div id="12-元数据利用" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#12-%e5%85%83%e6%95%b0%e6%8d%ae%e5%88%a9%e7%94%a8" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>元数据可以包含文档创建日期、作者或相关标签等信息，这些信息可用于在检索过程中筛选或确定文档的优先顺序，从而增强搜索过程。</p>
+<pre tabindex="0"><code>import numpy as np
+import faiss
+documents = [
+    &#34;Document 1 content here&#34;,
+    &#34;Content of the second document&#34;,
+    &#34;The third one has different content&#34;,
+]
+metadata = [
+    {&#34;date&#34;: &#34;20230101&#34;, &#34;tag&#34;: &#34;news&#34;},
+    {&#34;date&#34;: &#34;20230102&#34;, &#34;tag&#34;: &#34;update&#34;},
+    {&#34;date&#34;: &#34;20230103&#34;, &#34;tag&#34;: &#34;report&#34;},
+]
+# Dummy function to generate embeddings
+def generate_embeddings(texts):
+    &#34;&#34;&#34;Generate dummy embeddings for the sake of example.&#34;&#34;&#34;
+    return np.random.rand(len(texts), 128).astype(&#39;float32&#39;)  # 128-dimensional embeddings
+# Generate embeddings for documents
+doc_embeddings = generate_embeddings(documents)
+# Create a FAISS index for the embeddings (using FlatL2 for simplicity)
+index = faiss.IndexFlatL2(128)  # 128 is the dimensionality of the vectors
+index.add(doc_embeddings)  # Add embeddings to the index
+# Example search function that uses metadata
+def search(query_embedding, metadata_key, metadata_value):
+    &#34;&#34;&#34;定义一个搜索函数，它不仅根据向量相似度查找文档，还会根据这些文档关联的元数据（比如日期、标签等）进行二次筛选。&#34;&#34;&#34;
+    k = 2  # Number of nearest neighbors to find
+    distances, indices = index.search(np.array([query_embedding]), k)  # Perform the search
+    results = []
+    for idx in indices[0]:
+        if metadata[idx][metadata_key] == metadata_value:
+            results.append((documents[idx], metadata[idx]))
+    return results
+# Generate a query embedding (in a real scenario, this would come from a similar process)
+query_embedding = generate_embeddings([&#34;Query content here&#34;])[0]
+# Search for documents tagged with &#39;update&#39;
+matching_documents = search(query_embedding, &#39;tag&#39;, &#39;update&#39;)
+print(matching_documents)
+</code></pre>
+<h3 class="relative group">1.3 MultiVectorRetriever 
+    <div id="13-multivectorretriever" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#13-multivectorretriever" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>多向量检索器（<a
+  href="https://zhida.zhihu.com/search?content_id=242272823&amp;content_type=Article&amp;match_order=1&amp;q=MultiVectorRetriever&amp;zhida_source=entity"
+    target="_blank"
+  >MultiVectorRetriever</a>
+）允许每个文档存储多个向量，这在多种情况下非常有用。LangChain提供了一个基础的MultiVectorRetriever，使得查询这类设置变得简单。这种设置的主要复杂性在于如何为每个文档创建多个向量。这篇笔记涵盖了一些常见的创建向量的方法，并展示了如何使用MultiVectorRetriever。</p>
+<p>创建多个向量的方法：</p>
+<ol>
+<li><strong>较小的分块</strong>：将文档分割成较小的部分，并对这些部分进行嵌入（例如ParentDocumentRetriever）。</li>
+<li><strong>摘要</strong>：为每个文档创建摘要，并将摘要（或代替整个文档）嵌入。</li>
+<li><strong>假设性问题</strong>：创建每个文档可能回答的假设性问题，并将这些问题（或代替文档）进行嵌入。</li>
+</ol>
+<p>实现示例：</p>
+<ul>
+<li><strong>向量存储</strong>：使用Chroma进行向量的存储。</li>
+<li><strong>文档存储</strong>：使用<a
+  href="https://zhida.zhihu.com/search?content_id=242272823&amp;content_type=Article&amp;match_order=1&amp;q=InMemoryByteStore&amp;zhida_source=entity"
+    target="_blank"
+  >InMemoryByteStore</a>
+进行文档的存储。</li>
+<li><strong>检索器初始化</strong>：使用MultiVectorRetriever进行初始化，设置好文档和向量存储。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">from langchain.retrievers.multi_vector import MultiVectorRetriever
+</span></span><span class="line"><span class="cl">from langchain.storage import InMemoryByteStore
+</span></span><span class="line"><span class="cl">from langchain_openai import OpenAIEmbeddings
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">vectorstore = Chroma(collection_name=&#34;full_documents&#34;, embedding_function=OpenAIEmbeddings())
+</span></span><span class="line"><span class="cl">store = InMemoryByteStore()
+</span></span><span class="line"><span class="cl">retriever = MultiVectorRetriever(vectorstore=vectorstore, byte_store=store, id_key=&#34;doc_id&#34;)
+</span></span></code></pre></div>
+<h3 class="relative group">1.4 ParentDocumentRetriever 
+    <div id="14-parentdocumentretriever" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#14-parentdocumentretriever" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="img" src="https://s2.loli.net/2025/06/20/73BVwJZc1atIupN.png">
+
+  
+</figure>
+</p>
+<p>在进行文档分割以便检索时，我们通常会遇到几种需求的冲突：</p>
+<ol>
+<li><strong>精确的嵌入表示</strong>：我们希望拥有较小的文档，这样它们的嵌入能够更准确地反映其含义。如果文档过长，那么嵌入可能会失去其意义。</li>
+<li><strong>保留上下文</strong>：我们需要保证文档足够长，以保留每个文档块的上下文。</li>
+</ol>
+<p>父文档检索器（ParentDocumentRetriever） 通过分割和存储小数据块来实现上述平衡。在检索时，它首先获取这些小数据块，然后查找这些块的父ID，并返回这些较大的文档。</p>
+<blockquote>
+<p><strong>父文档</strong>指的是小数据块源自的文档。这可以是整个原始文档或者一个更大的数据块。</p></blockquote>
+<p>主要流程如下</p>
+<ol>
+<li><strong>索引阶段</strong>：
+<ul>
+<li>分割层级：
+<ul>
+<li><strong>子文档（Child Documents）</strong>：对原始文档进行<strong>细粒度分块</strong>（例如：小段句子或小段文本），用于向量嵌入和精准检索。</li>
+<li><strong>父文档（Parent Documents）</strong>：对原始文档进行<strong>粗粒度分块</strong>（例如：整节、整页），用于提供完整上下文。</li>
+</ul>
+</li>
+<li>存储关系：
+<ul>
+<li><strong>向量库（VectorStore）</strong>：存储<strong>子文档</strong>的嵌入向量。其元数据中记录对应的<strong>父文档ID</strong>。</li>
+<li><strong>文档存储（DocStore）</strong>：存储<strong>父文档</strong>的原始文本，并通过 ID 与子文档关联。</li>
+<li><em>（可选）字节存储（ByteStore）</em>：缓存子文档原文，加速返回结果（避免反复切分）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>检索阶段</strong>：
+<ul>
+<li><strong>Step 1 - 召回子文档</strong>：用查询向量在 <code>VectorStore</code> 中检索最相似的 <strong>K 个子文档</strong>。</li>
+<li><strong>Step 2 - 关联父文档</strong>：通过子文档的元数据 <code>parent_doc_id</code> 找到对应的 <strong>父文档原文</strong>。</li>
+<li><strong>最终返回</strong>：<strong>父文档内容</strong>（而非原子文档），提供完整上下文。</li>
+</ul>
+</li>
+</ol>
+<p>代码示例：</p>
+<ul>
+<li>数据准备</li>
+</ul>
+<pre tabindex="0"><code>from langchain.embeddings import HuggingFaceBgeEmbeddings
+from langchain.document_loaders import TextLoader
+ 
+#创建BAAI的embedding
+bge_embeddings = HuggingFaceBgeEmbeddings(model_name=&#34;BAAI/bge-small-zh-v1.5&#34;)
+ 
+#创建loaders
+loaders = [
+    TextLoader(&#34;./docs/华为智驾遥遥领先.txt&#34;,encoding=&#39;utf8&#39;),
+    TextLoader(&#34;./docs/小米SU7遥遥领先.txt&#34;,encoding=&#39;utf8&#39;),
+]
+docs = []
+for loader in loaders:
+    docs.extend(loader.load())
+    
+</code></pre><ul>
+<li>创建父文档检索器</li>
+</ul>
+<pre tabindex="0"><code>from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.retrievers import ParentDocumentRetriever
+from langchain.storage import InMemoryStore
+from langchain.vectorstores import Chroma
+ 
+# 创建文档分割器,设置块大小为200
+child_splitter = RecursiveCharacterTextSplitter(chunk_size=200)
+# 创建向量数据库对象
+vectorstore = Chroma(
+    collection_name=&#34;full_documents&#34;, embedding_function=bge_embeddings
+)
+# 创建内存存储对象
+store = InMemoryStore()
+#创建父文档检索器
+retriever = ParentDocumentRetriever(
+    vectorstore=vectorstore, #指定所使用的向量数据库
+    docstore=store, #原始文档存储器
+    child_splitter=child_splitter,#子文档分割器
+)
+#添加文档集
+retriever.add_documents(docs, ids=None)
+</code></pre><blockquote>
+<p>一旦完成添加原始文档的工作以后，所有的原始文档就会被child_splitter切割成一个个小的文档块，并且为小文档块与原始文档建立了索引关系，即通过小文档块的Id便能找到其对于的原始文档。</p></blockquote>
+<ul>
+<li>检索</li>
+</ul>
+<pre tabindex="0"><code>#搜索与用户问题相似度较高的子文档块
+sub_docs = vectorstore.similarity_search(&#34;小米SU7智能驾驶系统？&#34;)
+print(sub_docs[0].page_content)
+#检索原始文档的全部内容
+retrieved_docs = retriever.get_relevant_documents(&#34;小米SU7智能驾驶系统？&#34;)
+print(retrieved_docs[0].page_content)
+</code></pre>
+<h3 class="relative group">1.5 RAPTOR 
+    <div id="15-raptor" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#15-raptor" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>RAPTOR旨在解决<strong>超长文档的语义理解和精准检索</strong>难题。它通过递归构建树状文档结构，在复杂内容中实现<strong>多层级语义聚合</strong>，显著优于传统分块检索方法。</p>
+<p>基本流程：</p>
+<ul>
+<li>
+<p>分块与嵌入。</p>
+<ul>
+<li>按 100 的大小对文本进行分块，如果一个句子长度超过 100，则直接将句子作为一个文本块，保证块内语义的一致性。（如何断句也很重要！）</li>
+<li>对文本块进行 embedding。</li>
+</ul>
+</li>
+<li>
+<p>递归的构建 RAPTOR 树。文本块及其 embedding 作为树的叶子节点。</p>
+<ul>
+<li>通过聚类把相似的块聚在一起。</li>
+<li>利用语言模型为簇内的文本生成总结，并为总结生成 embedding，也作为树的一个节点。</li>
+<li>递归执行上述过程。</li>
+</ul>
+</li>
+<li>
+<p>查询。即如何检索相关的块。文中提供了两种策略：</p>
+<ul>
+<li>Tree Traversal Retrieval。遍历树的每一层，剪枝并选择最相关的节点。</li>
+<li>Collapsed Tree Retrieval。评估整个树中每个节点的相关性，找到最相关的几个。</li>
+</ul>
+</li>
+</ul>
+<p>RAPTOR 树构建流程：
+<a
+  href="https://img2024.cnblogs.com/blog/2338485/202402/2338485-20240208085455882-1585428380.png"
+    target="_blank"
+  >
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="img" src="https://img2024.cnblogs.com/blog/2338485/202402/2338485-20240208085455882-1585428380.png">
+
+  
+</figure>
+</a>
+</p>
+<p>RAPTOR 树的两种查询策略：
+<a
+  href="https://img2024.cnblogs.com/blog/2338485/202402/2338485-20240208085512343-1749141028.png"
+    target="_blank"
+  >
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="img" src="https://s2.loli.net/2025/06/20/TLoXxkSf8hCJ21s.png">
+
+  
+</figure>
+</a>
+</p>
+<p>代码示例：<a
+  href="https://github.com/langchain-ai/langchain/blob/master/cookbook/RAPTOR.ipynb"
+    target="_blank"
+  >代码</a>
+</p>
+
+<h3 class="relative group">1.6 ColBERT 
+    <div id="16-colbert" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#16-colbert" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="CleanShot 2025-06-17 at 10.09.19@2x" src="https://s2.loli.net/2025/06/20/BOZfWolI26rdVh5.png">
+
+  
+</figure>
+</p>
+<p>ColBERT 建立在 BERT 模型之上，但它的设计与众不同。传统方法将句子编码为单一向量，而 ColBERT 为每个 token 生成独立的上下文嵌入向量。ColBERT 的核心思想是<strong>延迟交互</strong>，即在查询和文档编码过程中保持独立，但在计算相似度时进行细粒度的交互。</p>
+<blockquote>
+<p>考虑查询“What is BGE?”，单一向量可能因句子整体平均而削弱“BGE”的特征。而 ColBERT 赋予“BGE”独立向量，保留了细粒度信息，非常适合需要局部匹配的任务，如信息检索。</p></blockquote>
+<ul>
+<li>
+<p><strong>延迟交互机制机制流程</strong>：</p>
+<ul>
+<li>分别生成查询 Q 和文档 D 的 token 向量集合，保持独立性。</li>
+<li>对每个查询向量 qi，在文档向量中寻找最匹配的 dj，通过点积 qi⋅dj 计算相似性。</li>
+<li>将所有查询 token 的最大匹配得分求和，得到最终得分。</li>
+</ul>
+</li>
+<li>
+<p><strong>为何延迟</strong>：
+提前融合可能导致语义损失，尤其在长句子中。延迟交互则保留了每个 token 的独立性，直到需要匹配时才进行计算。</p>
+</li>
+<li>
+<p><strong>简单示例</strong>：
+查询“What is BGE?”与文档“BGE is a model”对比。ColBERT 能直接匹配“BGE”与“BGE”，避免整体平均带来的模糊。换句话说，可以理解成他是匹配局部与局部之间的相关性。</p>
+</li>
+</ul>
+<p>代码示例：</p>
+<pre tabindex="0"><code>from ragatouille import RAGPretrainedModel
+
+RAG = RAGPretrainedModel.from_pretrained(&#34;jinaai/jina-colbert-v2&#34;)
+docs = [
+    &#34;ColBERT is a novel ranking model that adapts deep LMs for efficient retrieval.&#34;,
+    &#34;Jina-ColBERT is a ColBERT-style model but based on JinaBERT so it can support both 8k context length, fast and accurate retrieval.&#34;,
+]
+RAG.index(docs, index_name=&#34;demo&#34;)
+query = &#34;What does ColBERT do?&#34;
+results = RAG.search(query)
+</code></pre>
+<h2 class="relative group">2. <strong>Query Enhancement（查询增强）</strong> 
+    <div id="2-query-enhancement查询增强" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-query-enhancement%e6%9f%a5%e8%af%a2%e5%a2%9e%e5%bc%ba" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">2.1 <strong>查询重写</strong> 
+    <div id="21-查询重写" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#21-%e6%9f%a5%e8%af%a2%e9%87%8d%e5%86%99" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>**目的:**使查询更加具体和详细，提高检索相关信息的可能性。</p>
+<p><strong>方案:<strong>重写的确认样不仅与原始查询相似，而且还</strong>提供不同的角度或透视图</strong>，从而提高最终生成的质量和深度。</p>
+<p>示例代码：</p>
+<pre tabindex="0"><code>import os
+
+from langchain_community.utilities import DuckDuckGoSearchAPIWrapper
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.runnables import RunnablePassthrough
+from langchain_openai import ChatOpenAI
+os.environ[&#34;DASHSCOPE_API_KEY&#34;]=&#34;sk-18b7aefa5fc04e2ea604d480980f3364&#34;
+os.environ[&#34;ALIYUN_BASE_URL&#34;]=&#34;https://dashscope.aliyuncs.com/compatible-mode/v1&#34;
+
+
+
+
+model = ChatOpenAI(
+    api_key=os.getenv(&#34;DASHSCOPE_API_KEY&#34;),
+    base_url=&#34;https://dashscope.aliyuncs.com/compatible-mode/v1&#34;,
+    model=&#34;qwen-plus&#34;,  # 此处以qwen-plus为例，您可按需更换模型名称。模型列表：https://help.aliyun.com/zh/model-studio/getting-started/models
+    # other params...
+)
+
+search = DuckDuckGoSearchAPIWrapper()
+
+base_template = &#34;&#34;&#34;Answer the users question based only on the following context:
+&lt;context&gt;
+{context}
+&lt;/context&gt;
+Question: {question}
+&#34;&#34;&#34;
+
+base_prompt = ChatPromptTemplate.from_template(base_template)
+
+def june_print(msg, res):
+    print(&#39;-&#39; * 100)
+    print(msg)
+    print(res)
+def retriever(query):
+    return search.run(query)
+
+
+def withoutRewrite(query):
+    chain = (
+        {&#34;context&#34;: retriever, &#34;question&#34;: RunnablePassthrough()}
+        | base_prompt
+        | model
+        | StrOutputParser()
+    )
+
+    june_print(
+        &#39;The result of query:&#39;,
+        chain.invoke(query)
+    )
+    june_print(
+        &#39;The result of the searched contexts:&#39;,
+        retriever(query)
+    )
+
+
+def withRewrite(query):
+
+    rewrite_template = &#34;&#34;&#34;Provide a better search query for \
+    web search engine to answer the given question, end \
+    the queries with ’**’. Question: \
+    {x} Answer:&#34;&#34;&#34;
+    rewrite_prompt = ChatPromptTemplate.from_template(rewrite_template)
+    def _parse(text):
+        return text.strip(&#34;**&#34;)
+    rewriter = rewrite_prompt |model | StrOutputParser() | _parse
+    june_print(
+        &#39;Rewritten query:&#39;,
+        rewriter.invoke({&#34;x&#34;: query})
+    )
+
+    rewrite_retrieve_read_chain = (
+        {
+            &#34;context&#34;: {&#34;x&#34;: RunnablePassthrough()} | rewriter | retriever,
+            &#34;question&#34;: RunnablePassthrough(),
+        }
+        | base_prompt
+        | model
+        | StrOutputParser()
+    )
+    june_print(
+        &#39;The result of the rewrite_retrieve_read_chain:&#39;,
+        rewrite_retrieve_read_chain.invoke(query)
+    )
+
+query = &#34;The NBA champion of 2020 is the Los Angeles Lakers! Tell me what is langchain framework?&#34;
+withRewrite(query)
+</code></pre>
+<h4 class="relative group">2.1.1 <strong>假设文档嵌入（HyDE）</strong> 
+    <div id="211-假设文档嵌入hyde" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#211-%e5%81%87%e8%ae%be%e6%96%87%e6%a1%a3%e5%b5%8c%e5%85%a5hyde" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>论文《Precise Zero-Shot Dense Retrieval without Relevance Labels》提出了一种基于假设文档嵌入（HyDE）的方法，主要过程如图2所示：</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="img" src="https://pica.zhimg.com/v2-088baf0a7573bd16dcb2f81223b8b6b4_1440w.jpg">
+
+  
+</figure>
+</p>
+<p>该过程主要分为四个步骤：</p>
+<ol>
+<li>
+<p>使用LLM基于查询生成k个假设文档。这些生成的文件可能不是事实，也可能包含错误，但它们应该于相关文件相似。此步骤的目的是通过LLM解释用户的查询。</p>
+</li>
+<li>
+<p>将生成的假设文档输入编码器，将其映射到密集向量f(dk)，编码器具有过滤功能，过滤掉假设文档中的噪声。这里，dk表示第k个生成的文档，f表示编码器操作。</p>
+</li>
+<li>
+<p>使用给定的公式计算以下k个矢量的平均值:
+</p>
+$$
+   v= \frac1N \sum_{k=1}^{N} f(d_k)
+   $$</li>
+<li>
+<p>使用向量v从文档库中检索答案。如步骤3中所建立的，该向量保存来自用户的查询和所需答案模式的信息，这可以提高回忆。</p>
+</li>
+</ol>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="v2-6bffefb8fbce87cbd81ac590770529dc_1440w" src="https://pic3.zhimg.com/v2-6bffefb8fbce87cbd81ac590770529dc_1440w.jpg">
+
+  
+</figure>
+</p>
+<p>示例代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain_community.vectorstores</span> <span class="kn">import</span> <span class="n">FAISS</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain_core.prompts</span> <span class="kn">import</span> <span class="n">PromptTemplate</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain_core.output_parsers</span> <span class="kn">import</span> <span class="n">StrOutputParser</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain_core.runnables</span> <span class="kn">import</span> <span class="n">RunnablePassthrough</span><span class="p">,</span> <span class="n">RunnableLambda</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span> <span class="k">as</span> <span class="n">OpenAI_Client</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain.embeddings.base</span> <span class="kn">import</span> <span class="n">Embeddings</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain_openai</span> <span class="kn">import</span> <span class="n">ChatOpenAI</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&#34;DASHSCOPE_API_KEY&#34;</span><span class="p">]</span><span class="o">=</span><span class="s2">&#34;sk-18b7aefa5fc04e2ea604d480980f3364&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&#34;ALIYUN_BASE_URL&#34;</span><span class="p">]</span><span class="o">=</span><span class="s2">&#34;https://dashscope.aliyuncs.com/compatible-mode/v1&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI_Client</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 若没有配置环境变量，请用阿里云百炼API Key将下行替换为：api_key=</span>
+</span></span><span class="line"><span class="cl">    <span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&#34;DASHSCOPE_API_KEY&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">base_url</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&#34;ALIYUN_BASE_URL&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">AliyunEmbeddings</span><span class="p">(</span><span class="n">Embeddings</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&#34;text-embedding-v3&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">client</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">embed_documents</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">texts</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]]:</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;对多个文档进行嵌入&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">embed_query</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">texts</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">embed_query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;对单个查询进行嵌入&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">embeddings</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">input</span><span class="o">=</span><span class="n">text</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">embedding</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 示例文档 - 可替换为实际业务数据</span>
+</span></span><span class="line"><span class="cl"><span class="n">docs</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;阿里云创立于2009年，是全球领先的云计算和人工智能科技公司&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;通义千问（Qwen）是阿里云推出的大语言模型系列，包括多个不同规模版本&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;Qwen-plus是基于混合专家架构的先进大语言模型，支持中文、英文等多语言任务&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;Text-Embedding-V3是阿里云推出的文本嵌入模型，支持中文向量化任务&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;阿里云在杭州、上海、北京和深圳设有研发中心&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;通义千问支持128K上下文长度，适用于长文本理解任务&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;DashScope是阿里云推出的模型服务平台，提供Qwen等多种模型API&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;2023年阿里云发布了Qwen-VL多模态大模型，支持图像理解任务&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;PaiRAG是阿里云提供的检索增强生成解决方案，支持定制化知识库&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;阿里云机器学习平台PAI支持模型训练、部署和推理全流程&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用阿里云Text-Embedding-V3创建向量数据库</span>
+</span></span><span class="line"><span class="cl"><span class="n">embeddings</span> <span class="o">=</span> <span class="n">AliyunEmbeddings</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&#34;text-embedding-v3&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">vectorstore</span> <span class="o">=</span> <span class="n">FAISS</span><span class="o">.</span><span class="n">from_texts</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="n">embeddings</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">retriever</span> <span class="o">=</span> <span class="n">vectorstore</span><span class="o">.</span><span class="n">as_retriever</span><span class="p">(</span><span class="n">search_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;k&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 1. 生成假设文档的提示模板</span>
+</span></span><span class="line"><span class="cl"><span class="n">hyde_prompt</span> <span class="o">=</span> <span class="n">PromptTemplate</span><span class="o">.</span><span class="n">from_template</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;根据用户的问题，生成一个假设性的答案文档。即使你不确定，也请生成包含关键信息的全面回答。
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">问题：</span><span class="si">{query}</span><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">假设性回答：
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 最终答案生成的提示模板</span>
+</span></span><span class="line"><span class="cl"><span class="n">qa_prompt</span> <span class="o">=</span> <span class="n">PromptTemplate</span><span class="o">.</span><span class="n">from_template</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;基于以下上下文信息，回答问题：
+</span></span></span><span class="line"><span class="cl"><span class="s2"></span><span class="si">{context}</span><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">原始问题：</span><span class="si">{query}</span><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">如果上下文无法回答问题，请说明该信息不在知识库中。
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">正式回答：
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 初始化Qwen-plus模型</span>
+</span></span><span class="line"><span class="cl"><span class="n">llm</span><span class="o">=</span><span class="n">ChatOpenAI</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&#34;DASHSCOPE_API_KEY&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">base_url</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&#34;ALIYUN_BASE_URL&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model</span><span class="o">=</span><span class="s2">&#34;qwen-plus&#34;</span><span class="p">,</span>  <span class="c1"># 此处以qwen-plus为例，您可按需更换模型名称。模型列表：https://help.aliyun.com/zh/model-studio/getting-started/models</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># other params...</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 创建生成假设文档的链</span>
+</span></span><span class="line"><span class="cl"><span class="n">hyde_chain</span> <span class="o">=</span> <span class="n">hyde_prompt</span> <span class="o">|</span> <span class="n">llm</span> <span class="o">|</span> <span class="n">StrOutputParser</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 定义格式化文档的函数</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">format_docs</span><span class="p">(</span><span class="n">docs</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34;</span><span class="se">\n\n</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;• </span><span class="si">{</span><span class="n">doc</span><span class="o">.</span><span class="n">page_content</span><span class="si">}</span><span class="s2">&#34;</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 构建完整的HyDE RAG流程</span>
+</span></span><span class="line"><span class="cl"><span class="n">hyde_rag_chain</span> <span class="o">=</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">RunnablePassthrough</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">hypothetical_document</span><span class="o">=</span><span class="n">hyde_chain</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">format_docs</span><span class="p">(</span><span class="n">retriever</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s2">&#34;hypothetical_document&#34;</span><span class="p">])))</span>
+</span></span><span class="line"><span class="cl">        <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">answer</span><span class="o">=</span><span class="n">qa_prompt</span> <span class="o">|</span> <span class="n">llm</span> <span class="o">|</span> <span class="n">StrOutputParser</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        <span class="o">|</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;original_query&#34;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">&#34;query&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;generated_hypothetical&#34;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">&#34;hypothetical_document&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;retrieved_context&#34;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">&#34;context&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;final_answer&#34;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">&#34;answer&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 运行链并打印结果</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">run_query</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="se">\n</span><span class="si">{</span><span class="s1">&#39;=&#39;</span> <span class="o">*</span> <span class="mi">50</span><span class="si">}</span><span class="se">\n</span><span class="s2">查询: </span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="s1">&#39;=&#39;</span> <span class="o">*</span> <span class="mi">50</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="n">hyde_rag_chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">&#34;query&#34;</span><span class="p">:</span> <span class="n">query</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">生成的假设文档:</span><span class="se">\n</span><span class="si">{</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">40</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&#34;generated_hypothetical&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">检索到的相关上下文:</span><span class="se">\n</span><span class="si">{</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">40</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&#34;retrieved_context&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">最终回答:</span><span class="se">\n</span><span class="si">{</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">40</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&#34;final_answer&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">result</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 示例查询</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">queries</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;阿里云的主要研发中心在哪里？&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># &#34;Qwen-plus有哪些技术特点？&#34;,</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># &#34;Text-Embedding-V3模型的主要用途是什么？&#34;,</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># &#34;通义千问支持多模态任务吗？&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">queries</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">run_query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div>
+<h4 class="relative group"><strong>2.1.2 Step-Back提示</strong> 
+    <div id="212-step-back提示" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#212-step-back%e6%8f%90%e7%a4%ba" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>STEP-BACK PROMPING是一种简单的提示技术，使LLM能够从包含特定细节的实例中抽象、提取高级概念和基本原理。其思想是将“step-back问题”定义为从原始问题派生出的更抽象的问题。</p>
+<p>包括两个基本步骤：</p>
+<ul>
+<li><strong>抽象</strong>：最初，我们提示LLM提出一个关于高级概念或原理的广泛问题，而不是直接响应查询。然后，我们检索关于所述概念或原理的相关事实。</li>
+<li><strong>推理</strong>：LLM可以根据这些关于高级概念或原理的事实推导出原始问题的答案。我们称之为抽象推理。</li>
+</ul>
+<p>例如，如果查询包含大量细节，LLM很难检索相关事实来解决任务。如图5中的第一个例子所示，对于物理问题“如果温度增加2倍，体积增加8倍，理想气体的压力P会发生什么？”在直接推理该问题时，LLM可能会偏离理想气体定律的第一原理。</p>
+<p>同样，由于特定的时间范围限制，“Estella Leopold在1954年8月至1954年11月期间上过哪所学校？”这个问题很难直接解决。</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="v2-080730a28b92b0fc5f5bc0d05c4fabda_1440w" src="https://pic3.zhimg.com/v2-080730a28b92b0fc5f5bc0d05c4fabda_1440w.jpg">
+
+  
+</figure>
+</p>
+<p>示例代码：</p>
+<pre tabindex="0"><code>import os
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.prompts import ChatPromptTemplate, FewShotChatMessagePromptTemplate
+from langchain_core.runnables import RunnableLambda
+from langchain_openai import ChatOpenAI
+from langchain_community.utilities import DuckDuckGoSearchAPIWrapper
+
+os.environ[&#34;DASHSCOPE_API_KEY&#34;]=&#34;sk-18b7aefa5fc04e2ea604d480980f3364&#34;
+os.environ[&#34;ALIYUN_BASE_URL&#34;]=&#34;https://dashscope.aliyuncs.com/compatible-mode/v1&#34;
+
+
+model = ChatOpenAI(
+    api_key=os.getenv(&#34;DASHSCOPE_API_KEY&#34;),
+    base_url=&#34;https://dashscope.aliyuncs.com/compatible-mode/v1&#34;,
+    model=&#34;qwen-plus&#34;,  # 此处以qwen-plus为例，您可按需更换模型名称。模型列表：https://help.aliyun.com/zh/model-studio/getting-started/models
+    # other params...
+)
+
+def june_print(msg, res):
+    print(&#39;-&#39; * 100)
+    print(msg)
+    print(res)
+
+question = &#34;如果温度增加2倍，体积增加8倍，理想气体的压力P会发生什么？&#34;
+
+base_prompt_template = &#34;&#34;&#34;You are an expert of world knowledge. I am going to ask you a question. Your response should be comprehensive and not contradicted with the following context if they are relevant. Otherwise, ignore them if they are not relevant.
+
+{normal_context}
+Original Question: {question}
+Answer:&#34;&#34;&#34;
+
+base_prompt = ChatPromptTemplate.from_template(base_prompt_template)
+
+search = DuckDuckGoSearchAPIWrapper(max_results=4)
+def retriever(query):
+    return search.run(query)
+def base():
+    base_chain = (
+        {
+            # Retrieve context using the normal question (only the first 3 results)
+            &#34;normal_context&#34;: RunnableLambda(lambda x: x[&#34;question&#34;]) | retriever,
+            # Pass on the question
+            &#34;question&#34;: lambda x: x[&#34;question&#34;],
+        }
+        | base_prompt
+        | model
+        | StrOutputParser()
+    )
+
+    june_print(&#39;The searched contexts of the original question:&#39;, retriever(question))
+    june_print(&#39;The result of base_chain:&#39;, base_chain.invoke({&#34;question&#34;: question}) )
+
+def step_back():
+    # Few Shot Examples
+    examples = [
+        {
+            &#34;input&#34;: &#34;Could the members of The Police perform lawful arrests?&#34;,
+            &#34;output&#34;: &#34;what can the members of The Police do?&#34;,
+        },
+        {
+            &#34;input&#34;: &#34;Jan Sindel’s was born in what country?&#34;,
+            &#34;output&#34;: &#34;what is Jan Sindel’s personal history?&#34;,
+        },
+    ]
+    # We now transform these to example messages
+    example_prompt = ChatPromptTemplate.from_messages(
+        [
+            (&#34;human&#34;, &#34;{input}&#34;),
+            (&#34;ai&#34;, &#34;{output}&#34;),
+        ]
+    )
+    few_shot_prompt = FewShotChatMessagePromptTemplate(
+        example_prompt=example_prompt,
+        examples=examples,
+    )
+    step_back_prompt = ChatPromptTemplate.from_messages(
+        [
+            (
+                &#34;system&#34;,
+                &#34;&#34;&#34;You are an expert at world knowledge. Your task is to step back and paraphrase a question to a more generic step-back question, which is easier to answer. Here are a few examples:&#34;&#34;&#34;,
+            ),
+            # Few shot examples
+            few_shot_prompt,
+            # New question
+            (&#34;user&#34;, &#34;{question}&#34;),
+        ]
+    )
+    step_back_question_chain = step_back_prompt | model | StrOutputParser()
+
+
+    june_print(&#39;The step-back question:&#39;, step_back_question_chain.invoke({&#34;question&#34;: question}))
+    june_print(&#39;The searched contexts of the step-back question:&#39;,
+               retriever(step_back_question_chain.invoke({&#34;question&#34;: question})))
+    response_prompt_template = &#34;&#34;&#34;You are an expert of world knowledge. I am going to ask you a question. Your response should be comprehensive and not contradicted with the following context if they are relevant. Otherwise, ignore them if they are not relevant.
+    {normal_context}
+    {step_back_context}
+    Original Question: {question}
+    Answer:&#34;&#34;&#34;
+    response_prompt = ChatPromptTemplate.from_template(response_prompt_template)
+
+
+    step_back_chain = (
+            {
+                # Retrieve context using the normal question
+                &#34;normal_context&#34;: RunnableLambda(lambda x: x[&#34;question&#34;]) | retriever,
+                # Retrieve context using the step-back question
+                &#34;step_back_context&#34;: step_back_question_chain | retriever,
+                # Pass on the question
+                &#34;question&#34;: lambda x: x[&#34;question&#34;],
+            }
+            | response_prompt
+            | model
+            | StrOutputParser()
+    )
+    june_print(&#39;The result of step_back_chain:&#39;, step_back_chain.invoke({&#34;question&#34;: question}))
+
+step_back()
+</code></pre>
+<h3 class="relative group">2.2 混合检索 
+    <div id="22-混合检索" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#22-%e6%b7%b7%e5%90%88%e6%a3%80%e7%b4%a2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>使用 Elasticsearch 作为传统搜索机制，并使用 faiss 作为向量数据库进行语义搜索。<a
+  href="https://github.com/ndemir/machine-learning-projects/tree/main/hybrid-search"
+    target="_blank"
+  >代码</a>
+</li>
+<li>使用bm25 和向量检索实现。</li>
+</ul>
+<pre tabindex="0"><code>    def get_ensemble_retriever(self, k=3):
+        bm25 = self.get_bm25_retriever(k)
+        vector = self.get_vector_retriever(k)
+        return EnsembleRetriever(
+            retrievers=[bm25, vector],
+            weights=[0.5, 0.5]
+        )
+</code></pre>
+<h2 class="relative group">3. 重新排序和过滤 
+    <div id="3-重新排序和过滤" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e9%87%8d%e6%96%b0%e6%8e%92%e5%ba%8f%e5%92%8c%e8%bf%87%e6%bb%a4" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>在 RAG 工作流中，从检索器（Retriever）返回的候选文档通常包含冗余或无关的内容。通过重新排序（Reranking）和过滤，可以提升模型生成的最终答案的准确性和相关性。重新排序步骤主要依赖于预训练的交叉编码器模型（Cross Encoder），该模型能根据输入和上下文之间的语义相关性重新调整候选文档的优先级。</p>
+<p>示例代码</p>
+<p>以下代码展示了如何实现基于 <code>HuggingFaceCrossEncoder</code> 的文档重新排序器：</p>
+<pre tabindex="0"><code>    def local_reranker(retriever, top_n=3):
+        model = HuggingFaceCrossEncoder(model_name=&#34;BAAI/bge-reranker-base&#34;)
+        compressor = CrossEncoderReranker(model=model, top_n=top_n)
+        return ContextualCompressionRetriever(
+            base_compressor=compressor,
+            base_retriever=retriever
+        )
+</code></pre>
+<h2 class="relative group">4. 使用知识图谱改进 RAG 检索 
+    <div id="4-使用知识图谱改进-rag-检索" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#4-%e4%bd%bf%e7%94%a8%e7%9f%a5%e8%af%86%e5%9b%be%e8%b0%b1%e6%94%b9%e8%bf%9b-rag-%e6%a3%80%e7%b4%a2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>知识图谱是使用图结构来表示实体及其在现实世界中的关系并对其进行建模的一种技术方法。它将信息组织为**节点（实体）**和边（关系），形成一个有机网络，可以有效地存储、查询和分析复杂的知识。知识图谱的核心在于它使用三元组 （entity-relationship-entity） 来描述实体之间的关联。</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="v2-fd38bd205fb091948fbcbb60e945dc73_1440w" src="https://pic2.zhimg.com/v2-fd38bd205fb091948fbcbb60e945dc73_1440w.jpg">
+
+  
+</figure>
+</p>
+<p>通过将文档提取到实体和关系中，知识图谱可以显著压缩文档块，从而可以将所有相关文档提交到LLM。</p>
+<p><strong>识图谱RAG与Base RAG区别</strong></p>
+<ul>
+<li>知识图谱 RAG 使用图形结构来表示和存储信息，从而捕获实体之间的复杂关系，而Base RAG 通常使用矢量化文本数据。</li>
+<li>知识图谱 RAG 通过图遍历和子图搜索来检索信息，而Base RAG 依赖于向量相似性搜索。</li>
+<li>知识图谱 RAG 可以更好地理解实体之间的关系和层次结构，从而提供更丰富的上下文，而Base RAG 在处理复杂关系方面受到限制</li>
+</ul>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="v2-3029b7fdfc14438b1b7c4063936cc3ef_1440w" src="https://picx.zhimg.com/v2-3029b7fdfc14438b1b7c4063936cc3ef_1440w.jpg">
+
+  
+</figure>
+</p>
+<pre tabindex="0"><code>from llama_index.graph_stores.neo4j import Neo4jGraphStore
+from llama_index.core import Settings
+from llama_index.llms.dashscope import DashScope
+from llama_index.embeddings.dashscope import DashScopeEmbedding # &lt;--- Changed this line
+import os
+
+os.environ[&#34;DASHSCOPE_API_KEY&#34;]=&#34;sk-18b7aefa5fc04e2ea604d480980f3364&#34;
+os.environ[&#34;ALIYUN_BASE_URL&#34;]=&#34;https://dashscope.aliyuncs.com/compatible-mode/v1&#34;
+username = &#34;neo4j&#34;
+password = &#34;12345678&#34;
+url = &#34;bolt://localhost:7687&#34;
+database = &#34;neo4j&#34;
+graph_store = Neo4jGraphStore(
+    username=username,
+    password=password,
+    url=url,
+    database=database,
+)
+
+#设置 llm
+Settings.llm = DashScope( 
+    api_key=os.getenv(&#34;DASHSCOPE_API_KEY&#34;),
+    model=&#34;qwen-plus&#34;
+)
+# 配置嵌入模型 ⭐ 新增设置
+Settings.embed_model = DashScopeEmbedding(
+    model_name=&#34;text-embedding-v3&#34;,  # 百炼嵌入模型
+    api_key=os.getenv(&#34;DASHSCOPE_API_KEY&#34;),
+)
+
+from llama_index.core import StorageContext, SimpleDirectoryReader, KnowledgeGraphIndex
+
+# 使用 SimpleDirectoryReader 加载文档数据。
+documents = SimpleDirectoryReader(&#34;./data&#34;).load_data()
+# 使用 StorageContext 创建存储上下文对象，并传入图形存储对象/
+storage_context = StorageContext.from_defaults(graph_store=graph_store)
+# 使用 KnowledgeGraphIndex 从文档创建知识图谱索引对象。
+index = KnowledgeGraphIndex.from_documents(
+    documents,
+    storage_context=storage_context,
+    max_triplets_per_chunk=2,#指定每个文档块将被提取为最多两个三元组。
+    include_embeddings=True,#表示提取的三元组将被转换为嵌入向量并保存。
+)
+
+query_engine = index.as_query_engine(
+    include_text=True,
+    response_mode=&#34;tree_summarize&#34;,
+    embedding_mode=&#34;hybrid&#34;,
+    similarity_top_k=5,
+    verbose=True,
+)
+response = query_engine.query(&#34;白龍馬身世?&#34;)
+print(f&#34;Response: {response}&#34;)
+</code></pre>
+<h2 class="relative group">5. 多模态RAG 
+    <div id="5-多模态rag" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#5-%e5%a4%9a%e6%a8%a1%e6%80%81rag" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="image-20250616164742368" src="https://s2.loli.net/2025/06/20/MSdOLgq4KE9wT6r.png">
+
+  
+</figure>
+</p>
+<p><strong>方案  1</strong>：</p>
+<p>使用多模态嵌入（如 CLIP）对图像和文本进行嵌入通过相似度搜索同时检索图像和文本将原始图像和文本块传递给多模态大语言模型进行答案合成</p>
+<p><strong>方案 2</strong>：</p>
+<p>使用多模态大语言模型（如 GPT-4V、LLaVA 或 FUYU-8b）从<strong>图像生成文本摘要</strong>对文本摘要进行嵌入和检索将文本块传递给<strong>大语言模</strong>型进行答案合成</p>
+<p><strong>方案 3</strong>：</p>
+<p>使用多模态大语言模型（如 GPT-4V、LLaVA 或 FUYU-8b）从图像生成文本摘要嵌入并检索图像摘要（附带原始图像引用）将<strong>原始图像和文本块传递给多模态大语言模型</strong>进行答案合成</p>
+
+<h2 class="relative group">6. 综合实战 
+    <div id="6-综合实战" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#6-%e7%bb%bc%e5%90%88%e5%ae%9e%e6%88%98" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">6.1 数据集 
+    <div id="61-数据集" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#61-%e6%95%b0%e6%8d%ae%e9%9b%86" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>数据集：使用数据为chinese-simplified-xlsum-v2新闻数据集，摘取<code>chinese_simplified_train.jsonl</code> 前八条</p>
+
+<h3 class="relative group">6.2 数据加载与分块 
+    <div id="62-数据加载与分块" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#62-%e6%95%b0%e6%8d%ae%e5%8a%a0%e8%bd%bd%e4%b8%8e%e5%88%86%e5%9d%97" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<blockquote>
+<p>数据清洗分块:由于数据集为jsonl格式，直接按照每个json单元分块</p></blockquote>
+<p>数据加载与分块 - 针对特定JSONL格式优化</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">NewsJsonlDataLoader</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">file_path</span> <span class="o">=</span> <span class="n">file_path</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">load_and_chunk</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;加载JSONL文件并分块处理&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 直接处理JSONL文件</span>
+</span></span><span class="line"><span class="cl">        <span class="n">loader</span> <span class="o">=</span> <span class="n">JSONLoader</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">file_path</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">file_path</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">jq_schema</span><span class="o">=</span><span class="s2">&#34;.&#34;</span><span class="p">,</span>  <span class="c1"># 整个对象作为文档</span>
+</span></span><span class="line"><span class="cl">            <span class="n">content_key</span><span class="o">=</span><span class="s2">&#34;text&#34;</span><span class="p">,</span>  <span class="c1"># 使用text字段作为内容</span>
+</span></span><span class="line"><span class="cl">            <span class="n">metadata_func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">extract_metadata</span><span class="p">,</span><span class="c1">#指定如何提取每条记录的元数据</span>
+</span></span><span class="line"><span class="cl">            <span class="n">json_lines</span><span class="o">=</span><span class="kc">True</span>  <span class="c1"># 处理JSONL格式</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 每个新闻作为一个分块</span>
+</span></span><span class="line"><span class="cl">        <span class="n">text_splitter</span> <span class="o">=</span> <span class="n">RecursiveCharacterTextSplitter</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">chunk_overlap</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">separators</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;</span><span class="se">\n\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="s2">&#34;。&#34;</span><span class="p">,</span> <span class="s2">&#34;！&#34;</span><span class="p">,</span> <span class="s2">&#34;？&#34;</span><span class="p">,</span> <span class="s2">&#34;．&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">loader</span><span class="o">.</span><span class="n">load_and_split</span><span class="p">(</span><span class="n">text_splitter</span><span class="o">=</span><span class="n">text_splitter</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">extract_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">metadata</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;提取元数据&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;id&#34;</span><span class="p">:</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;id&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;url&#34;</span><span class="p">:</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;url&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;title&#34;</span><span class="p">:</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;title&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;summary&#34;</span><span class="p">:</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;summary&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span></code></pre></div><p><strong>RecursiveCharacterTextSplitter 原理</strong>：该工具以递归为核心机制。先按指定字符集顺序尝试分割文本，评估分割结果是否小于指定块大小，不满足则换用下一个字符，直到符合条件。</p>
+
+<h3 class="relative group">6.3 向量存储 
+    <div id="63-向量存储" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#63-%e5%90%91%e9%87%8f%e5%ad%98%e5%82%a8" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="c1"># # 构建向量数据库（首次运行）</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># vector_store = Chroma.from_documents(</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#     documents=documents,</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#     embedding=embeddings,</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#     persist_directory=&#34;./chroma_db&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># )</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># # 显式保存到磁盘（Chroma 会自动保存，但建议显式调用）</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># vector_store.persist()</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print(f&#34;向量索引已保存至目录: ./chroma_db&#34;)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">#  二次使用</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 从持久化目录加载向量存储</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector_store</span> <span class="o">=</span> <span class="n">Chroma</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">persist_directory</span><span class="o">=</span><span class="s2">&#34;./chroma_db&#34;</span><span class="p">,</span>  <span class="c1"># 与保存时相同的目录</span>
+</span></span><span class="line"><span class="cl">        <span class="n">embedding_function</span><span class="o">=</span><span class="n">embeddings</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span></code></pre></div>
+<h3 class="relative group">6.4 检索器系统 
+    <div id="64-检索器系统" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#64-%e6%a3%80%e7%b4%a2%e5%99%a8%e7%b3%bb%e7%bb%9f" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">RetrievalSystem</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">,</span> <span class="n">vector_store</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">documents</span> <span class="o">=</span> <span class="n">documents</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">vector_store</span> <span class="o">=</span> <span class="n">vector_store</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#关键词检索</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">get_bm25_retriever</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">BM25Retriever</span><span class="o">.</span><span class="n">from_documents</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">documents</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">documents</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">k</span><span class="o">=</span><span class="n">k</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#向量检索</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">get_vector_retriever</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vector_store</span><span class="o">.</span><span class="n">as_retriever</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">search_type</span><span class="o">=</span><span class="s2">&#34;mmr&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">search_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;k&#34;</span><span class="p">:</span> <span class="n">k</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#混合检索</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">get_ensemble_retriever</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">bm25</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_bm25_retriever</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">vector</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_vector_retriever</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">EnsembleRetriever</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">retrievers</span><span class="o">=</span><span class="p">[</span><span class="n">bm25</span><span class="p">,</span> <span class="n">vector</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="n">weights</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span></code></pre></div>
+<h3 class="relative group">6.5 重排 
+    <div id="65-重排" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#65-%e9%87%8d%e6%8e%92" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Reranker</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#基于本地模型的重排</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@staticmethod</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">local_reranker</span><span class="p">(</span><span class="n">retriever</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">model</span> <span class="o">=</span> <span class="n">HuggingFaceCrossEncoder</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="s2">&#34;BAAI/bge-reranker-base&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">compressor</span> <span class="o">=</span> <span class="n">CrossEncoderReranker</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="n">top_n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ContextualCompressionRetriever</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">base_compressor</span><span class="o">=</span><span class="n">compressor</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">base_retriever</span><span class="o">=</span><span class="n">retriever</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#基于阿里云api的重排</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@staticmethod</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">cloud_reranker</span><span class="p">(</span><span class="n">retriever</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 实际使用需要替换为DashScope实现</span>
+</span></span><span class="line"><span class="cl">        <span class="n">compressor</span> <span class="o">=</span> <span class="n">DashScopeRerank</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">compression_retriever</span> <span class="o">=</span> <span class="n">ContextualCompressionRetriever</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">base_compressor</span><span class="o">=</span><span class="n">compressor</span><span class="p">,</span> <span class="n">base_retriever</span><span class="o">=</span><span class="n">retriever</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">compression_retriever</span>  <span class="c1"># 降级处理，直接返回原始检索器</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="" src="https://s2.loli.net/2025/06/20/UD8Z37uTiYEmRSn.png">
+
+  
+</figure>
+</p>
+<p>Bi-Encoder会用BERT对输入文本编码，再根据cosine相似度分数筛选文本。Cross-Encoder会直接计算两个句子的相关性分数。</p>
+<ul>
+<li>
+<p>有一组预先定义好的句子对，并想对其进行打分时，就可以使用cross-Encoder</p>
+</li>
+<li>
+<p>需要在向量空间中获得句子嵌入以进行高效比较的情况，使用BiEncoder</p>
+</li>
+<li>
+<p>ContextualCompressionRetriever：将交叉编码器包装为 <code>Compressor</code> 对象，负责对检索结果重排并截断。</p>
+<ul>
+<li>接收基础检索器返回的文档列表。</li>
+<li>用交叉编码器计算每个文档相对于查询的相关性得分。</li>
+<li>按得分降序排序，保留前 <code>top_n</code> 个文档。</li>
+</ul>
+</li>
+<li>
+<p>ContextualCompressionRetriever：创建压缩检索器</p>
+</li>
+</ul>
+
+<h3 class="relative group">6.6 质量评估 
+    <div id="66-质量评估" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#66-%e8%b4%a8%e9%87%8f%e8%af%84%e4%bc%b0" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">AnswerGrader</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">llm</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">llm</span> <span class="o">=</span> <span class="n">llm</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">hallucination_grader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">class</span> <span class="nc">GradeHallucinations</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">binary_score</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&#34;答案是否虚构。(&#39;yes&#39; or &#39;no&#39;)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">instruction</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        你是一个评分人员，负责确认LLM的回复是否为虚构的。
+</span></span></span><span class="line"><span class="cl"><span class="s2">        以下会给你一个文件与相对应的LLM回复，请输出 &#39;yes&#39; or &#39;no&#39;作为判断结果。
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &#39;Yes&#39; 代表LLM的回答是虚构的，未基于文件内容 &#39;No&#39; 则代表LLM的回答并未虚构，而是基于文件内容得出。
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">prompt</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="o">.</span><span class="n">from_messages</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">            <span class="p">(</span><span class="s2">&#34;system&#34;</span><span class="p">,</span> <span class="n">instruction</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="p">(</span><span class="s2">&#34;human&#34;</span><span class="p">,</span> <span class="s2">&#34;文件: </span><span class="se">\n\n</span><span class="s2"> </span><span class="si">{documents}</span><span class="s2"> </span><span class="se">\n\n</span><span class="s2"> LLM 回复: </span><span class="si">{generation}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">prompt</span> <span class="o">|</span> <span class="bp">self</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">with_structured_output</span><span class="p">(</span><span class="n">GradeHallucinations</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">answer_grader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">class</span> <span class="nc">GradeAnswer</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">binary_score</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&#34;答案是否回应问题。(&#39;yes&#39; or &#39;no&#39;)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">instruction</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        你是一个评分人员，负责确认答案是否回应了问题。
+</span></span></span><span class="line"><span class="cl"><span class="s2">        输出 &#39;yes&#39; or &#39;no&#39;。 &#39;Yes&#39; 代表答案确实回应了问题， &#39;No&#39; 则代表答案并未回应问题。
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">prompt</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="o">.</span><span class="n">from_messages</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">            <span class="p">(</span><span class="s2">&#34;system&#34;</span><span class="p">,</span> <span class="n">instruction</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="p">(</span><span class="s2">&#34;human&#34;</span><span class="p">,</span> <span class="s2">&#34;用户问题: </span><span class="se">\n\n</span><span class="s2"> </span><span class="si">{question}</span><span class="s2"> </span><span class="se">\n\n</span><span class="s2"> 答案: </span><span class="si">{generation}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">prompt</span> <span class="o">|</span> <span class="bp">self</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">with_structured_output</span><span class="p">(</span><span class="n">GradeAnswer</span><span class="p">)</span>
+</span></span></code></pre></div><ul>
+<li>
+<p>幻觉检测</p>
+<ul>
+<li>生成文本+RAG 文档给llm 判断</li>
+<li><strong><code>with_structured_output</code></strong>:LangChain 的方法，用于指定 LLM 的输出格式。</li>
+<li><strong><code>|</code></strong>:在 LangChain 中，<code>|</code> 是用于将两个组件串联的语法，类似于管道操作符。它将 <code>hallucination_prompt</code> 的输出传递给 <code>structured_llm_grader</code>。</li>
+</ul>
+</li>
+<li>
+<p>answer_grader：确认答案是否回应问题</p>
+</li>
+</ul>
+
+<h3 class="relative group">6.7 RAG问答系统 
+    <div id="67-rag问答系统" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#67-rag%e9%97%ae%e7%ad%94%e7%b3%bb%e7%bb%9f" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">RAGSystem</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">retriever</span><span class="p">,</span> <span class="n">client</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">      <span class="bp">self</span><span class="o">.</span><span class="n">retriever</span> <span class="o">=</span> <span class="n">retriever</span>
+</span></span><span class="line"><span class="cl">      <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">client</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">format_docs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">docs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Document</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;&#34;&#34;格式化检索到的文档用于提示词&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="s2">&#34;</span><span class="se">\n\n</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">          <span class="sa">f</span><span class="s2">&#34;标题: </span><span class="si">{</span><span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="sa">f</span><span class="s2">&#34;日期: </span><span class="si">{</span><span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;未知&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="sa">f</span><span class="s2">&#34;摘要: </span><span class="si">{</span><span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;summary&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="sa">f</span><span class="s2">&#34;内容: </span><span class="si">{</span><span class="n">doc</span><span class="o">.</span><span class="n">page_content</span><span class="p">[:</span><span class="mi">500</span><span class="p">]</span><span class="si">}</span><span class="s2">...</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="sa">f</span><span class="s2">&#34;来源: </span><span class="si">{</span><span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span>
+</span></span><span class="line"><span class="cl">      <span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">generate_answer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">question</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">检索相关文档: </span><span class="si">{</span><span class="n">question</span><span class="si">}</span><span class="s2">...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">context_docs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">retriever</span><span class="o">.</span><span class="n">get_relevant_documents</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1"># 准备参考文档摘要</span>
+</span></span><span class="line"><span class="cl">      <span class="n">reference_summary</span> <span class="o">=</span> <span class="s2">&#34;参考文档摘要：</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">doc</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">context_docs</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">          <span class="n">title</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;无标题&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="n">url</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">,</span> <span class="s1">&#39;未知链接&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="n">summary</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;summary&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="n">reference_summary</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">. 来源: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2"> | 标题: </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2"> | 摘要: </span><span class="si">{</span><span class="n">summary</span><span class="si">}</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;格式化 </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">context_docs</span><span class="p">)</span><span class="si">}</span><span class="s2"> 个相关文档...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_docs</span><span class="p">(</span><span class="n">context_docs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="n">template</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">      你是一个新闻分析助手，需要根据以下相关新闻片段回答问题。
+</span></span></span><span class="line"><span class="cl"><span class="s2">      如果问题涉及多个新闻，请综合多篇新闻内容进行回答。
+</span></span></span><span class="line"><span class="cl"><span class="s2">      回答时需要注明新闻来源，如可能请包含发布日期。
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">      相关新闻片段：
+</span></span></span><span class="line"><span class="cl"><span class="s2">      </span><span class="si">{context}</span><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">      &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="n">prompt</span> <span class="o">=</span> <span class="n">PromptTemplate</span><span class="o">.</span><span class="n">from_template</span><span class="p">(</span><span class="n">template</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">system_prompt</span> <span class="o">=</span> <span class="n">prompt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;生成回答...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">completion</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">          <span class="n">model</span><span class="o">=</span><span class="s2">&#34;qwen-plus&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+</span></span><span class="line"><span class="cl">              <span class="p">{</span><span class="s1">&#39;role&#39;</span><span class="p">:</span> <span class="s1">&#39;system&#39;</span><span class="p">,</span> <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="n">system_prompt</span><span class="p">},</span>  <span class="c1"># 中文系统角色</span>
+</span></span><span class="line"><span class="cl">              <span class="p">{</span><span class="s1">&#39;role&#39;</span><span class="p">:</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="n">question</span><span class="p">},</span>  <span class="c1"># 使用生成的提示</span>
+</span></span><span class="line"><span class="cl">          <span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">answer</span> <span class="o">=</span> <span class="n">completion</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
+</span></span><span class="line"><span class="cl">      <span class="n">combined_response</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="se">\n\n</span><span class="si">{</span><span class="n">reference_summary</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="n">combined_response</span>
+</span></span></code></pre></div>
+<h3 class="relative group">6.7 主程序 
+    <div id="67-主程序" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#67-%e4%b8%bb%e7%a8%8b%e5%ba%8f" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 配置</span>
+</span></span><span class="line"><span class="cl">    <span class="n">JSONL_FILE</span> <span class="o">=</span> <span class="s2">&#34;../data/chinese-simplified-xlsum-v2/chinese_simplified_XLSum_v2.0/test.jsonl&#34;</span>  <span class="c1"># 替换为实际文件路径</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 步骤1: 加载数据并分块</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;正在加载新闻数据...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">loader</span> <span class="o">=</span> <span class="n">NewsJsonlDataLoader</span><span class="p">(</span><span class="n">JSONL_FILE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">documents</span> <span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="n">load_and_chunk</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;成功加载 </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span><span class="si">}</span><span class="s2"> 条新闻&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 步骤2: 初始化LLM</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;初始化语言模型...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 若没有配置环境变量，请用阿里云百炼API Key将下行替换为：api_key=</span>
+</span></span><span class="line"><span class="cl">        <span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&#34;DASHSCOPE_API_KEY&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">base_url</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&#34;ALIYUN_BASE_URL&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">llm</span> <span class="o">=</span> <span class="n">ChatOpenAI</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">openai_api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&#34;DASHSCOPE_API_KEY&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">base_url</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&#34;ALIYUN_BASE_URL&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">model</span><span class="o">=</span><span class="s1">&#39;qwen-plus&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 步骤3: 创建向量存储</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;正在构建向量索引...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 创建 Chroma 向量存储并指定持久化目录</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">embeddings</span> <span class="o">=</span> <span class="n">AliyunEmbeddings</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&#34;text-embedding-v3&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># # 构建向量数据库（首次运行）</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># vector_store = Chroma.from_documents(</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#     documents=documents,</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#     embedding=embeddings,</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#     persist_directory=&#34;./chroma_db&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># )</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># # 显式保存到磁盘（Chroma 会自动保存，但建议显式调用）</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># vector_store.persist()</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print(f&#34;向量索引已保存至目录: ./chroma_db&#34;)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">#  二次使用</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 从持久化目录加载向量存储</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector_store</span> <span class="o">=</span> <span class="n">Chroma</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">persist_directory</span><span class="o">=</span><span class="s2">&#34;./chroma_db&#34;</span><span class="p">,</span>  <span class="c1"># 与保存时相同的目录</span>
+</span></span><span class="line"><span class="cl">        <span class="n">embedding_function</span><span class="o">=</span><span class="n">embeddings</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;已成功加载本地向量存储&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 步骤4: 创建检索系统</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;构建检索系统...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">retrieval_sys</span> <span class="o">=</span> <span class="n">RetrievalSystem</span><span class="p">(</span><span class="n">documents</span><span class="p">,</span> <span class="n">vector_store</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 选择检索方式: ensemble_retriever | self_query_retriever</span>
+</span></span><span class="line"><span class="cl">    <span class="n">retriever</span> <span class="o">=</span> <span class="n">retrieval_sys</span><span class="o">.</span><span class="n">get_vector_retriever</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;自查询检索器准备就绪&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 步骤5: 添加重排</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;添加结果重排...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">reranked_retriever</span> <span class="o">=</span> <span class="n">Reranker</span><span class="o">.</span><span class="n">local_reranker</span><span class="p">(</span><span class="n">retriever</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 步骤6: 创建RAG系统</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;初始化问答系统...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">rag_system</span> <span class="o">=</span> <span class="n">RAGSystem</span><span class="p">(</span><span class="n">reranked_retriever</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 示例问题</span>
+</span></span><span class="line"><span class="cl">    <span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;心理健康新闻&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;足球新闻&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">question</span> <span class="ow">in</span> <span class="n">questions</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span> <span class="o">+</span> <span class="s2">&#34;=&#34;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;问题: </span><span class="si">{</span><span class="n">question</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 生成答案</span>
+</span></span><span class="line"><span class="cl">        <span class="n">answer</span> <span class="o">=</span> <span class="n">rag_system</span><span class="o">.</span><span class="n">generate_answer</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">回答:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 步骤7: 回答质量评估</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span> <span class="o">+</span> <span class="s2">&#34;-&#34;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">质量评估:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">grader</span> <span class="o">=</span> <span class="n">AnswerGrader</span><span class="p">(</span><span class="n">llm</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># # 幻觉评估</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span> <span class="o">+</span> <span class="s2">&#34;-&#34;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">hallucination_result</span> <span class="o">=</span> <span class="n">grader</span><span class="o">.</span><span class="n">hallucination_grader</span><span class="p">()</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;documents&#34;</span><span class="p">:</span> <span class="s2">&#34;相关新闻摘要...&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;generation&#34;</span><span class="p">:</span> <span class="n">answer</span>
+</span></span><span class="line"><span class="cl">        <span class="p">})</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;幻觉评估: </span><span class="si">{</span><span class="n">hallucination_result</span><span class="o">.</span><span class="n">binary_score</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 回答相关性评估</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span> <span class="o">+</span> <span class="s2">&#34;-&#34;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">relevance_result</span> <span class="o">=</span> <span class="n">grader</span><span class="o">.</span><span class="n">answer_grader</span><span class="p">()</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;question&#34;</span><span class="p">:</span> <span class="n">question</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;generation&#34;</span><span class="p">:</span> <span class="n">answer</span>
+</span></span><span class="line"><span class="cl">        <span class="p">})</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;答案相关性: </span><span class="si">{</span><span class="n">relevance_result</span><span class="o">.</span><span class="n">binary_score</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">问答系统完成&#34;</span><span class="p">)</span>
+</span></span></code></pre></div>
+          
+          
+          
+        </div>
+
+        
+
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.407e5b2727c1f241c95d53db24c776bea71bfc18e09511b815d669ad8caca6e9e18a53864ad364b1ccccfa2f2956768d33cfe193bfb64d3406f3b5ece354ba57.js"
+          integrity="sha512-QH5bJyfB8kHJXVPbJMd2vqcb/BjglRG4FdZprYyspunhilOGStNksczM&#43;i8pVnaNM8/hk7&#43;2TTQG87Xs41S6Vw=="
+          data-oid="views_posts/高级 RAG.md"
+          data-oid-likes="likes_posts/高级 RAG.md"></script>
+      
+
+    </section>
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span>
+          
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/posts/llamaindex/">
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  ></span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="0001-01-01T00:00:00&#43;00:00">1 January 0001</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a
+    href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400">
+        <ul class="flex flex-col list-none sm:flex-row">
+          
+            <li
+              class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href="https://external-link"
+                title="">
+                
+                Privacy
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+      </p>
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script> 
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-index-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

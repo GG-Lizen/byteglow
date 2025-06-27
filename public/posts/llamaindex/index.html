@@ -1,0 +1,2769 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  
+  <meta http-equiv="content-language" content="en" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>LlamaIndex &middot; ByteGlow</title>
+  <meta name="title" content="LlamaIndex &middot; ByteGlow" />
+  
+  
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/posts/llamaindex/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.2755fda1868f0bfc1843df512e7b0b0bec55a259db5f8b13dc3c0f7894e519f617c2b66f5915ec207e2a1ffc8b6d1b53dbd8f3dff8892140cb5eacc50a6edfbb.css"
+    integrity="sha512-J1X9oYaPC/wYQ99RLnsLC&#43;xVolnbX4sT3DwPeJTlGfYXwrZvWRXsIH4qH/yLbRtT29jz3/iJIUDLXqzFCm7fuw==" />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.54688f522dbd435cd17577667367d50a06517a06f4b40b8c2f04d9e61afcb5f1b807ce42dfbe1f0d7979b2430f4e253cf548907cf81ab2f7efb0d66e57933d16.js"
+    integrity="sha512-VGiPUi29Q1zRdXdmc2fVCgZRegb0tAuMLwTZ5hr8tfG4B85C374fDXl5skMPTiU89UiQfPgasvfvsNZuV5M9Fg==" data-copy="Copy" data-copied="Copied"></script>
+  
+  
+  
+  <script src="/lib/zoom/zoom.min.f592a181a15d2a5b042daa7f746c3721acf9063f8b6acd175d989129865a37d400ae0e85b640f9ad42cd98d1f8ad30931718cf8811abdcc5fcb264400d1a2b0c.js" integrity="sha512-9ZKhgaFdKlsELap/dGw3Iaz5Bj&#43;Las0XXZiRKYZaN9QArg6FtkD5rULNmNH4rTCTFxjPiBGr3MX8smRADRorDA=="></script>
+  
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:url" content="http://localhost:1313/posts/llamaindex/">
+  <meta property="og:site_name" content="ByteGlow">
+  <meta property="og:title" content="LlamaIndex">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-06-20T15:26:15+08:00">
+    <meta property="article:modified_time" content="2025-06-20T15:26:15+08:00">
+      <meta property="og:see_also" content="http://localhost:1313/posts/langchain%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/">
+      <meta property="og:see_also" content="http://localhost:1313/posts/%E9%AB%98%E7%BA%A7rag/">
+      <meta property="og:see_also" content="http://localhost:1313/posts/langgraph/">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="LlamaIndex">
+
+    
+  
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Posts",
+    "name": "LlamaIndex",
+    "headline": "LlamaIndex",
+    
+    
+    "inLanguage": "en",
+    "url" : "http:\/\/localhost:1313\/posts\/llamaindex\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Lizen"
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-06-20T15:26:15\u002b08:00",
+    "datePublished": "2025-06-20T15:26:15\u002b08:00",
+    
+    "dateModified": "2025-06-20T15:26:15\u002b08:00",
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "2739"
+  }]
+  </script>
+
+
+  
+  
+  <meta name="author" content="Lizen" />
+  
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+  
+  
+  
+  <meta name="theme-color"/>
+  
+  
+
+  
+  
+</head>
+<body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a
+      >
+    </div>
+    
+    
+      <div class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3 padding-main-menu">
+    
+    <div class="flex flex-1 items-center justify-between">
+        <nav class="flex space-x-3">
+
+            
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">ByteGlow</a>
+            
+
+        </nav>
+        <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+
+            
+            
+            
+  <a
+  href="/posts/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="Posts">
+    Blog
+  </p>
+</a>
+
+
+
+            
+            
+  <a
+  href=""
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="">
+    Topics
+  </p>
+</a>
+
+
+
+            
+            
+  <a
+  href="https://github.com/nunocoracao/blowfish"
+  target="_blank"
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+    <span class="mr-1">
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+
+    </span>
+  
+  <p class="text-base font-medium" title="">
+    GitHub
+  </p>
+</a>
+
+
+
+            
+            
+  <a
+  href="https://github.com/nunocoracao/blowfish"
+  target="_blank"
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+    <span >
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+
+    </span>
+  
+  <p class="text-base font-medium" title="">
+    
+  </p>
+</a>
+
+
+
+            
+            
+
+            
+
+
+            
+            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+
+            
+            
+            <div
+                class=" flex items-center">
+                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                    <div class="flex items-center justify-center dark:hidden">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                    </div>
+                    <div class="items-center justify-center hidden dark:flex">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                    </div>
+                </button>
+            </div>
+            
+
+        </nav>
+        <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+
+            <span></span>
+
+            
+
+
+            
+            <button id="search-button-mobile" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+            
+            
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+                <div class="flex items-center justify-center dark:hidden">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                </div>
+                <div class="items-center justify-center hidden dark:flex">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                </div>
+            </button>
+            
+
+        </div>
+    </div>
+    <div class="-my-2 md:hidden">
+
+        <label id="menu-button" class="block">
+            
+            <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+
+  </span>
+
+
+            </div>
+            <div id="menu-wrapper" class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 padding-top-[5px]">
+                <ul
+                    class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+
+                    <li id="menu-close-button">
+                        <span
+                            class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+</span>
+                    </li>
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href="/posts/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="Posts">
+      Blog
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href=""
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      Topics
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href="https://github.com/nunocoracao/blowfish"
+    
+      target="_blank"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+      <div class="mr-2">
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+
+      </div>
+    
+    <p class="text-bg font-bg" title="">
+      GitHub
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href="https://github.com/nunocoracao/blowfish"
+    
+      target="_blank"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+      <div >
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+
+      </div>
+    
+    <p class="text-bg font-bg" title="">
+      
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                </ul>
+                
+                
+
+            </div>
+        </label>
+    </div>
+</div>
+
+
+
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+
+
+  <article>
+    
+
+
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        LlamaIndex
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-06-20T15:26:15&#43;08:00">20 June 2025</time><span class="px-2 text-primary-500">&middot;</span><span>2739 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">13 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+
+        
+          
+          
+<div class="flex author">
+  
+    
+    
+      
+    
+    
+      
+        
+      
+      <img
+        class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4"
+        width="96"
+        height="96"
+        alt="Lizen"
+        src="/patrick_hu_c021bb9cc15f143b.png">
+    
+  
+  <div class="place-self-center">
+    
+      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+        Author
+      </div>
+      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+        Lizen
+      </div>
+    
+    
+    <div class="text-2xl sm:text-lg">
+</div>
+  </div>
+</div>
+
+        
+
+        
+
+        
+          <div class="mb-5"></div>
+        
+
+      
+
+    </header>
+
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+          <div
+            class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky 
+              lg:top-10
+            
+            ">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#1-llamaindex-使用模板">1. LlamaIndex 使用模板</a>
+      <ul>
+        <li><a href="#11-读取文档">1.1 读取文档</a></li>
+        <li><a href="#12-将文档解析为nodes">1.2 将文档解析为Nodes</a></li>
+        <li><a href="#13-构建索引">1.3 构建索引</a></li>
+        <li><a href="#14-查询索引并对话大模型">1.4 查询索引并对话大模型</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-使用-llamaindex-索引">2. 使用 LlamaIndex 索引</a>
+      <ul>
+        <li><a href="#21-list-index">2.1 List Index</a></li>
+        <li><a href="#22-向量存储索引">2.2 向量存储索引</a></li>
+        <li><a href="#23-树状索引">2.3 树状索引</a></li>
+        <li><a href="#24-关键词索引">2.4 关键词索引</a></li>
+        <li><a href="#25-可组合性图索引">2.5 可组合性图索引</a></li>
+        <li><a href="#26-文档摘要索引">2.6 文档摘要索引</a></li>
+        <li><a href="#27-知识图谱索引">2.7 知识图谱索引</a></li>
+        <li><a href="#28-pandas">2.8 Pandas</a></li>
+        <li><a href="#28-总结">2.8 总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#补充">补充</a>
+      <ul>
+        <li><a href="#1-retriever_mode">1. Retriever_mode</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#1-llamaindex-使用模板">1. LlamaIndex 使用模板</a>
+      <ul>
+        <li><a href="#11-读取文档">1.1 读取文档</a></li>
+        <li><a href="#12-将文档解析为nodes">1.2 将文档解析为Nodes</a></li>
+        <li><a href="#13-构建索引">1.3 构建索引</a></li>
+        <li><a href="#14-查询索引并对话大模型">1.4 查询索引并对话大模型</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-使用-llamaindex-索引">2. 使用 LlamaIndex 索引</a>
+      <ul>
+        <li><a href="#21-list-index">2.1 List Index</a></li>
+        <li><a href="#22-向量存储索引">2.2 向量存储索引</a></li>
+        <li><a href="#23-树状索引">2.3 树状索引</a></li>
+        <li><a href="#24-关键词索引">2.4 关键词索引</a></li>
+        <li><a href="#25-可组合性图索引">2.5 可组合性图索引</a></li>
+        <li><a href="#26-文档摘要索引">2.6 文档摘要索引</a></li>
+        <li><a href="#27-知识图谱索引">2.7 知识图谱索引</a></li>
+        <li><a href="#28-pandas">2.8 Pandas</a></li>
+        <li><a href="#28-总结">2.8 总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#补充">补充</a>
+      <ul>
+        <li><a href="#1-retriever_mode">1. Retriever_mode</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+
+            
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+  <details
+    class="mt-2 mb-5 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 margin-left-[0px]"
+    >
+    
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
+    学习笔记 -
+    This article is part of a series.
+  </summary>
+  
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="/posts/langchain%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/">
+          Part :
+          LangChain 简易教程
+        </a>
+      </div>
+    
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="/posts/%E9%AB%98%E7%BA%A7rag/">
+          Part :
+          高级RAG
+        </a>
+      </div>
+    
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        Part :
+        This Article
+      </div>
+    
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="/posts/langgraph/">
+          Part :
+          LangGraph
+        </a>
+      </div>
+    
+  
+
+
+  </details>
+
+
+
+
+        <div class="article-content max-w-prose mb-20">
+          
+<h1 class="relative group">LlamaIndex 
+    <div id="llamaindex" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#llamaindex" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+
+<h2 class="relative group">简介 
+    <div id="简介" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%ae%80%e4%bb%8b" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>LlamaIndex（以前称为 <strong>GPT Index</strong>）是一个用于构建基于文档的大语言模型（LLM）应用的开源工具。它通过提供灵活的索引结构和简单的接口，帮助开发者将外部数据源（如文档、数据库或API）与大语言模型相结合，从而更高效地查询和分析数据。以下是 LlamaIndex 的核心概念和功能简介：</p>
+<p>核心功能：</p>
+<ol>
+<li><strong>数据整合与管理</strong>
+<ul>
+<li><strong>多种数据源支持</strong>：支持导入多种数据格式，包括文本文件、PDF、CSV、SQL数据库等。</li>
+<li><strong>数据预处理</strong>：能够自动分块长文本、清理无关内容，并为后续的模型查询做好准备。</li>
+</ul>
+</li>
+<li><strong>灵活的索引结构</strong>
+<ul>
+<li>提供了多种索引类型，例如树状索引（Tree Index）、列表索引（List Index）和图索引（Graph Index）。</li>
+<li>开发者可以根据应用场景选择合适的索引，以优化查询效率或结果质量。</li>
+</ul>
+</li>
+<li><strong>智能查询引擎</strong>
+<ul>
+<li>基于构建的索引，可以直接使用 LLM 进行语义搜索和自然语言问答。</li>
+<li>支持自定义查询模板，以适配不同领域的需求。</li>
+</ul>
+</li>
+<li><strong>与主流 LLM 的集成</strong>
+<ul>
+<li>支持与 OpenAI、Anthropic、Cohere 等多种主流语言模型的无缝集成。</li>
+<li>可以通过配置文件快速切换不同模型。</li>
+</ul>
+</li>
+</ol>
+
+<h2 class="relative group">1. LlamaIndex 使用模板 
+    <div id="1-llamaindex-使用模板" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-llamaindex-%e4%bd%bf%e7%94%a8%e6%a8%a1%e6%9d%bf" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>LlamaIndex 常用使用模版：</p>
+<ol>
+<li>
+<p>读取文档 (手动添加or通过Loader自动添加)；</p>
+</li>
+<li>
+<p>将文档解析为Nodes；</p>
+</li>
+<li>
+<p>构建索引（从文档or从Nodes，如果从文档，则对应函数内部会完成第2步的Node解析）</p>
+<p>[可选，进阶] 在其他索引上构建索引，即多级索引结构</p>
+</li>
+<li>
+<p>查询索引并对话大模型</p>
+</li>
+</ol>
+<p>LlamaIndex的核心是将文档分解为多个Node对象。节点是LlamaIndex中的一等公民。节点表示源文档的“块”，无论是文本块、图像块还是更多。它们还包含元数据以及与其他节点和索引结构的关系信息。当您创建索引时，它抽象了节点的创建，但是，如果您的需求需要，您可以手动为文档定义节点。</p>
+<p>安装：</p>
+<pre tabindex="0"><code>!pip install llama-index
+!pip install llama-index-core
+!pip install llama-index-llms-dashscope
+!pip install llama-index-embeddings-dashscope
+</code></pre>
+<h3 class="relative group">1.1 读取文档 
+    <div id="11-读取文档" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#11-%e8%af%bb%e5%8f%96%e6%96%87%e6%a1%a3" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ol>
+<li>使用data loaders读取</li>
+</ol>
+<pre tabindex="0"><code>from llama_index import SimpleDirectoryReader
+
+# 从文件夹读取
+documents = SimpleDirectoryReader(input_dir=&#39;./data&#39;).load_data()
+
+# 从指定文件读取，输入为List
+documents = SimpleDirectoryReader(input_files=[&#39;./data/file.txt&#39;]).load_data()
+</code></pre><ol>
+<li>或者直接把自己的text改为document文档</li>
+</ol>
+<pre tabindex="0"><code>from llama_index import Document
+# 直接从文本转换
+text_list = [text1, text2, ...]
+documents = [Document(t) for t in text_list]
+</code></pre>
+<h3 class="relative group">1.2 将文档解析为Nodes 
+    <div id="12-将文档解析为nodes" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#12-%e5%b0%86%e6%96%87%e6%a1%a3%e8%a7%a3%e6%9e%90%e4%b8%banodes" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>文档是轻量化的数据源容器，可以将文档：</p>
+<ul>
+<li>
+<p>解析为 Node 对象</p>
+<ul>
+<li>
+<pre tabindex="0"><code>from llama_index.node_parser import SimpleNodeParser
+parser = SimpleNodeParser()
+nodes = parser.get_nodes_from_documents(documents)
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p>直接喂入 Index，函数内部会完成转化Node过程</p>
+<ul>
+<li>
+<pre tabindex="0"><code>from llama_index import GPTSimpleVectorIndex
+index = GPTSimpleVectorIndex.from_documents(documents)
+</code></pre></li>
+<li>
+<p>或者从Node构建Index</p>
+<pre tabindex="0"><code>from llama_index import GPTSimpleVectorIndex
+index = GPTSimpleVectorIndex(nodes)
+</code></pre></li>
+</ul>
+</li>
+</ul>
+
+<h3 class="relative group">1.3 构建索引 
+    <div id="13-构建索引" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#13-%e6%9e%84%e5%bb%ba%e7%b4%a2%e5%bc%95" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>详见[使用LlamaIndex索引](#使用 LlamaIndex 索引)</p>
+<p>当想在多个索引中，复用一个 Node 时，可以通过定义 DocumentStore 结构，并在添加Nodes时指定 DocumentStore</p>
+<pre tabindex="0"><code>from gpt_index.docstore import SimpleDocumentStore
+
+docstore = SimpleDocumentStore()
+docstore.add_documents(nodes)
+
+index1 = GPTSimpleVectorIndex(nodes, docstore=docstore)
+index2 = GPTListIndex(nodes, docstore=docstore)
+</code></pre><p>也可以将文档插入到索引</p>
+<pre tabindex="0"><code>from llama_index import GPTSimpleVectorIndex
+
+index = GPTSimpleVectorIndex([])
+for doc in documents:
+    index.insert(doc)
+</code></pre><p>存储 Index 下次用</p>
+<pre tabindex="0"><code>import os.path as osp
+index_file = &#34;data/indices/index.json&#34;
+if not osp.isfile(index_file):
+    # 判断是否存在，不存在则创建
+    index = GPTSimpleVectorIndex.from_documents(documents)
+    index.save_to_disk(index_file, encoding=&#39;utf-8&#39;)
+else:
+    # 存在则 load
+    index = GPTSimpleVectorIndex.load_from_disk(index_file)
+</code></pre>
+<h3 class="relative group">1.4 查询索引并对话大模型 
+    <div id="14-查询索引并对话大模型" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#14-%e6%9f%a5%e8%af%a2%e7%b4%a2%e5%bc%95%e5%b9%b6%e5%af%b9%e8%af%9d%e5%a4%a7%e6%a8%a1%e5%9e%8b" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>在默认情况下，查询索引通常采用问答形式，无需指定额外参数：</p>
+<p>Python</p>
+<pre tabindex="0"><code># 简单查询
+response = index.query(&#34;作者成长过程中做了什么？&#34;)
+print(response)
+
+response = index.query(&#34;请根据用户的背景信息撰写一封邮件。&#34;)
+print(response)
+</code></pre><p>您也可以根据所使用的索引类型，通过添加额外参数来优化查询。</p>
+<ol>
+<li>设置模式（<code>mode</code>）</li>
+</ol>
+<p><code>mode</code> 参数允许您指定底层模型的行为。以 <code>ListIndex</code> 为例，主要有两种选项：</p>
+<ul>
+<li><strong><code>default</code></strong>: 此模式采用“创建并完善”的方法，顺序遍历每个 <code>Node</code> 以构建答案。</li>
+<li><strong><code>embedding</code></strong>: 此模式根据与查询最相似的 top-k 个节点（通过嵌入向量确定）来合成回复。</li>
+</ul>
+<pre tabindex="0"><code>index = GPTListIndex.from_documents(documents)
+
+# 使用默认模式
+response = index.query(&#34;作者成长过程中做了什么？&#34;, mode=&#34;default&#34;)
+
+# 使用嵌入模式
+response = index.query(&#34;作者成长过程中做了什么？&#34;, mode=&#34;embedding&#34;)
+</code></pre><ol start="2">
+<li>设置回复模式（<code>response_mode</code>）</li>
+</ol>
+<p><strong>注意：</strong> 此选项不适用于 <code>GPTTreeIndex</code>。</p>
+<p><code>response_mode</code> 参数影响答案是如何从检索到的节点中构建的：</p>
+<ul>
+<li><strong><code>default</code></strong>: 对于给定的索引，此模式通过顺序浏览每个节点来“创建并完善”答案。每个节点都涉及一次独立的 LLM 调用。这对于获取更详细的答案很有益。</li>
+<li><strong><code>compact</code></strong>: 在每次 LLM 调用过程中，此模式通过填充尽可能多的节点文本块（以适应最大提示大小）来“紧凑”提示。如果一个提示中塞满了太多块，则通过多个提示来“创建并完善”答案。</li>
+<li><strong><code>tree_summarize</code></strong>: 给定一组节点和查询，此模式递归地构建一棵树并将根节点作为响应返回。这对于摘要目的很有用。</li>
+</ul>
+<pre tabindex="0"><code>index = GPTListIndex.from_documents(documents)
+
+# 默认回复模式
+response = index.query(&#34;作者成长过程中做了什么？&#34;, response_mode=&#34;default&#34;)
+
+# 紧凑回复模式
+response = index.query(&#34;作者成长过程中做了什么？&#34;, response_mode=&#34;compact&#34;)
+
+# 树状总结回复模式
+response = index.query(&#34;作者成长过程中做了什么？&#34;, response_mode=&#34;tree_summarize&#34;)
+</code></pre><ol start="3">
+<li>设置 <code>required_keywords</code> 和 <code>exclude_keywords</code></li>
+</ol>
+<p>您可以在大多数索引上设置 <code>required_keywords</code> 和 <code>exclude_keywords</code>（<code>GPTTreeIndex</code> 除外）。这可以预先过滤掉不包含 <code>required_keywords</code> 或包含 <code>exclude_keywords</code> 的节点，从而减少搜索空间，进而减少 LLM 调用/成本的时间/数量。</p>
+<p>Python</p>
+<pre tabindex="0"><code>response = index.query(
+    &#34;作者在 Y Combinator 之后做了什么？&#34;,
+    required_keywords=[&#34;Combinator&#34;],
+    exclude_keywords=[&#34;Italy&#34;]
+)
+</code></pre><ol start="4">
+<li>解析回复</li>
+</ol>
+<p>查询的回复通常包含答案文本和用于生成回复的来源节点。</p>
+<p>Python</p>
+<pre tabindex="0"><code>response = index.query(&#34;&lt;query_str&gt;&#34;)
+
+# 获取回复文本
+print(response.response) # 注意：根据库版本，通常直接通过 .response 或 .response_str 访问
+
+# 获取来源节点
+source_nodes = response.source_nodes
+print(source_nodes)
+
+# 获取格式化的来源（如果可用）
+formatted_sources = response.get_formatted_sources()
+print(formatted_sources)
+</code></pre>
+<h2 class="relative group">2. 使用 LlamaIndex 索引 
+    <div id="2-使用-llamaindex-索引" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e4%bd%bf%e7%94%a8-llamaindex-%e7%b4%a2%e5%bc%95" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>设置阿里dash scope 模型：</p>
+<pre tabindex="0"><code>from llama_index.core import Settings
+from llama_index.llms.dashscope import DashScope
+from llama_index.embeddings.dashscope import DashScopeEmbedding # &lt;--- Changed this line
+import os
+
+os.environ[&#34;DASHSCOPE_API_KEY&#34;]=&#34;&lt;your-api-key&gt;&#34;
+os.environ[&#34;ALIYUN_BASE_URL&#34;]=&#34;https://dashscope.aliyuncs.com/compatible-mode/v1&#34;
+#设置 llm
+Settings.llm = DashScope( # &lt;--- Changed this line
+    api_key=os.getenv(&#34;DASHSCOPE_API_KEY&#34;),
+    model=&#34;qwen-plus&#34;
+)
+# 配置嵌入模型 ⭐ 新增设置
+Settings.embed_model = DashScopeEmbedding(
+    model_name=&#34;text-embedding-v3&#34;,  # 百炼嵌入模型
+    api_key=os.getenv(&#34;DASHSCOPE_API_KEY&#34;),
+)
+</code></pre><p>加载华为2024年度财报PDF文档：</p>
+<pre tabindex="0"><code>import logging
+import sys
+
+## showing logs
+logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
+
+
+## load the PDF
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from llama_index.core import download_loader
+
+# define loader
+UnstructuredReader = download_loader(&#39;UnstructuredReader&#39;, refresh_cache=True)
+loader = UnstructuredReader()
+
+# load the data
+documents = loader.load_data(&#39;data/annual_report_2024_cn.pdf&#39;,split_documents=False)
+</code></pre>
+<h3 class="relative group">2.1 List Index 
+    <div id="21-list-index" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#21-list-index" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>列表索引是一种简单的数据结构，其中节点按顺序存储。在索引构建期间，文档文本被分块、转换为节点并存储在列表中。</p>
+<p>索引构建流程：</p>
+<ul>
+<li>
+<p>文档切分：原始文档被分割成更小的文本块（如按段落、固定长度）。</p>
+</li>
+<li>
+<p>点生成：每个文本块转换为一个 Node 对象，生成对应的向量嵌入。</p>
+</li>
+<li>
+<p>列表存储：所有节点按顺序存入列表，形成索引结构。</p>
+</li>
+</ul>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="img" src="https://s2.loli.net/2025/06/20/lNLYGpPMaSi5QfH.png">
+
+  
+</figure>
+</p>
+<p>在查询期间，如果没有指定其他查询参数，LlamaIndex只是将列表中的所有node加载到Response Synthesis模块中。适用于需全局信息的查询（如摘要生成、全局分析）</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="img" src="https://s2.loli.net/2025/06/20/lNLYGpPMaSi5QfH.png">
+
+  
+</figure>
+</p>
+<p>列表索引提供了许多查询列表索引的方法，如从基于嵌入的查询中获取前k个邻居，或者添加一个关键字过滤器，如下所示:</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="img" src="https://s2.loli.net/2025/06/20/mIpkE2fgovbXQJz.png">
+
+  
+</figure>
+</p>
+<p>创建 List Index并查询：</p>
+<pre tabindex="0"><code>from llama_index.core import GPTListIndex 
+from IPython.display import Markdown, display
+
+# Example documents (replace with your own)
+
+
+# Build the index from documents
+index = GPTListIndex.from_documents(documents)
+
+# Create a query engine from the index
+query_engine = index.as_query_engine()
+
+# Query the index
+response = query_engine.query(&#34;净收入为多少？&#34;)
+display(Markdown(f&#34;&lt;b&gt;{response}&lt;/b&gt;&#34;))
+
+# Alternative query engine setup with retriever_mode specified
+query_engine_with_embedding = index.as_query_engine(
+    retriever_mode=&#34;embedding&#34;,
+    verbose=True
+)
+
+# Query with the alternative query engine
+response_with_embedding = query_engine_with_embedding.query(&#34;净收入为多少?&#34;)
+display(Markdown(f&#34;&lt;b&gt;{response_with_embedding}&lt;/b&gt;&#34;))
+</code></pre><p>输出：</p>
+<pre tabindex="0"><code>新提供的上下文中没有提及具体的净收入数值。因此，根据给定的信息，无法直接得出新的净收入数额。基于此，对于“净收入为多少？”这一问题的回答保持不变。
+2024年，华为的净利润为人民币62,574百万元。请注意，您所询问的是净收入，而给出的数据是净利润，这两个概念虽然相关但并不相同。在当前提供的信息中，并没有直接提供关于净收入的具体数据。
+
+2024年的净收入为861,335百万元人民币，2023年的净收入为703,246百万元人民币。这里提到的净收入指的是客户合同收入
+</code></pre><p>LlamaIndex 能够为列表索引提供 Embedding 支持。</p>
+<pre tabindex="0"><code># Alternative query engine setup with retriever_mode specified
+query_engine_with_embedding = index.as_query_engine(
+    retriever_mode=&#34;embedding&#34;,
+    verbose=True
+)
+
+# Query with the alternative query engine
+response_with_embedding = query_engine_with_embedding.query(&#34;What is net operating income?&#34;)
+display(Markdown(f&#34;&lt;b&gt;{response_with_embedding}&lt;/b&gt;&#34;))
+</code></pre>
+<h3 class="relative group">2.2 向量存储索引 
+    <div id="22-向量存储索引" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#22-%e5%90%91%e9%87%8f%e5%ad%98%e5%82%a8%e7%b4%a2%e5%bc%95" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><strong>向量存储索引（Vector Store Index）</strong> 是 LlamaIndex 中的一种索引类型，基于嵌入向量实现高效的语义检索。通过将文本表示为向量并存储在专门的数据库中，查询时可以快速找到与查询语句语义最相关的内容。</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="6" src="https://s2.loli.net/2025/06/20/oXA2czhqviNJPT4.png">
+
+  
+</figure>
+</p>
+<p>索引构建流程：</p>
+<ul>
+<li>文档分割：长文档被拆分为文本块（chunks），例如每块 500 字符。</li>
+<li>节点生成：每个文本块转化为 Node 对象。</li>
+<li>向量化：调用嵌入模型 API为每个 Node 生成向量。</li>
+<li>向量存储：所有向量存入专用数据库。</li>
+</ul>
+<p>查询流程：</p>
+<ul>
+<li>查询向量化：用户输入（如 &ldquo;气候变化的影响&rdquo;）通过相同的嵌入模型转换为向量。</li>
+<li>相似度搜索：向量数据库计算查询向量与所有存储向量的相似度，返回 Top-K 最相似节点（如 K=5）。</li>
+<li>响应合成：LLM（如 GPT-4）根据这些节点生成自然语言响应。</li>
+</ul>
+<pre tabindex="0"><code>from llama_index.core import Document, GPTVectorStoreIndex
+
+# Example documents (replace with your actual data)
+documents = [
+    Document(text=&#34;The author spent their childhood exploring forests, climbing trees, and reading books.&#34;)
+]
+
+# Build the index from the documents
+index = GPTVectorStoreIndex.from_documents(documents)
+
+# Create a query engine from the index
+query_engine = index.as_query_engine()
+
+# Query the index
+response = query_engine.query(&#34;What did the author do growing up?&#34;)
+print(response)
+</code></pre>
+<h3 class="relative group">2.3 树状索引 
+    <div id="23-树状索引" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#23-%e6%a0%91%e7%8a%b6%e7%b4%a2%e5%bc%95" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="8" src="https://s2.loli.net/2025/06/20/H7M8QtlS9C3Ufup.png">
+
+  
+</figure>
+</p>
+<p>树状索引是树结构索引，<strong>其中每个节点是子节点的摘要</strong>。在索引构建期间，树以自下而上的方式构建，直到我们最终得到一组根节点。</p>
+<p>树<strong>索引的构建</strong>过程是一个自下而上的分层聚合流程：</p>
+<ul>
+<li><strong>叶节点层</strong>：
+<ul>
+<li>每个文本块被作为一个叶节点。</li>
+<li>每个叶节点存储对应文本块及其嵌入向量。</li>
+</ul>
+</li>
+<li><strong>中间节点层</strong>：
+<ul>
+<li>将叶节点按照一定数量（如 5 个或 10 个）分组。</li>
+<li>对每组的文本块嵌入进行聚合（如取平均值或加权平均），生成一个代表这一组的嵌入向量。</li>
+<li>为每组生成一个中间节点，存储代表性嵌入向量和摘要信息。</li>
+</ul>
+</li>
+<li><strong>根节点</strong>：
+<ul>
+<li>对中间节点再次聚合，直到只剩一个根节点。</li>
+<li>根节点的嵌入向量是整个索引的全局表示。</li>
+</ul>
+</li>
+</ul>
+<p><strong>查询树</strong>状索引涉及从根节点向下遍历到叶节点。默认情况下(<code>child_branch_factor=1 </code>)，查询在给定父节点的情况下选择一个子节点。如果<code>child_branch_factor=2</code>，则查询在每个层级选择两个子节点。</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="" src="https://www.luxiangdong.com/images/llamaindex/9.png">
+
+  
+</figure>
+</p>
+<p>示例代码：</p>
+<pre tabindex="0"><code>from llama_index.core import GPTTreeIndex
+
+new_index = GPTTreeIndex.from_documents(documents)
+response = query_engine.query(&#34;净收入为多少?&#34;)
+display(Markdown(f&#34;&lt;b&gt;{response}&lt;/b&gt;&#34;))
+
+## if you want to have more content from the answer, 
+# you can add the parameters child_branch_factor
+# let&#39;s try using branching factor 2
+query_engine = new_index.as_query_engine(
+    child_branch_factor=2
+)
+response = query_engine.query(&#34;净收入为多少?&#34;)
+display(Markdown(f&#34;&lt;b&gt;{response}&lt;/b&gt;&#34;))
+</code></pre><p><strong>在查询期间构建树状索引</strong></p>
+<p>在 LlamaIndex 中，「查询时构建树状索引」是一种<strong>按需计算</strong>的优化技术，核心思想是<strong>延迟索引构建成本</strong>，直到真正需要时才根据查询动态创建树状结构。</p>
+<p><strong>工作原理对比</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center"><strong>索引构建方式</strong></th>
+          <th style="text-align: center">构建时机</th>
+          <th style="text-align: center">存储成本</th>
+          <th style="text-align: center">响应延迟</th>
+          <th style="text-align: center">适用场景</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><strong>预先构建索引</strong></td>
+          <td style="text-align: center">数据加载时</td>
+          <td style="text-align: center">高（完整树）</td>
+          <td style="text-align: center">低（查询快）</td>
+          <td style="text-align: center">高频查询的静态数据</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>查询时动态构建</strong></td>
+          <td style="text-align: center">首次查询时</td>
+          <td style="text-align: center">低（仅叶节点）</td>
+          <td style="text-align: center">高（需计算）</td>
+          <td style="text-align: center">低频查询/动态数据</td>
+      </tr>
+  </tbody>
+</table>
+<p>为此，可以设置以下参数：</p>
+<ul>
+<li><code>retriever_mode</code>：指定检索模式，例如 &ldquo;all_leaf&rdquo; 表示使用所有叶节点。</li>
+<li><code>response_mode</code>：指定响应模式，例如 &ldquo;tree_summarize&rdquo; 表示以树状摘要模式生成响应。</li>
+<li>在构建索引时，将 <code>build_tree=False</code>。</li>
+</ul>
+<pre tabindex="0"><code>from llama_index import GPTKeywordTableIndex, Document
+
+# 1. 初始只创建叶节点层（不构建树）
+documents = [Document(text=&#34;段落1...&#34;), Document(text=&#34;段落2...&#34;)] 
+index = GPTKeywordTableIndex.from_documents(
+    documents,
+    build_tree=False  # 关键设置：仅生成叶节点
+)
+
+# 2. 查询时动态构建树并生成响应
+query_engine = index.as_query_engine(
+    retriever_mode=&#34;all_leaf&#34;,    # 使用所有叶节点为基础
+    response_mode=&#34;tree_summarize&#34; # 树状摘要模式
+)
+
+# 首次查询触发树构建
+response = query_engine.query(&#34;气候变化的主要影响？&#34;)
+</code></pre>
+<h3 class="relative group">2.4 关键词索引 
+    <div id="24-关键词索引" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#24-%e5%85%b3%e9%94%ae%e8%af%8d%e7%b4%a2%e5%bc%95" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>关键字表索引从每个Node提取关键字，并构建从每个关键字到该关键字对应的Node的映射。</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="img" src="https://www.luxiangdong.com/images/llamaindex/10.png">
+
+  
+</figure>
+</p>
+<p>在查询时，我们从查询中提取相关关键字，并将其与预提取的Node关键字进行匹配，获取相应的Node。提取的节点被传递到响应合成模块。</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="img" src="https://s2.loli.net/2025/06/20/r8VQIqN6yZDFaMP.png">
+
+  
+</figure>
+</p>
+<p>示例代码：</p>
+<pre tabindex="0"><code>from llama_index.core import GPTKeywordTableIndex
+index = GPTKeywordTableIndex.from_documents(documents)
+query_engine = index.as_query_engine()
+response = query_engine.query(&#34;净收入为多少?&#34;)
+</code></pre><p>源码解析：</p>
+<ol>
+<li>调用llm 生成关键词：</li>
+</ol>
+<pre tabindex="0"><code>    def _extract_keywords(self, text: str) -&gt; Set[str]:
+        &#34;&#34;&#34;Extract keywords from text.&#34;&#34;&#34;
+        response = self._llm.predict(
+            self.keyword_extract_template,
+            text=text,
+        )
+        return extract_keywords_given_response(response, start_token=&#34;KEYWORDS:&#34;)
+</code></pre><pre tabindex="0"><code>DEFAULT_KEYWORD_EXTRACT_TEMPLATE_TMPL = (
+    &#34;Some text is provided below. Given the text, extract up to {max_keywords} &#34;
+    &#34;keywords from the text. Avoid stopwords.&#34;
+    &#34;---------------------\n&#34;
+    &#34;{text}\n&#34;
+    &#34;---------------------\n&#34;
+    &#34;Provide keywords in the following comma-separated format: &#39;KEYWORDS: &lt;keywords&gt;&#39;\n&#34;
+)
+</code></pre><blockquote>
+<p>Max_keywords 默认 10</p></blockquote>
+<ol start="2">
+<li>关键字提取：</li>
+</ol>
+<pre tabindex="0"><code>def extract_keywords_given_response(
+    response: str, lowercase: bool = True, start_token: str = &#34;&#34;
+) -&gt; Set[str]:
+    &#34;&#34;&#34;
+    在从给定的文本字符串中提取关键词应。
+    将&lt;start_token&gt;: &lt;word1&gt;, &lt;word2&gt;, ...解析为[word1, word2, ...]  
+    如果响应未以&lt;start_token&gt;开头，则抛出异常
+    &#34;&#34;&#34;
+    
+    ...
+    
+    # 如果关键字由多个单词组成拆分为子词
+    # (去除停用词)
+    return expand_tokens_with_subtokens(set(results))
+</code></pre>
+<h3 class="relative group">2.5 可组合性图索引 
+    <div id="25-可组合性图索引" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#25-%e5%8f%af%e7%bb%84%e5%90%88%e6%80%a7%e5%9b%be%e7%b4%a2%e5%bc%95" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>可组合性图索引（Composable Graph Index）是 LlamaIndex 提供的高级索引结构，用于整合多个子索引的信息并进行跨文档查询。这种索引特别适用于需要对多个相关但独立的数据源进行联合分析的场景，比如：</p>
+<ol>
+<li>分析不同年份的财务报告</li>
+<li>比较多篇学术论文的技术细节</li>
+<li>整合多个知识库的专家系统</li>
+<li>结合产品说明和用户反馈的分析系统</li>
+</ol>
+<p><strong>核心概念</strong></p>
+<ul>
+<li>
+<p>子索引（Subindexes）</p>
+<ul>
+<li>每个数据源建立独立的索引（如 VectorStoreIndex）</li>
+<li>保留各数据源的上下文和特性</li>
+<li>支持个性化配置（解析器、参数等）</li>
+</ul>
+</li>
+<li>
+<p>组合索引（Composed Graph）</p>
+<ul>
+<li>将子索引整合成一个有向图</li>
+<li>添加元信息描述各子索引内容</li>
+<li>实现跨索引的信息路由和综合</li>
+</ul>
+</li>
+</ul>
+<p><strong>索引构建流程</strong>：</p>
+<ol>
+<li>初始化独立子索引</li>
+<li>子索引关系映射为每个子索引创建 <strong>IndexNode</strong> 描述符</li>
+<li>构建索引图结构
+<ul>
+<li>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="image-20250626154057326" src="https://s2.loli.net/2025/06/26/8LVOJKfvgZRudQk.png">
+
+  
+</figure>
+</li>
+</ul>
+</li>
+</ol>
+<p>查询过程：</p>
+<ol>
+<li>初始查询与路由</li>
+</ol>
+<ul>
+<li>
+<p>当用户提交一个查询请求时，这个请求首先会到达可组合性图索引的<strong>顶层节点</strong>。这个顶层节点通常是一个<strong>路由器（Router）</strong>。</p>
+<ul>
+<li>
+<p><strong>路由器（Router）的作用：</strong> 路由器是可组合性图索引的核心，它负责根据用户的查询意图，智能地决定将查询转发给哪个（或哪些）子索引进行处理。这就像一个智能的总机，根据你的需求把你转接到相应的部门。</p>
+</li>
+<li>
+<p><strong>路由决策：</strong> 路由器通常会包含一些元数据或描述，用于解释每个子索引包含什么类型的信息。LlamaIndex 会利用语言模型的能力，分析用户的查询，并将其与这些元数据进行匹配，从而选择最相关的子索引。</p>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>子索引查询与执行</li>
+</ol>
+<ul>
+<li>
+<p>一旦路由器确定了目标子索引，查询就会被转发到该子索引。</p>
+<ul>
+<li>
+<p><strong>并行或顺序执行：</strong></p>
+<ul>
+<li><strong>并行：</strong> 如果用户的查询可能涉及到多个子索引（例如，“查找所有关于人工智能和机器学习的信息”），路由器可能会将查询并行地发送给多个相关的子索引。</li>
+<li><strong>顺序：</strong> 在某些情况下，查询可能需要按顺序通过多个子索引。例如，你可能先在一个 SQL 索引中查询出某些 ID，然后将这些 ID 传递给一个向量索引来查找相关的文档。</li>
+</ul>
+</li>
+<li>
+<p><strong>特定索引类型的处理：</strong> 每个子索引都会根据其自身的类型来处理查询。</p>
+<ul>
+<li><strong>向量索引：</strong> 如果是向量索引，查询会被向量化，然后进行相似性搜索以检索最相关的文本块。</li>
+<li><strong>列表索引：</strong> 如果是列表索引，可能会遍历列表中的所有节点以找到匹配项。</li>
+<li><strong>树索引：</strong> 如果是树索引，查询会沿着树的路径进行遍历，或者对子节点进行递归查询。</li>
+<li><strong>Pandas/SQL 索引：</strong> 如果是 Pandas 或 SQL 索引，LlamaIndex 会尝试将自然语言查询转换为相应的 Pandas 代码或 SQL 语句，并在 DataFrame 或数据库上执行。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>结果合并与后处理</li>
+</ol>
+<ul>
+<li>
+<p>当所有选定的子索引完成查询并返回结果后，这些结果会回到顶层节点。</p>
+<ul>
+<li>
+<p><strong>结果聚合：</strong> 如果查询涉及多个子索引，LlamaIndex 会将它们各自返回的结果进行聚合。这可能包括合并文本块、数据条目或其他相关信息。</p>
+</li>
+<li>
+<p><strong>答案合成：</strong> 在聚合之后，LlamaIndex 会再次利用语言模型的能力，对这些原始结果进行综合、提炼和组织，最终生成一个连贯、有意义且符合用户查询的最终答案。这个过程可能包括：</p>
+<ul>
+<li><strong>去重和过滤：</strong> 移除冗余或不相关的结果。</li>
+<li><strong>总结和概括：</strong> 对检索到的信息进行总结，提供高层次的洞察。</li>
+<li><strong>格式化：</strong> 将答案以易于理解的格式呈现给用户。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>通过一个场景编写代码:我们将执行以下步骤来演示可组合性图索引的能力:</p>
+<ul>
+<li>加载多篇PDF格式的学术论文。</li>
+<li>为每篇论文创建独立的“知识库”（索引）。</li>
+<li>为每篇论文生成一个简短的摘要。</li>
+<li>将所有论文的知识库组合成一个更大的、可相互关联的“总知识图谱”。</li>
+<li>查询</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">llama_index.core</span> <span class="kn">import</span> <span class="n">Settings</span><span class="p">,</span> <span class="n">StorageContext</span><span class="p">,</span> <span class="n">VectorStoreIndex</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">llama_index.core.indices.composability</span> <span class="kn">import</span> <span class="n">ComposableGraph</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">llama_index.llms.dashscope</span> <span class="kn">import</span> <span class="n">DashScope</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">llama_index.embeddings.dashscope</span> <span class="kn">import</span> <span class="n">DashScopeEmbedding</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">llama_index.readers.file</span> <span class="kn">import</span> <span class="n">UnstructuredReader</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">llama_index.core.node_parser</span> <span class="kn">import</span> <span class="n">SentenceSplitter</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置API密钥和环境变量</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&#34;DASHSCOPE_API_KEY&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;&lt;your-api-key&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 配置模型设置 - 统一全局设置</span>
+</span></span><span class="line"><span class="cl"><span class="n">Settings</span><span class="o">.</span><span class="n">llm</span> <span class="o">=</span> <span class="n">DashScope</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&#34;DASHSCOPE_API_KEY&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model</span><span class="o">=</span><span class="s2">&#34;qwen-plus&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 关键修改1: 设置较小的批处理大小</span>
+</span></span><span class="line"><span class="cl"><span class="n">Settings</span><span class="o">.</span><span class="n">embed_model</span> <span class="o">=</span> <span class="n">DashScopeEmbedding</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model_name</span><span class="o">=</span><span class="s2">&#34;text-embedding-v3&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&#34;DASHSCOPE_API_KEY&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">embed_batch_size</span><span class="o">=</span><span class="mi">10</span>  <span class="c1"># 设置为安全值 (小于等于10)</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#  降低分块大小以加速处理（可选）</span>
+</span></span><span class="line"><span class="cl"><span class="n">Settings</span><span class="o">.</span><span class="n">node_parser</span> <span class="o">=</span> <span class="n">SentenceSplitter</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">chunk_size</span><span class="o">=</span><span class="mi">384</span><span class="p">,</span>  <span class="c1"># 减小分块大小以降低复杂度</span>
+</span></span><span class="line"><span class="cl">    <span class="n">chunk_overlap</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">include_prev_next_rel</span><span class="o">=</span><span class="kc">True</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 限制输出长度避免token超限（可选）</span>
+</span></span><span class="line"><span class="cl"><span class="n">Settings</span><span class="o">.</span><span class="n">num_output</span> <span class="o">=</span> <span class="mi">384</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 准备两篇论文的文档</span>
+</span></span><span class="line"><span class="cl"><span class="n">paper_files</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;transformer&#34;</span><span class="p">:</span> <span class="s2">&#34;data/1706.03762v7.pdf&#34;</span><span class="p">,</span>  <span class="c1"># &#34;Attention is All You Need&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;vit&#34;</span><span class="p">:</span> <span class="s2">&#34;data/2010.11929v2.pdf&#34;</span>           <span class="c1"># &#34;An Image is Worth 16x16 Words&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 自定义PDF解析器</span>
+</span></span><span class="line"><span class="cl"><span class="n">reader</span> <span class="o">=</span> <span class="n">UnstructuredReader</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 为每篇论文创建索引</span>
+</span></span><span class="line"><span class="cl"><span class="n">index_set</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="n">doc_set</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;开始创建单篇论文索引...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">paper_name</span><span class="p">,</span> <span class="n">file_path</span> <span class="ow">in</span> <span class="n">paper_files</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;正在处理: </span><span class="si">{</span><span class="n">paper_name</span><span class="si">}</span><span class="s2"> 论文...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># 加载单篇论文</span>
+</span></span><span class="line"><span class="cl">    <span class="n">loader</span> <span class="o">=</span> <span class="n">SimpleDirectoryReader</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">input_files</span><span class="o">=</span><span class="p">[</span><span class="n">file_path</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">        <span class="n">file_extractor</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;.pdf&#34;</span><span class="p">:</span> <span class="n">reader</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">    <span class="n">documents</span> <span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">doc_set</span><span class="p">[</span><span class="n">paper_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">documents</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># 创建存储上下文</span>
+</span></span><span class="line"><span class="cl">    <span class="n">storage_context</span> <span class="o">=</span> <span class="n">StorageContext</span><span class="o">.</span><span class="n">from_defaults</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># 创建针对学术论文优化的索引</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cur_index</span> <span class="o">=</span> <span class="n">VectorStoreIndex</span><span class="o">.</span><span class="n">from_documents</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">documents</span><span class="o">=</span><span class="n">documents</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">storage_context</span><span class="o">=</span><span class="n">storage_context</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">show_progress</span><span class="o">=</span><span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;索引创建错误，尝试减小批处理大小: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 如果还不行，尝试使用更小的批处理</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">from</span> <span class="nn">llama_index.core</span> <span class="kn">import</span> <span class="n">ServiceContext</span>
+</span></span><span class="line"><span class="cl">        <span class="n">service_context</span> <span class="o">=</span> <span class="n">ServiceContext</span><span class="o">.</span><span class="n">from_defaults</span><span class="p">(</span><span class="n">embed_batch_size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cur_index</span> <span class="o">=</span> <span class="n">VectorStoreIndex</span><span class="o">.</span><span class="n">from_documents</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">documents</span><span class="o">=</span><span class="n">documents</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">storage_context</span><span class="o">=</span><span class="n">storage_context</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">service_context</span><span class="o">=</span><span class="n">service_context</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">show_progress</span><span class="o">=</span><span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">index_set</span><span class="p">[</span><span class="n">paper_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">cur_index</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># 保存索引以备后用</span>
+</span></span><span class="line"><span class="cl">    <span class="n">storage_context</span><span class="o">.</span><span class="n">persist</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;./paper_indexes/</span><span class="si">{</span><span class="n">paper_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;已完成 </span><span class="si">{</span><span class="n">paper_name</span><span class="si">}</span><span class="s2"> 论文索引创建!</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 为每篇论文生成摘要</span>
+</span></span><span class="line"><span class="cl"><span class="n">index_summaries</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">paper_name</span> <span class="ow">in</span> <span class="n">paper_files</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;正在为 </span><span class="si">{</span><span class="n">paper_name</span><span class="si">}</span><span class="s2"> 论文生成摘要...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">query_engine</span> <span class="o">=</span> <span class="n">index_set</span><span class="p">[</span><span class="n">paper_name</span><span class="p">]</span><span class="o">.</span><span class="n">as_query_engine</span><span class="p">(</span><span class="n">similarity_top_k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># 减少检索量</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># 使用较短提示减少响应长度（可选）</span>
+</span></span><span class="line"><span class="cl">    <span class="n">response</span> <span class="o">=</span> <span class="n">query_engine</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;总结这篇论文的核心贡献和技术创新点 (100字)&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">index_summaries</span><span class="p">[</span><span class="n">paper_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">response</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">paper_name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2"> 论文摘要:</span><span class="se">\n</span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">response</span><span class="si">}</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 创建组合索引（知识图谱）</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;正在创建组合索引...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">graph</span> <span class="o">=</span> <span class="n">ComposableGraph</span><span class="o">.</span><span class="n">from_indices</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">base_class</span><span class="o">=</span><span class="n">VectorStoreIndex</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">indices</span><span class="o">=</span><span class="p">[</span><span class="n">index_set</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">paper_files</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">        <span class="n">index_summaries</span><span class="o">=</span><span class="p">[</span><span class="n">index_summaries</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">paper_files</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;创建组合索引出错: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 如果出错，降级为简单索引</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">from</span> <span class="nn">llama_index.core</span> <span class="kn">import</span> <span class="n">SummaryIndex</span>
+</span></span><span class="line"><span class="cl">    <span class="n">all_nodes</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">paper_name</span> <span class="ow">in</span> <span class="n">paper_files</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">all_nodes</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">index_set</span><span class="p">[</span><span class="n">paper_name</span><span class="p">]</span><span class="o">.</span><span class="n">docstore</span><span class="o">.</span><span class="n">get_nodes</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">index_set</span><span class="p">[</span><span class="n">paper_name</span><span class="p">]</span><span class="o">.</span><span class="n">index_struct</span><span class="o">.</span><span class="n">nodes_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">graph</span> <span class="o">=</span> <span class="n">SummaryIndex</span><span class="p">(</span><span class="n">all_nodes</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 保存组合索引</span>
+</span></span><span class="line"><span class="cl"><span class="n">graph</span><span class="o">.</span><span class="n">storage_context</span><span class="o">.</span><span class="n">persist</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;./paper_indexes/combined&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;组合索引已保存!</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 配置查询引擎</span>
+</span></span><span class="line"><span class="cl"><span class="n">custom_query_engines</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">index_set</span><span class="p">[</span><span class="n">paper_name</span><span class="p">]</span><span class="o">.</span><span class="n">index_id</span><span class="p">:</span> <span class="n">index_set</span><span class="p">[</span><span class="n">paper_name</span><span class="p">]</span><span class="o">.</span><span class="n">as_query_engine</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">similarity_top_k</span><span class="o">=</span><span class="mi">3</span>  <span class="c1"># 减少子索引检索量</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span> <span class="k">for</span> <span class="n">paper_name</span> <span class="ow">in</span> <span class="n">paper_files</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 确保最终查询批处理不超限（可选）</span>
+</span></span><span class="line"><span class="cl"><span class="n">query_engine</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">as_query_engine</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">custom_query_engines</span><span class="o">=</span><span class="n">custom_query_engines</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">similarity_top_k</span><span class="o">=</span><span class="mi">3</span>  <span class="c1"># 减少检索结果数量</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 执行跨论文查询</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;执行跨论文比较查询...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 使用更短的查询（可选）</span>
+</span></span><span class="line"><span class="cl">    <span class="n">response</span> <span class="o">=</span> <span class="n">query_engine</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;比较Transformer和ViT的核心异同点:架构设计、注意力机制、数据处理方式&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;查询出错: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;尝试简化查询...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">response</span> <span class="o">=</span> <span class="n">query_engine</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;比较Transformer和ViT的架构差异&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">跨论文查询结果:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 检查源节点存在性</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">响应来源:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="s1">&#39;source_nodes&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">response</span><span class="o">.</span><span class="n">source_nodes</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">source_node</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">source_nodes</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">file_path</span> <span class="o">=</span> <span class="n">source_node</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;file_path&#39;</span><span class="p">,</span> <span class="s1">&#39;未知来源&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">preview</span> <span class="o">=</span> <span class="n">source_node</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">text</span><span class="p">[:</span><span class="mi">40</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34;...&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;- </span><span class="si">{</span><span class="n">preview</span><span class="si">}</span><span class="s2"> (来自 </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;未找到来源信息&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;无法获取响应来源: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>输出：</p>
+<pre tabindex="0"><code>开始创建单篇论文索引...
+正在处理: transformer 论文...
+WARNING:root:&#39;doc_id&#39; is deprecated and &#39;id_&#39; will be used instead
+&#39;doc_id&#39; is deprecated and &#39;id_&#39; will be used instead
+&#39;doc_id&#39; is deprecated and &#39;id_&#39; will be used instead
+&#39;doc_id&#39; is deprecated and &#39;id_&#39; will be used instead
+
+Parsing nodes:   0%|          | 0/1 [00:00&lt;?, ?it/s]
+Generating embeddings:   0%|          | 0/15 [00:00&lt;?, ?it/s]
+已完成 transformer 论文索引创建!
+
+正在处理: vit 论文...
+WARNING:root:&#39;doc_id&#39; is deprecated and &#39;id_&#39; will be used instead
+&#39;doc_id&#39; is deprecated and &#39;id_&#39; will be used instead
+&#39;doc_id&#39; is deprecated and &#39;id_&#39; will be used instead
+&#39;doc_id&#39; is deprecated and &#39;id_&#39; will be used instead
+
+Parsing nodes:   0%|          | 0/1 [00:00&lt;?, ?it/s]
+Generating embeddings:   0%|          | 0/29 [00:00&lt;?, ?it/s]
+已完成 vit 论文索引创建!
+
+正在为 transformer 论文生成摘要...
+TRANSFORMER 论文摘要:
+这篇论文提出了Transformer模型，完全基于注意力机制，摒弃了传统的循环和卷积结构。该模型在机器翻译任务上表现出色，不仅质量更优，而且具有更好的并行化能力，训练时间也大幅减少。此外，Transformer还成功应用于英语句法分析任务，展示了其良好的泛化性能。
+
+正在为 vit 论文生成摘要...
+VIT 论文摘要:
+该论文的核心贡献在于提出了视觉变换器（ViT），这是一种将自然语言处理中的变换器模型应用于计算机视觉任务的新方法。技术创新点包括使用自注意力机制来处理图像数据，以及在大规模数据集上进行预训练以提高模型性能。此外，论文还展示了ViT在多个基准测试中达到了与最先进的卷积神经网络相媲美的结果。
+
+正在创建组合索引...
+创建组合索引出错: ComposableGraph.from_indices() missing 2 required positional arguments: &#39;root_index_cls&#39; and &#39;children_indices&#39;
+组合索引已保存!
+
+执行跨论文比较查询...
+
+跨论文查询结果:
+Transformer和ViT（Vision Transformer）在架构设计、注意力机制以及数据处理方式上有一些核心的异同点。
+
+1. **架构设计**：
+   - **相同点**：两者都基于Transformer架构，利用了自注意力机制来捕捉输入序列中的长距离依赖关系。它们都采用了编码器结构，并且每一层都包含了多头自注意力机制和前馈神经网络。
+   - **不同点**：原始的Transformer主要用于自然语言处理任务，如机器翻译，其输入是文本序列；而ViT则是将Transformer应用于计算机视觉领域，它首先将图像分割成一系列的patches，并将这些patches线性嵌入到一维序列中作为模型的输入。此外，ViT通常不包含解码器部分，而是直接使用编码器输出进行分类或其他视觉任务。
+
+2. **注意力机制**：
+   - **相同点**：两者都采用了多头自注意力机制，通过计算query, key, value之间的相似度来为每个位置分配权重，从而允许模型关注输入序列中最重要的部分。
+   - **不同点**：虽然基本原理一致，但具体实现细节可能有所不同。例如，在处理图像时，ViT需要考虑如何有效地将二维空间
+
+响应来源:
+- 3 2 0 2  g u A 2  ] L C . s c [  7 v 2 6... (来自 data/1706.03762v7.pdf)
+- Numerous efforts have since continued to... (来自 data/1706.03762v7.pdf)
+- Here, the encoder maps an input sequence... (来自 data/1706.03762v7.pdf)
+...
+</code></pre><p>源码解析：</p>
+<p>此方法创建一个 <strong>可组合的索引图</strong>，其中指定一个索引作为根节点 (<code>root_index</code>)，多个子索引 (<code>children_indices</code>) 作为叶节点。根索引负责将查询路由到相关的子索引。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"> <span class="k">def</span> <span class="nf">from_indices</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">cls</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">root_index_cls</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">BaseIndex</span><span class="p">],</span><span class="c1">#根索引的类</span>
+</span></span><span class="line"><span class="cl">        <span class="n">children_indices</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">BaseIndex</span><span class="p">],</span><span class="c1">#子索引列表</span>
+</span></span><span class="line"><span class="cl">        <span class="n">index_summaries</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span><span class="c1">#每个子索引的文本摘要</span>
+</span></span><span class="line"><span class="cl">        <span class="n">storage_context</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">StorageContext</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&#34;ComposableGraph&#34;</span><span class="p">:</span>  <span class="c1"># type: ignore</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;Create composable graph using this index class as the root.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">from</span> <span class="nn">llama_index.core</span> <span class="kn">import</span> <span class="n">Settings</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">with</span> <span class="n">Settings</span><span class="o">.</span><span class="n">callback_manager</span><span class="o">.</span><span class="n">as_trace</span><span class="p">(</span><span class="s2">&#34;graph_construction&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">index_summaries</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">children_indices</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="n">index</span><span class="o">.</span><span class="n">index_struct</span><span class="o">.</span><span class="n">summary</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                            <span class="s2">&#34;Summary must be set for children indices. &#34;</span>
+</span></span><span class="line"><span class="cl">                            <span class="s2">&#34;If the index does a summary &#34;</span>
+</span></span><span class="line"><span class="cl">                            <span class="s2">&#34;(through index.index_struct.summary), then &#34;</span>
+</span></span><span class="line"><span class="cl">                            <span class="s2">&#34;it must be specified with then `index_summaries` &#34;</span>
+</span></span><span class="line"><span class="cl">                            <span class="s2">&#34;argument in this function. We will support &#34;</span>
+</span></span><span class="line"><span class="cl">                            <span class="s2">&#34;automatically setting the summary in the future.&#34;</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">index_summaries</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">index</span><span class="o">.</span><span class="n">index_struct</span><span class="o">.</span><span class="n">summary</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">children_indices</span>
+</span></span><span class="line"><span class="cl">                <span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># set summaries for each index</span>
+</span></span><span class="line"><span class="cl">                <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">summary</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">children_indices</span><span class="p">,</span> <span class="n">index_summaries</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">index</span><span class="o">.</span><span class="n">index_struct</span><span class="o">.</span><span class="n">summary</span> <span class="o">=</span> <span class="n">summary</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">children_indices</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">index_summaries</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&#34;indices and index_summaries must have same length!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1"># 遍历每个子索引和其对应的摘要，创建 IndexNode</span>
+</span></span><span class="line"><span class="cl">            <span class="n">index_nodes</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">summary</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">children_indices</span><span class="p">,</span> <span class="n">index_summaries</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">index</span><span class="o">.</span><span class="n">index_struct</span><span class="p">,</span> <span class="n">IndexStruct</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">index_node</span> <span class="o">=</span> <span class="n">IndexNode</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">text</span><span class="o">=</span><span class="n">summary</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">index_id</span><span class="o">=</span><span class="n">index</span><span class="o">.</span><span class="n">index_id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">relationships</span><span class="o">=</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">NodeRelationship</span><span class="o">.</span><span class="n">SOURCE</span><span class="p">:</span> <span class="n">RelatedNodeInfo</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                            <span class="n">node_id</span><span class="o">=</span><span class="n">index</span><span class="o">.</span><span class="n">index_id</span><span class="p">,</span> <span class="n">node_type</span><span class="o">=</span><span class="n">ObjectType</span><span class="o">.</span><span class="n">INDEX</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">                <span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">index_nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">index_node</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1"># 使用提供的 root_index_cls 类，将生成的 index_nodes 作为节点传入，构造根索引</span>
+</span></span><span class="line"><span class="cl">            <span class="n">root_index</span> <span class="o">=</span> <span class="n">root_index_cls</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">nodes</span><span class="o">=</span><span class="n">index_nodes</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">storage_context</span><span class="o">=</span><span class="n">storage_context</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 将所有子索引和根索引组合成一个字典，键为 index_id，值为对应的索引</span>
+</span></span><span class="line"><span class="cl">            <span class="n">all_indices</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">BaseIndex</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">                <span class="o">*</span><span class="n">cast</span><span class="p">(</span><span class="n">List</span><span class="p">[</span><span class="n">BaseIndex</span><span class="p">],</span> <span class="n">children_indices</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                <span class="n">root_index</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">all_indices</span><span class="o">=</span><span class="p">{</span><span class="n">index</span><span class="o">.</span><span class="n">index_id</span><span class="p">:</span> <span class="n">index</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">all_indices</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">                <span class="n">root_id</span><span class="o">=</span><span class="n">root_index</span><span class="o">.</span><span class="n">index_id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">storage_context</span><span class="o">=</span><span class="n">storage_context</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span></code></pre></div><p>在 <code>ComposableGraph</code> 中，子索引和父索引之间的关系被抽象为一种有向图的关系结构。</p>
+<pre tabindex="0"><code>根索引（父索引）
+└── 子索引1：关于机器学习的知识
+└── 子索引2：关于深度学习的知识
+</code></pre><p>子索引与父索引之间的关系在代码中表现为一种有向连接：</p>
+<ul>
+<li>父索引通过 <code>IndexNode</code> 引用子索引。</li>
+<li>子索引通过 <code>NodeRelationship.SOURCE</code> 链接回父索引。</li>
+<li>这种关系形成了一个逻辑上的树状结构，支持数据的分层组织和高效检索。</li>
+</ul>
+
+<h3 class="relative group">2.6 文档摘要索引 
+    <div id="26-文档摘要索引" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#26-%e6%96%87%e6%a1%a3%e6%91%98%e8%a6%81%e7%b4%a2%e5%bc%95" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<blockquote>
+<p>这是一个全新的LlamaIndex数据结构，它是为了问答而制作的。</p></blockquote>
+<p>通常，大多数用户以以下方式开发基于LLM的QA系统:</p>
+<ol>
+<li>获取源文档并将其分成文本块。</li>
+<li>然后将文本块存储在矢量数据库中。</li>
+<li>在查询期间，通过使用相似度和/或关键字过滤器进行Embedding来检索文本块。</li>
+<li>执行整合后的响应。</li>
+</ol>
+<p>然而，这种方法存在一些影响检索性能的局限性：</p>
+<ol>
+<li>文本块没有完整的全局上下文，这通常限制了问答过程的有效性。</li>
+<li>需要仔细调优top-k /相似性分数阈值，因为过小的值可能会导致错过相关上下文，而过大的值可能会增加不相关上下文的成本和延迟。</li>
+<li>Embeddings可能并不总是为一个问题选择最合适的上下文，因为这个过程本质上是分别决定文本和上下文的。</li>
+</ol>
+<p>为了增强检索结果，一些开发人员添加了关键字过滤器。然而，这种方法有其自身的挑战，例如通过手工或使用NLP关键字提取/主题标记模型为每个文档确定适当的关键字，以及从查询中推断正确的关键字。</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="img" src="https://s2.loli.net/2025/06/20/PFkcGY14SVdApjb.png">
+
+  
+</figure>
+</p>
+<p>这就是 LlamaIndex 引入文档摘要索引的原因，它可以为每份文档提取非结构化文本摘要并编制索引，从而提高检索性能，超越现有方法。该索引比单一文本块包含更多信息，比关键字标签具有更多语义。它还允许灵活的检索，包括基于 LLM 和嵌入的方法。在构建期间，该索引接收文档并使用 LLM 从每个文档中提取摘要。在查询时，它会根据摘要使用以下方法检索相关文档：</p>
+<ul>
+<li>基于 LLM 的检索：获取文档摘要集合并请求 LLM 识别相关文档+相关性得分</li>
+<li>基于嵌入的检索：利用摘要嵌入相似性来检索相关文档，并对检索结果的数量施加顶k限制。</li>
+</ul>
+<p>文档摘要索引的检索类为任何选定的文档检索所有节点，而不是在节点级返回相关块。</p>
+<p><strong>索引构建</strong></p>
+<ol>
+<li>文档加载与分块</li>
+<li>生成摘要</li>
+<li>向量化嵌入</li>
+<li>构建索引</li>
+</ol>
+<p><strong>查询阶段</strong></p>
+<ol>
+<li>
+<p>用户输入查询</p>
+</li>
+<li>
+<p>查询向量化</p>
+</li>
+<li>
+<p>语义检索</p>
+</li>
+</ol>
+<p>示例代码：</p>
+<pre tabindex="0"><code>from llama_index.core import (
+    Document,
+    VectorStoreIndex,
+    DocumentSummaryIndex,
+    StorageContext,
+    Settings,
+    SimpleDirectoryReader,
+    ServiceContext,
+)
+from llama_index.core.schema import TextNode
+from llama_index.llms.dashscope import DashScope
+from llama_index.embeddings.dashscope import DashScopeEmbedding
+from llama_index.core.node_parser import SentenceSplitter
+from llama_index.core.extractors import SummaryExtractor
+from llama_index.core.ingestion import IngestionPipeline
+import os
+
+# 1. 配置环境
+os.environ[&#34;DASHSCOPE_API_KEY&#34;] = &#34;&lt;your-api-key&gt;&#34; # Ensure this is correct and active
+
+# 全局设置
+llm = DashScope(model=&#34;qwen-plus&#34;, api_key=os.getenv(&#34;DASHSCOPE_API_KEY&#34;))
+embed_model = DashScopeEmbedding(
+    model_name=&#34;text-embedding-v3&#34;,
+    api_key=os.getenv(&#34;DASHSCOPE_API_KEY&#34;),
+    embed_batch_size=8
+)
+
+# Set global LLM and Embed Model for LlamaIndex
+Settings.llm = llm
+Settings.embed_model = embed_model
+Settings.node_parser = SentenceSplitter(
+    chunk_size=512,
+    chunk_overlap=20,
+    include_prev_next_rel=True
+)
+
+# 2. 文档预处理
+# --- MODIFIED: This function will now return Document objects ---
+def load_documents_from_files(file_paths: list):
+    &#34;&#34;&#34;加载文档并返回Document对象列表&#34;&#34;&#34;
+    all_documents = []
+
+    for file_path in file_paths:
+        if not os.path.exists(file_path):
+            print(f&#34;文件不存在: {file_path}&#34;)
+            continue
+
+        print(f&#34;正在加载: {os.path.basename(file_path)}&#34;)
+        try:
+            # SimpleDirectoryReader directly loads into Document objects
+            docs = SimpleDirectoryReader(
+                input_files=[file_path]
+            ).load_data()
+
+            # Add custom metadata to each document
+            for doc in docs:
+                doc.metadata[&#34;source&#34;] = os.path.basename(file_path)
+                doc.metadata[&#34;doc_type&#34;] = &#34;academic&#34;
+            all_documents.extend(docs) # Extend the list with new documents
+
+        except Exception as e:
+            print(f&#34;文件 {os.path.basename(file_path)} 加载错误: {str(e)}&#34;)
+
+    print(f&#34;已加载 {len(all_documents)} 个文档&#34;)
+    return all_documents
+
+# 3. 创建摘要索引管道
+def create_summary_index(documents, storage_path):
+    &#34;&#34;&#34;创建文档摘要索引&#34;&#34;&#34;
+    if not documents:
+        raise ValueError(&#34;没有可用的文档&#34;)
+
+    # 创建摘要提取器
+    summary_extractor = SummaryExtractor(
+        llm=llm,  # Explicitly pass the LLM to the extractor
+        summaries=[&#34;self&#34;],
+        prompt=&#34;生成此文档的技术摘要，突出核心贡献、创新点和关键技术&#34;,
+    )
+
+    # 创建解析管道
+    # --- MODIFIED: Add SentenceSplitter to the pipeline explicitly ---
+    transformations = [
+        Settings.node_parser, # The global node parser (SentenceSplitter) will split documents into nodes
+        summary_extractor     # Then, SummaryExtractor will process these nodes
+    ]
+
+    # 创建处理管道
+    pipeline = IngestionPipeline(
+        transformations=transformations,
+    )
+
+    # 运行管道处理文档
+    # --- MODIFIED: Pass documents to the pipeline instead of pre-created nodes ---
+    print(&#34;正在通过管道处理文档并提取摘要...&#34;)
+    transformed_nodes = pipeline.run(documents=documents, show_progress=True)
+
+    # Filter out any nodes that might somehow end up with None ref_doc_id (safety check)
+    initial_node_count = len(transformed_nodes)
+    transformed_nodes = [node for node in transformed_nodes if node.ref_doc_id is not None]
+    if len(transformed_nodes) &lt; initial_node_count:
+        print(f&#34;警告: {initial_node_count - len(transformed_nodes)} 个节点因 ref_doc_id 为 None 而被移除。&#34;)
+
+
+    # 创建存储上下文
+    storage_context = StorageContext.from_defaults()
+
+    # 创建摘要索引
+    summary_index = DocumentSummaryIndex(
+        nodes=transformed_nodes,  # These nodes should now have proper ref_doc_id
+        storage_context=storage_context,
+        llm=llm,  # Pass LLM to the index as well
+    )
+
+    # 保存索引
+    os.makedirs(storage_path, exist_ok=True)  # Ensure directory exists
+    storage_context.persist(persist_dir=storage_path)
+    print(f&#34;摘要索引已保存到: {storage_path}&#34;)
+    return summary_index
+
+# 4. 创建查询引擎 (No change)
+def create_query_engine(index):
+    &#34;&#34;&#34;创建摘要查询引擎&#34;&#34;&#34;
+    return index.as_query_engine(
+        response_mode=&#34;tree_summarize&#34;,
+    )
+
+# 5. 使用示例
+if __name__ == &#34;__main__&#34;:
+    # 文档路径配置
+    PAPER_PATHS = [
+        &#34;data/academic/1706.03762v7.pdf&#34;,  # Transformer论文
+        &#34;data/academic/2010.11929v2.pdf&#34;   # ViT论文
+    ]
+
+    INDEX_PATH = &#34;./paper_summary_index&#34;
+
+    # 步骤1: 加载文档 (不再创建TextNode，而是Document)
+    documents = load_documents_from_files(PAPER_PATHS)
+
+    if not documents:
+        print(&#34;没有可处理的文档，程序退出&#34;)
+        exit()
+
+    # 步骤2: 创建摘要索引
+    # Pass the list of Document objects to the create_summary_index function
+    summary_index = create_summary_index(documents, INDEX_PATH)
+
+    # 步骤3: 创建查询引擎
+    query_engine = create_query_engine(summary_index)
+
+    # 执行查询
+    queries = [
+        &#34;总结Transformer的核心创新点&#34;,
+        &#34;ViT是如何处理图像的?&#34;,
+        &#34;Transformer和ViT在注意力机制应用上有何异同&#34;
+    ]
+
+    for i, q in enumerate(queries):
+        print(f&#34;\n{&#39;=&#39;*50}\n查询 #{i+1}: {q}\n{&#39;-&#39;*50}&#34;)
+
+        try:
+            response = query_engine.query(q)
+            print(f&#34;结果:\n{response.response}\n&#34;)
+        except Exception as e:
+            print(f&#34;查询出错: {str(e)}&#34;)
+</code></pre><p>输出：</p>
+<pre tabindex="0"><code>正在加载: 1706.03762v7.pdf
+正在加载: 2010.11929v2.pdf
+已加载 37 个文档
+正在通过管道处理文档并提取摘要...
+
+Parsing nodes:   0%|          | 0/37 [00:00&lt;?, ?it/s]
+100%|██████████| 82/82 [04:52&lt;00:00,  3.56s/it]
+
+摘要索引已保存到: ./paper_summary_index
+
+==================================================
+查询 #1: 总结Transformer的核心创新点
+--------------------------------------------------
+结果:
+Transformer的核心创新点主要包括以下几个方面：
+
+1. **自注意力机制**：Transformer引入了多头自注意力机制，这使得模型能够并行处理输入序列，并且在处理长距离依赖关系时更加有效。
+
+2. **编码器-解码器架构**：模型由编码器和解码器两部分组成，每部分都包含多个相同的层。这种结构允许模型有效地捕捉输入序列的信息，并生成相应的输出序列。
+
+3. **位置前馈网络**：每个编码器和解码器层中都包含一个位置前馈网络，它对序列中的每个位置进行独立的线性变换，从而增强了模型的表达能力。
+
+4. **残差连接与层归一化**：为了提高训练的稳定性和效率，Transformer在每个子层之后使用了残差连接和层归一化技术。
+
+5. **位置编码**：由于Transformer没有递归或卷积结构，因此通过添加位置编码来为模型提供序列中元素的位置信息。
+
+这些创新点共同使得Transformer在处理序列数据时具有高效、并行化和强大的表示能力。
+
+
+==================================================
+查询 #2: ViT是如何处理图像的?
+--------------------------------------------------
+结果:
+ViT处理图像的过程包括以下几个步骤：
+
+1. **图像分割**：首先，将输入的图像分割成固定大小的块（patches）。
+
+2. **线性嵌入**：每个块被展平并进行线性投影，生成patch embeddings。这些嵌入向量形成一个序列。
+
+3. **位置嵌入**：为了保留位置信息，向patch embeddings中添加可学习的位置嵌入。
+
+4. **分类标记**：在patch embeddings序列的前面添加一个额外的可学习的“分类标记”（[class] token）。这个标记在通过Transformer编码器后，作为图像的表示用于分类任务。
+
+5. **Transformer编码器**：将包含位置嵌入和分类标记的patch embeddings序列输入到标准的Transformer编码器中。编码器由多头自注意力机制（MSA）和多层感知机（MLP）交替组成，并且在每个块之前应用层归一化（LN），之后添加残差连接。
+
+6. **分类头**：最后，将分类标记的输出通过一个分类头进行处理。在预训练阶段，分类头是一个具有一个隐藏层的多层感知机（MLP），而在微调阶段，它
+
+
+==================================================
+查询 #3: Transformer和ViT在注意力机制应用上有何异同
+--------------------------------------------------
+结果:
+Transformer 和 Vision Transformer (ViT) 在注意力机制的应用上有一些共同点和不同点。
+
+**共同点：**
+- 两者都使用自注意力机制（self-attention）来处理输入数据。自注意力机制允许模型在处理每个元素时，能够关注到序列中的其他所有元素，从而捕捉长距离依赖关系。
+- 自注意力机制的核心组成部分是查询（Query）、键（Key）和值（Value），这些组件在两种模型中都是通过线性变换从输入数据中生成的。
+
+**不同点：**
+- **输入数据的处理方式：**
+  - Transformer 主要用于处理一维序列数据，如文本。它将输入序列分割成固定长度的片段，并对每个片段应用自注意力机制。
+  - ViT 则专门设计用于处理二维图像数据。它将图像分割成多个小块（patches），并将每个块展平为一维向量，然后将其作为序列输入到自注意力层中。这样，ViT 能够直接应用于图像分类等任务。
+
+- **位置编码：**
+  - Transformer 使用位置编码来保留输入序列中元素的位置信息，因为自注意力机制本身不包含位置信息。
+  - ViT 同样需要
+</code></pre><p>添加支持加载已生成的 index：</p>
+<pre tabindex="0"><code>if __name__ == &#34;__main__&#34;:
+    PAPER_PATHS = [
+        &#34;data/academic/1706.03762v7.pdf&#34;,
+        &#34;data/academic/2010.11929v2.pdf&#34;
+    ]
+
+    INDEX_PATH = &#34;./paper_summary_index&#34;
+
+    summary_index = None
+
+    # --- 添加加载逻辑 ---
+    if os.path.exists(INDEX_PATH) and os.listdir(INDEX_PATH):
+        print(f&#34;检测到已存在的索引目录: {INDEX_PATH}，尝试加载索引...&#34;)
+        try:
+            # 创建一个用于加载的 StorageContext
+            storage_context = StorageContext.from_defaults(persist_dir=INDEX_PATH)
+            # 使用 load_index_from_storage 加载索引
+            # 注意：对于DocumentSummaryIndex，你通常需要指定 type=DocumentSummaryIndex
+            # 但如果它能自动推断，也可以省略。这里显式指定更安全。
+            summary_index = load_index_from_storage(
+                storage_context=storage_context,
+                llm=llm, # 加载时也传递LLM和Embed Model
+                embed_model=embed_model,
+                index_type=&#34;document_summary&#34; # 明确指定索引类型
+            )
+            print(&#34;索引加载成功！&#34;)
+        except Exception as e:
+            print(f&#34;加载索引失败: {e}&#34;)
+            print(&#34;将重新生成索引...&#34;)
+            # 如果加载失败，则回退到生成新索引
+            documents = load_documents_from_files(PAPER_PATHS)
+            if not documents:
+                print(&#34;没有可处理的文档，程序退出&#34;)
+                exit()
+            summary_index = create_summary_index(documents, INDEX_PATH)
+    else:
+        print(f&#34;未检测到索引目录或目录为空: {INDEX_PATH}，正在生成新索引...&#34;)
+        documents = load_documents_from_files(PAPER_PATHS)
+        if not documents:
+            print(&#34;没有可处理的文档，程序退出&#34;)
+            exit()
+        summary_index = create_summary_index(documents, INDEX_PATH)
+
+    if summary_index is None:
+        print(&#34;未能创建或加载索引，程序退出。&#34;)
+        exit()
+
+    # 步骤3: 创建查询引擎
+    query_engine = create_query_engine(summary_index)
+
+    # 执行查询
+    queries = [
+        &#34;总结Transformer的核心创新点&#34;,
+        &#34;ViT是如何处理图像的?&#34;,
+        &#34;Transformer和ViT在注意力机制应用上有何异同&#34;
+    ]
+
+    for i, q in enumerate(queries):
+        print(f&#34;\n{&#39;=&#39;*50}\n查询 #{i+1}: {q}\n{&#39;-&#39;*50}&#34;)
+
+        try:
+            response = query_engine.query(q)
+            print(f&#34;结果:\n{response.response}\n&#34;)
+        except Exception as e:
+            print(f&#34;查询出错: {str(e)}&#34;)
+</code></pre><table>
+  <thead>
+      <tr>
+          <th><strong>特征</strong></th>
+          <th><code>ref_doc_id</code></th>
+          <th><code>node_id</code></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>层级</strong></td>
+          <td>文档级（标识源文档）</td>
+          <td>节点级（标识单个数据单元）</td>
+      </tr>
+      <tr>
+          <td><strong>生成方式</strong></td>
+          <td>由文档 ingestion 自动生成（或手动指定）</td>
+          <td>由节点创建过程自动生成（或手动指定）</td>
+      </tr>
+      <tr>
+          <td><strong>唯一性范围</strong></td>
+          <td>全局唯一（每个文档对应一个 <code>ref_doc_id</code>）</td>
+          <td>全局唯一（每个节点对应一个 <code>node_id</code>）</td>
+      </tr>
+      <tr>
+          <td><strong>典型操作</strong></td>
+          <td>删除文档关联的所有节点（<code>delete_ref_doc</code>）</td>
+          <td>删除单个节点（<code>delete_nodes</code>）</td>
+      </tr>
+      <tr>
+          <td><strong>使用场景</strong></td>
+          <td>溯源、文档级管理</td>
+          <td>细粒度检索、节点关系建模</td>
+      </tr>
+      <tr>
+          <td><strong>无文档场景</strong></td>
+          <td><code>None</code>（如 <code>build_index_from_nodes</code>）</td>
+          <td>必须存在（节点创建时强制生成）</td>
+      </tr>
+  </tbody>
+</table>
+
+<h3 class="relative group">2.7 知识图谱索引 
+    <div id="27-知识图谱索引" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#27-%e7%9f%a5%e8%af%86%e5%9b%be%e8%b0%b1%e7%b4%a2%e5%bc%95" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>它通过在一组文档中提取知识三元组（主语、谓语、宾语）来建立索引。 在查询时，它既可以只使用知识图谱作为上下文进行查询，也可以利用每个实体的底层文本作为上下文进行查询。通过利用底层文本，我们可以针对文档内容提出更复杂的查询。</p>
+<p>参考文档《高级 RAG》”使用知识图谱改进 RAG 检索“章节</p>
+
+<h3 class="relative group">2.8 Pandas 
+    <div id="28-pandas" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#28-pandas" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>利用LlamaIndex的能力，通过其PandasQueryEngine查询Pandas数据帧。该引擎允许你针对dataframe提出自然语言问题，LlamaIndex会将这些问题转换为Pandas代码以获取答案。</p>
+<pre tabindex="0"><code>import pandas as pd
+from llama_index.experimental.query_engine import PandasQueryEngine
+from llama_index.llms.openai import OpenAI # Or any other LLM you prefer
+from llama_index.llms.dashscope import DashScope
+
+from llama_index.core.extractors import SummaryExtractor
+from llama_index.core.ingestion import IngestionPipeline
+import os
+
+
+
+# 1. Create a sample Pandas DataFrame
+data = {
+    &#39;Name&#39;: [&#39;Alice&#39;, &#39;Bob&#39;, &#39;Charlie&#39;, &#39;David&#39;],
+    &#39;Age&#39;: [25, 30, 35, 40],
+    &#39;City&#39;: [&#39;New York&#39;, &#39;Los Angeles&#39;, &#39;Chicago&#39;, &#39;New York&#39;],
+    &#39;Salary&#39;: [70000, 80000, 90000, 75000]
+}
+df = pd.DataFrame(data)
+
+# 2. Initialize the LLM (e.g., OpenAI)
+# Make sure you have your OpenAI API key set as an environment variable
+# export OPENAI_API_KEY=&#34;your_api_key_here&#34;
+llm = DashScope(model=&#34;qwen-plus&#34;, api_key=os.getenv(&#34;DASHSCOPE_API_KEY&#34;))
+# 3. Create a PandasQueryEngine from your DataFrame
+query_engine = PandasQueryEngine(df=df, llm=llm, verbose=True)
+
+# 4. Query your DataFrame with natural language
+response = query_engine.query(&#34;What is the average age of people from New York?&#34;)
+print(response)
+
+response = query_engine.query(&#34;Show me the names of people older than 30.&#34;)
+print(response)
+</code></pre>
+<h3 class="relative group">2.8 总结 
+    <div id="28-总结" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#28-%e6%80%bb%e7%bb%93" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>这是一张关于不同索引类型（Type）的表格，包含以下内容：</p>
+<table>
+  <thead>
+      <tr>
+          <th>索引类型（Type）</th>
+          <th>用途（Purpose）</th>
+          <th>是否涉及大语言模型调用/嵌入费用（LLM Call aka Embeeding Fee）</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Vector Store Index</td>
+          <td>易于使用，可基于大规模数据语料库回答查询</td>
+          <td>是</td>
+      </tr>
+      <tr>
+          <td>List Index</td>
+          <td>有助于综合跨多个数据源信息来生成答案</td>
+          <td>否，仅在执行数据检索时涉及</td>
+      </tr>
+      <tr>
+          <td>Tree Index</td>
+          <td>有助于总结文档集合</td>
+          <td>否，仅在执行数据检索时涉及</td>
+      </tr>
+      <tr>
+          <td>Keyword Table Index</td>
+          <td>有助于将查询路由到不同数据源</td>
+          <td>是</td>
+      </tr>
+      <tr>
+          <td>Composability Graph Index</td>
+          <td>有助于构建知识图谱并堆叠多个索引</td>
+          <td>是</td>
+      </tr>
+      <tr>
+          <td>Document Summary Index</td>
+          <td>为问答目的预先构建</td>
+          <td>是</td>
+      </tr>
+  </tbody>
+</table>
+<p>这些索引类型在处理数据、回答查询、构建知识图谱等不同场景中发挥作用，且在是否产生大语言模型相关调用或嵌入费用方面存在差异 。</p>
+
+<h2 class="relative group">补充 
+    <div id="补充" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%a1%a5%e5%85%85" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">1. Retriever_mode 
+    <div id="1-retriever_mode" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-retriever_mode" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>LlamaIndex中不同索引类型对应的**检索器模式（Retriever Modes）**及其映射的检索器类。以下是分索引类型的详细解释：</p>
+<p><strong>1. 向量索引（Vector Index）</strong></p>
+<ul>
+<li><strong>特点</strong>：检索器模式配置<strong>无效</strong>（会被忽略）。</li>
+<li><strong>默认行为</strong>：无论参数如何，调用 <code>vector_index.as_retriever(...)</code> 始终返回 <code>VectorIndexRetriever</code>，基于向量相似度进行检索。</li>
+</ul>
+<p><strong>2. 摘要索引（Summary Index）</strong></p>
+<p>通过不同模式选择检索方式：</p>
+<ul>
+<li><strong><code>default</code></strong>：使用 <code>SummaryIndexRetriever</code>，基于摘要内容直接检索。</li>
+<li><strong><code>embedding</code></strong>：使用 <code>SummaryIndexEmbeddingRetriever</code>，将摘要转为嵌入向量后检索（适合语义匹配）。</li>
+<li><strong><code>llm</code></strong>：使用 <code>SummaryIndexLLMRetriever</code>，通过LLM生成查询来检索（适合自然语言理解）。</li>
+</ul>
+<p><strong>3. 树索引（Tree Index）</strong></p>
+<p>针对树结构数据的不同检索粒度：</p>
+<ul>
+<li><strong><code>select_leaf</code></strong>：<code>TreeSelectLeafRetriever</code>，检索匹配的叶子节点（适合细粒度查询）。</li>
+<li><strong><code>select_leaf_embedding</code></strong>：<code>TreeSelectLeafEmbeddingRetriever</code>，结合嵌入向量检索叶子节点。</li>
+<li><strong><code>all_leaf</code></strong>：<code>TreeAllLeafRetriever</code>，检索所有叶子节点（适合全面查询）。</li>
+<li><strong><code>root</code></strong>：<code>TreeRootRetriever</code>，直接检索根节点（适合获取整体摘要）。</li>
+</ul>
+<p><strong>4. 关键词表索引（Keyword Table Index）</strong></p>
+<p>基于关键词提取方法选择检索器：</p>
+<ul>
+<li><strong><code>default</code></strong>：<code>KeywordTableGPTRetriever</code>，使用GPT生成关键词检索（精度较高）。</li>
+<li><strong><code>simple</code></strong>：<code>KeywordTableSimpleRetriever</code>，基于简单关键词匹配（轻量级，速度快）。</li>
+<li><strong><code>rake</code></strong>：<code>KeywordTableRAKERetriever</code>，使用RAKE算法提取关键词（适合多词短语）。</li>
+</ul>
+<p><strong>5. 知识图谱索引（Knowledge Graph Index）</strong></p>
+<p>不同模式对应知识图谱的查询方式：</p>
+<ul>
+<li><strong><code>keyword</code>/<code>embedding</code>/<code>hybrid</code></strong>：均使用 <code>KGTableRetriever</code>，分别通过关键词匹配、嵌入向量或混合方式检索知识图谱数据。
+<ul>
+<li><strong>注</strong>：模式名称可能仅表示输入查询的类型，但检索器类不变。</li>
+</ul>
+</li>
+</ul>
+<p><strong>6. 文档摘要索引（Document Summary Index）</strong></p>
+<p>针对文档摘要的检索策略：</p>
+<ul>
+<li><strong><code>llm</code></strong>：<code>DocumentSummaryIndexLLMRetriever</code>，通过LLM生成查询匹配摘要内容。</li>
+<li><strong><code>embedding</code></strong>：<code>DocumentSummaryIndexEmbeddingRetrievers</code>，基于摘要的嵌入向量检索</li>
+</ul>
+
+          
+          
+          
+        </div>
+
+        
+
+        
+  <details class="mt-2 mb-5 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 margin-left-[0px]">
+    
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
+    学习笔记 -
+    This article is part of a series.
+  </summary>
+  
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="/posts/langchain%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/">
+          Part :
+          LangChain 简易教程
+        </a>
+      </div>
+    
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="/posts/%E9%AB%98%E7%BA%A7rag/">
+          Part :
+          高级RAG
+        </a>
+      </div>
+    
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        Part :
+        This Article
+      </div>
+    
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="/posts/langgraph/">
+          Part :
+          LangGraph
+        </a>
+      </div>
+    
+  
+
+
+  </details>
+
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.407e5b2727c1f241c95d53db24c776bea71bfc18e09511b815d669ad8caca6e9e18a53864ad364b1ccccfa2f2956768d33cfe193bfb64d3406f3b5ece354ba57.js"
+          integrity="sha512-QH5bJyfB8kHJXVPbJMd2vqcb/BjglRG4FdZprYyspunhilOGStNksczM&#43;i8pVnaNM8/hk7&#43;2TTQG87Xs41S6Vw=="
+          data-oid="views_posts/LlamaIndex.md"
+          data-oid-likes="likes_posts/LlamaIndex.md"></script>
+      
+
+    </section>
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/posts/%E9%AB%98%E7%BA%A7rag/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >高级RAG</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-06-20T15:24:15&#43;08:00">20 June 2025</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/posts/langgraph/">
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >LangGraph</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-06-20T16:02:13&#43;08:00">20 June 2025</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a
+    href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400">
+        <ul class="flex flex-col list-none sm:flex-row">
+          
+            <li
+              class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href="https://external-link"
+                title="">
+                
+                Privacy
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          Lizen
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+      </p>
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script> 
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-index-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>
