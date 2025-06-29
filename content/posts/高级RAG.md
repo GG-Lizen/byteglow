@@ -248,6 +248,8 @@ RAPTOR 树构建流程：
 
 ![CleanShot 2025-06-17 at 10.09.19@2x](https://s2.loli.net/2025/06/20/BOZfWolI26rdVh5.png)
 
+![CleanShot 2025-06-29 at 17.05.58](https://s2.loli.net/2025/06/29/67XTIuZznEj3yaM.png)
+
 >(a) 基于表示的相似性 (Representation-based Similarity): 在这种方法中,文档片段通过某些深度神经网络进行离线编码 (即预先处理),而查询片段则以类似的方式进行在线编码 (即实时处理)。然后计算查询与所有文档之间的成对相似性（通常是cos相似度）得分,并返回得分最高的几个文档。
 >
 >(b) 查询-文档交互 (Query-Document Interaction): 在这种方法中,通过使用 n-gram (即连续的 n 个词组成的序列) 计算查询和文档中所有单词之间的词语和短语级关系,作为一种特征工程的形式。这些关系被转换为交互矩阵,然后作为输入提供给卷积网络。
@@ -268,12 +270,40 @@ ColBERT 建立在 BERT 模型之上，但它的设计与众不同。传统方法
 - **简单示例**：
   查询“What is BGE?”与文档“BGE is a model”对比。ColBERT 能直接匹配“BGE”与“BGE”，避免整体平均带来的模糊。换句话说，可以理解成他是匹配局部与局部之间的相关性。
 
+
+
+**ColBERT 的查询编码过程**：
+
+假设有一个查询 Q，其标记（token）为 q1， q2， ...， ql，处理步骤如下:
+
+- 将 Q 转换为 BERT 使用的 WordPiece 标记（token） (一种子词分词方法)。
+- 在序列开头添加一个特殊的 [Q] 标记（token），紧随 BERT 的 [CLS] 标记（token）之后，用于标识查询的开始。
+- 如果查询长度不足预设的 Nq 个标记（token），用 [mask] 标记（token）填充；若超过则截断。
+- 将处理后的序列输入 BERT，然后通过卷积神经网络 (CNN) 处理，最后进行归一化。
+
+最终输出的查询嵌入向量集合 Eq 可表示为:
+
+$Eq := Normalize(BERT([Q]， q0， q1， …， ql， [mask]， [mask]， …， [mask]))$
+
+**ColBERT 的文档编码过程**：
+
+对于包含标记 d1， d2， ...， dn 的文档 D，处理步骤类似:
+
+- 在序列开头添加 [D] 标记，标识文档开始。
+- 无需填充，直接输入 BERT 进行处理。
+
+文档嵌入向量集合 Ed 可表示为:$ Ed := Filter(Normalize(BERT([D]， d0， d1， ...， dn)))$
+
+Filter用于去除与标点符号对应的嵌入，从而提升分析速度。这里的查询填充策略 (论文中称为"查询增强")确保了所有查询长度一致，有利于批量处理。而 [Q] 和 [D] 标记则帮助模型区分输入类型，提高了处理效率。
+
 **使用 ColBERT 查找最相关的前 K 个文档计算过程包括**:
 
 - 批量点积计算:用于计算词语级别的相似度。每一个词都和整个文档进行计算
 
 - 最大池化 (max-pooling):在文档词语上进行操作,找出每个查询词语的最高相似度。
-- 求和:对查询词语的相似度分数进行累加,得出文档的总体相关性分数。
+- 求和:对查询词语的相似度分数进行累加,得出文档的总体相关性分数，公式如下：
+  - $$ S_{q,d} := \sum_{i \in [\vert E_q \vert]} \max_{j \in [\vert E_d \vert]} E_{q_i} \cdot E_{d_j}^T \tag{3} $$
+
 - 排序:根据总分对文档进行排序。
 
 代码示例：
@@ -748,6 +778,15 @@ for doc in docs:
 
 #### 3.1.2 LlamaIndex
 
+使用示例：
+
+```
+postprocessor = SimilarityPostprocessor(similarity_cutoff=0.7)
+query_engine = index.as_query_engine(node_postprocessors=[postprocessor])
+```
+
+llamaIndex [Node Postprocessor](https://docs.llamaindex.ai/en/stable/module_guides/querying/node_postprocessors/node_postprocessors/#node-postprocessor-modules) 包含以下内容：
+
 - SimilarityPostprocessor：为每个检索结果按相似度打分，然后通过设置一个分数阈值进行过滤。
 
   - **向量余弦相似度**：节点嵌入向量与查询嵌入向量的余弦距离（最常用）。
@@ -755,6 +794,10 @@ for doc in docs:
   - **其他度量**：如欧氏距离（取反后作为相似度）等，具体取决于索引类型（如`VectorStoreIndex`默认使用余弦相似度）。
 
 - KeywordNodePostprocessor：使用 [spacy](https://spacy.io/) 的 短语匹配器（PhraseMatcher）对检索结果进行检查，**按包含或不包含特定的关键字进行过滤**。
+
+  - ```
+    postprocessor = KeywordNodePostprocessor(required_keywords=["keyword"]
+    ```
 
 - [Sentence Embedding Optimizer](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/OptimizerDemo/)：使用 [nltk.tokenize](https://www.nltk.org/api/nltk.tokenize.html) 对检索出的每一条结果进行分句，然后通过计算每个分句和用户输入的相似性来过滤和输入不相干的句子，有两种过滤方式：`threshold_cutoff` 是根据相似度阈值来过滤（比如只保留相似度 0.75 以上的句子），`percentile_cutoff` 是根据百分位阈值来过滤（比如只保留相似度高的前 50% 的句子）。这种后处理方法可以极大地减少 token 的使用。
 
@@ -765,7 +808,7 @@ for doc in docs:
     - **显式时间标注**：通过`file_metadata`为每个文档节点附加时间
 
       - ```
-        ocuments = SimpleDirectoryReader(
+        documents = SimpleDirectoryReader(
             input_files=[
             		....
             ],
@@ -807,35 +850,144 @@ for doc in docs:
 
 #### 3.1.3 LangChain
 
-LangChain 也支持 [Long-Context Reorder](https://python.langchain.com/v0.1/docs/modules/data_connection/retrievers/long_context_reorder/)。
+LangChain 中上下文压缩同样解决此问了题。思路很简单：不是立即返回检索到的文档，而是使用给定查询的上下文对其进行压缩，以便只返回相关信息。这里的“压缩”既指单个文档内容的压缩，也指整个文档的过滤。上下文压缩检索器将查询传递给基本检索器，获取初始文档并将其通过文档压缩器传递。文档压缩器接受文档列表，通过减少文档内容或完全删除文档来缩短列表。
 
-此外，LangChain 中的 [ContextualCompressionRetriever](https://python.langchain.com/v0.1/docs/modules/data_connection/retrievers/contextual_compression/) 也支持一些不同的过滤策略：
+示例代码：
 
-- LLMChainExtractor
+```
+from langchain.retrievers import ContextualCompressionRetriever
+from langchain.retrievers.document_compressors import LLMChainExtractor
+from langchain_openai import OpenAI
+ 
+llm = OpenAI(temperature=0)
+compressor = LLMChainExtractor.from_llm(llm)
+compression_retriever = ContextualCompressionRetriever(
+    base_compressor=compressor, base_retriever=retriever
+)
+ 
+compressed_docs = compression_retriever.get_relevant_documents(
+    "What did the president say about Ketanji Jackson Brown"
+)
+pretty_print_docs(compressed_docs)
+```
 
-这个过滤器依次将检索文档丢给大模型，让大模型从文档中抽取出和用户问题相关的片段，从而实现过滤的功能。
+**LangChain 中的compressor**：
 
-- LLMChainFilter
+- LLMChainExtractor：这个过滤器依次将检索文档和用户查询给大模型，让大模型从文档中抽取出和用户问题相关的片段，从而实现过滤的功能。
 
-这个过滤器相比 `LLMChainExtractor` 稍微简单一点，它直接让大模型判断文档和用户问题是否相关，而不是抽取片段，这样做不仅消耗更少的 token，而且处理速度更快，而且可以防止大模型对文档原始内容进行篡改。
+  - ```
+    from langchain.retrievers import ContextualCompressionRetriever
+    from langchain.retrievers.document_compressors import LLMChainExtractor
+    from langchain_openai import ChatOpenAI
+    from langchain.chains.summarize import load_summarize_chain
+    # 初始化 LLM
+    llm =ChatOpenAI(
+            openai_api_key=os.getenv("DASHSCOPE_API_KEY"),
+            base_url=os.getenv("ALIYUN_BASE_URL"),
+            model='qwen-plus',
+        )
+    # 创建提取器
+    compressor = LLMChainExtractor.from_llm(llm)
+    # 提取关键信息
+    compression_retriever = ContextualCompressionRetriever(
+        base_compressor=compressor, base_retriever=retriever
+    )
+    compressed_docs = compression_retriever.get_relevant_documents(
+        "What did the president say about Ketanji Jackson Brown"
+    )
+    pretty_print_docs(compressed_docs)
+    ```
 
-- EmbeddingsFilter
-
-和 LlamaIndex 的 `SimilarityPostprocessor` 类似，计算每个文档和用户问题的相似度分数，然后通过设置一个分数阈值进行过滤。
-
-- EmbeddingsRedundantFilter
-
-这个过滤器虽然名字和 `EmbeddingsFilter` 类似，但是实现原理是不一样的，它不是计算文档和用户问题之间的相似度，而是计算文档之间的相似度，然后把相似的文档过滤掉，有点像 LlamaIndex 的 `EmbeddingRecencyPostprocessor`。
+    
 
 
+- LLMChainFilter：这个过滤器相比 `LLMChainExtractor` 稍微简单一点，它直接让大模型判断文档和用户问题是否相关，而不是抽取片段，这样做不仅消耗更少的 token，而且处理速度更快，而且可以防止大模型对文档原始内容进行篡改。
+
+  - ```
+    from langchain.retrievers.document_compressors import LLMChainFilter
+     
+    _filter = LLMChainFilter.from_llm(llm)
+    compression_retriever = ContextualCompressionRetriever(
+        base_compressor=_filter, base_retriever=retriever
+    )
+     
+    compressed_docs = compression_retriever.get_relevant_documents(
+        "What did the president say about Ketanji Jackson Brown"
+    )
+    pretty_print_docs(compressed_docs)
+    ```
+
+    
+
+
+- EmbeddingsFilter：和 LlamaIndex 的 `SimilarityPostprocessor` 类似，计算**每个文档和用户问题**的相似度分数，然后通过设置一个分数阈值进行过滤。
+
+- EmbeddingsRedundantFilter: 这个过滤器虽然名字和 `EmbeddingsFilter` 类似，但是实现原理是不一样的，它不是计算文档和用户问题之间的相似度，而是**计算文档之间的相似度，然后把相似的文档过滤掉**。
+
+**将多个压缩器依次组合在一起**：
+
+使用`DocumentCompressorPipeline`，我们还可以轻松地将多个压缩器依次组合在一起。
+
+在下面的示例中，我们首先将文档拆分为较小的块，然后删除冗余文档，然后根据与查询相关性进行过滤。
+
+```python
+from langchain.retrievers.document_compressors import DocumentCompressorPipeline
+from langchain_community.document_transformers import EmbeddingsRedundantFilter
+from langchain_text_splitters import CharacterTextSplitter
+splitter = CharacterTextSplitter(chunk_size=300, chunk_overlap=0, separator=". ")
+redundant_filter = EmbeddingsRedundantFilter(embeddings=embeddings)
+relevant_filter = EmbeddingsFilter(embeddings=embeddings, similarity_threshold=0.76)
+pipeline_compressor = DocumentCompressorPipeline(
+    transformers=[splitter, redundant_filter, relevant_filter]
+)
+compression_retriever = ContextualCompressionRetriever(
+    base_compressor=pipeline_compressor, base_retriever=retriever
+)
+compressed_docs = compression_retriever.get_relevant_documents(
+    "What did the president say about Ketanji Jackson Brown"
+)
+pretty_print_docs(compressed_docs)
+```
 
 
 
 ### 3.2 重排序
 
-在 RAG 工作流中，从检索器（Retriever）返回的候选文档通常包含冗余或无关的内容。通过重新排序（Reranking）和过滤，可以提升模型生成的最终答案的准确性和相关性。重新排序步骤主要依赖于预训练的交叉编码器模型（Cross Encoder），该模型能根据输入和上下文之间的语义相关性重新调整候选文档的优先级。
+在上面的过滤策略中，我们经常会用到 Embedding 来计算文档的相似性，然后根据相似性来对文档进行排序，这里的排序被称为 **粗排**，我们还可以使用一些专门的排序引擎对文档进一步排序和过滤，这被称为 **精排**。LlamaIndex 支持下面这些重排序策略：
 
-示例代码
+#### 3.2.1 LlamaIndex
+
+- [SentenceTransformerRerank](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/SentenceTransformerRerank/)：比如 [sentence-transformer](https://www.sbert.net/index.html) 包中的 **交叉编码器（Cross Encoder）** 可以用来重新排序节点。
+
+  - ```
+    from llama_index.core.postprocessor import SentenceTransformerRerank
+    
+    # 初始化重排器（使用交叉编码器模型，保留前3个节点）
+    rerank = SentenceTransformerRerank(
+        model="cross-encoder/ms-marco-MiniLM-L-2-v2", 
+        top_n=3
+    )
+    
+    # 将重排器添加到查询引擎的后处理器链中
+    query_engine = index.as_query_engine(
+        similarity_top_k=10, 
+        node_postprocessors=[rerank]
+    )
+    ```
+
+    
+
+- [Colbert Reranker](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/ColbertRerank/):另一种实现本地重排序的是 [ColBERT](https://github.com/stanford-futuredata/ColBERT) 模型，它是一种快速准确的检索模型，可以在几十毫秒内对大文本集合进行基于 BERT 的搜索。
+
+- [LLM Rerank](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/LLMReranker-Gatsby/)：我们还可以使用大模型来做重排序，将文档丢给大模型，然后让大模型对文档的相关性进行评分，从而实现文档的重排序。下面是 LlamaIndex 内置的用于重排序的 Prompt：
+
+- [RankGPT](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/rankGPT/)：RankGPT 是 Weiwei Sun 等人在论文 [Is ChatGPT Good at Search? Investigating Large Language Models as Re-Ranking Agents](https://arxiv.org/abs/2304.09542) 中提出的一种基于大模型的 zero-shot 重排方法，它采用了排列生成方法和滑动窗口策略来高效地对段落进行重排序，具体内容可以参考 [RankGPT 的源码](https://github.com/sunnweiwei/RankGPT)。
+
+- [RankLLMRerank](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/rankLLM/)：[RankLLM](https://github.com/castorini/rank_llm) 和 RankGPT 类似，也是利用大模型来实现重排，只不过它的重点放在与 [FastChat](https://github.com/lm-sys/FastChat?tab=readme-ov-file#supported-models) 兼容的开源大模型上，比如 Vicuna 和 Zephyr 等，并且对这些开源模型专门为重排任务进行了微调，比如 RankVicuna 和 RankZephyr 等。
+
+#### 3.2.2 Langchain
+
+示例代码:
 
 以下代码展示了如何实现基于 `HuggingFaceCrossEncoder` 的文档重新排序器：
 
@@ -849,6 +1001,22 @@ LangChain 也支持 [Long-Context Reorder](https://python.langchain.com/v0.1/doc
         )
 
 ```
+
+![](https://s2.loli.net/2025/06/20/UD8Z37uTiYEmRSn.png)
+
+Bi-Encoder会用BERT对输入文本编码，再根据cosine相似度分数筛选文本。Cross-Encoder会直接计算两个句子的相关性分数。
+
+- 有一组预先定义好的句子对，并想对其进行打分时，就可以使用cross-Encoder
+
+- 需要在向量空间中获得句子嵌入以进行高效比较的情况，使用BiEncoder
+
+- ContextualCompressionRetriever：将交叉编码器包装为 `Compressor` 对象，负责对检索结果重排并截断。
+
+  - 接收基础检索器返回的文档列表。
+  - 用交叉编码器计算每个文档相对于查询的相关性得分。
+  - 按得分降序排序，保留前 `top_n` 个文档。
+
+- ContextualCompressionRetriever：创建压缩检索器
 
 ## 4. 使用知识图谱改进 RAG 检索
 
@@ -1065,26 +1233,6 @@ class Reranker:
 
 ```
 
-
-
-![](https://s2.loli.net/2025/06/20/UD8Z37uTiYEmRSn.png)
-
-Bi-Encoder会用BERT对输入文本编码，再根据cosine相似度分数筛选文本。Cross-Encoder会直接计算两个句子的相关性分数。
-
-- 有一组预先定义好的句子对，并想对其进行打分时，就可以使用cross-Encoder
-
-- 需要在向量空间中获得句子嵌入以进行高效比较的情况，使用BiEncoder
-
-- ContextualCompressionRetriever：将交叉编码器包装为 `Compressor` 对象，负责对检索结果重排并截断。
-
-  - 接收基础检索器返回的文档列表。
-  - 用交叉编码器计算每个文档相对于查询的相关性得分。
-  - 按得分降序排序，保留前 `top_n` 个文档。
-
-- ContextualCompressionRetriever：创建压缩检索器
-
-  
-
 ### 6.6 质量评估
 
 ```python
@@ -1300,3 +1448,11 @@ if __name__ == "__main__":
 
     print("\n问答系统完成")
 ```
+
+# 参考
+
+- https://juejin.cn/post/7400688776484798490
+- https://www.aneasystone.com/archives/2024/06/advanced-rag-notes.html
+- https://docs.llamaindex.ai/en/stable/
+- https://python.langchain.com/docs/
+- https://zhuanlan.zhihu.com/p/701763569
