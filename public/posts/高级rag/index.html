@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="light"
-  data-auto-appearance="true"><head><script src="/byteglow/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=byteglow/livereload" data-no-instant defer></script>
+  data-auto-appearance="true"><head><script src="/byteglow/livereload.js?mindelay=10&amp;v=2&amp;port=62936&amp;path=byteglow/livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   
   <meta http-equiv="content-language" content="en" />
@@ -19,7 +19,7 @@
   
   
   
-  <link rel="canonical" href="http://localhost:1313/byteglow/posts/%E9%AB%98%E7%BA%A7rag/" />
+  <link rel="canonical" href="http://localhost:62936/byteglow/posts/%E9%AB%98%E7%BA%A7rag/" />
   
   
   
@@ -68,13 +68,7 @@
   
   
   
-  
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  <meta name="referrer" content="no-referrer-when-downgrade">
-  
-
-  
-  <meta property="og:url" content="http://localhost:1313/byteglow/posts/%E9%AB%98%E7%BA%A7rag/">
+  <meta property="og:url" content="http://localhost:62936/byteglow/posts/%E9%AB%98%E7%BA%A7rag/">
   <meta property="og:site_name" content="ByteGlow">
   <meta property="og:title" content="高级RAG">
   <meta property="og:locale" content="en">
@@ -82,9 +76,9 @@
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-06-20T15:24:15+08:00">
     <meta property="article:modified_time" content="2025-06-20T15:24:15+08:00">
-      <meta property="og:see_also" content="http://localhost:1313/byteglow/posts/langchain%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/">
-      <meta property="og:see_also" content="http://localhost:1313/byteglow/posts/llamaindex/">
-      <meta property="og:see_also" content="http://localhost:1313/byteglow/posts/langgraph/">
+      <meta property="og:see_also" content="http://localhost:62936/byteglow/posts/langchain%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/">
+      <meta property="og:see_also" content="http://localhost:62936/byteglow/posts/llamaindex/">
+      <meta property="og:see_also" content="http://localhost:62936/byteglow/posts/langgraph/">
 
   
   <meta name="twitter:card" content="summary">
@@ -103,7 +97,7 @@
     
     
     "inLanguage": "en",
-    "url" : "http:\/\/localhost:1313\/byteglow\/posts\/%E9%AB%98%E7%BA%A7rag\/",
+    "url" : "http:\/\/localhost:62936\/byteglow\/posts\/%E9%AB%98%E7%BA%A7rag\/",
     "author" : {
       "@type": "Person",
       "name": "Lizen"
@@ -117,7 +111,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "3048"
+    "wordCount": "3081"
   }]
   </script>
 
@@ -665,7 +659,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-06-20T15:24:15&#43;08:00">20 June 2025</time><span class="px-2 text-primary-500">&middot;</span><span>3048 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">15 mins</span>
+      <time datetime="2025-06-20T15:24:15&#43;08:00">20 June 2025</time><span class="px-2 text-primary-500">&middot;</span><span>3081 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">15 mins</span>
     
 
     
@@ -682,7 +676,12 @@
 
 
 
+      <span>
+        <span id="busuanzi_container_page_pv">本文阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+      </span>
       </div>
+
+
 
       
       
@@ -742,10 +741,6 @@
         
 
       
-      
-      
-        <span id="busuanzi_container_page_pv">本文阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-      
     </header>
 
     <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
@@ -786,6 +781,7 @@
             <li><a href="#211-假设文档嵌入hyde">2.1.1 假设文档嵌入（HyDE）</a></li>
             <li><a href="#212-step-back提示">2.1.2 Step-Back提示</a></li>
             <li><a href="#213-multi-query-retriever">2.1.3 Multi Query Retriever</a></li>
+            <li><a href="#214-rag-fusion">2.1.4 RAG-Fusion</a></li>
           </ul>
         </li>
         <li><a href="#22-混合检索">2.2 混合检索</a></li>
@@ -851,6 +847,7 @@
             <li><a href="#211-假设文档嵌入hyde">2.1.1 假设文档嵌入（HyDE）</a></li>
             <li><a href="#212-step-back提示">2.1.2 Step-Back提示</a></li>
             <li><a href="#213-multi-query-retriever">2.1.3 Multi Query Retriever</a></li>
+            <li><a href="#214-rag-fusion">2.1.4 RAG-Fusion</a></li>
           </ul>
         </li>
         <li><a href="#22-混合检索">2.2 混合检索</a></li>
@@ -1908,6 +1905,56 @@ step_back()
 </span></span><span class="line"><span class="cl"><span class="p">)</span>
 </span></span></code></pre></div></blockquote>
 
+<h4 class="relative group">2.1.4 RAG-Fusion 
+    <div id="214-rag-fusion" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#214-rag-fusion" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>RAG-Fusion可以认为是<a
+  href="https://link.zhihu.com/?target=https%3A//python.langchain.com/docs/modules/data_connection/retrievers/MultiQueryRetriever"
+    target="_blank"
+  >MultiQueryRetriever</a>
+的进化版，如下图所示，RAG-Fusion首先根据原始question从不同角度生成多个版本的新question，用以提升question的质量；然后针对每个question进行向量检索，到此步为止都是MultiQueryRetriever的功能；与之不同的是，RAG-Fusion在喂给LLM生成答案之前增加了一个排序的步骤。</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="img" src="https://picx.zhimg.com/v2-7ee6fdc5e000ba866f9540a39835fff3_1440w.jpg">
+
+  
+</figure>
+</p>
+<p>排序包含两个动作：</p>
+<ul>
+<li>
+<p>独立对每个question检索返回的内容根据相似度排序，确定每个返回chunk在各自候选集中的位置，相似度越高排名越靠前。</p>
+</li>
+<li>
+<p>对所有question 返回的内容利用倒数排序融合（Reciprocal Rank Fusion）综合排序。</p>
+<ul>
+<li>
+<p>具体来说，RRF是一种用于将来自多个信息源的结果进行排序融合的技术。在RAG（检索增强生成）系统中，RRF用于综合不同检索方法的结果，以生成最终的排序列表。它通过考虑每个文档在不同检索系统中的排名位置，而不是原始分数，来计算文档的综合得分。公式为：$score=\sum_{q \in queries}\frac{1}{k+rank(d \in result(q))}$</p>
+<p>其中：</p>
+<ul>
+<li>d 是一个文档，</li>
+<li>result(q) 是查询 q 的结果集，</li>
+<li>rank(d∈result(q)) 是文档 d 在结果集 result(q) 中的排名，</li>
+<li>k 是一个常数平滑因子，通常取值为60。</li>
+</ul>
+<p>RRF的优势在于它不依赖于不同模型的分数，而是基于文档在结果集中的排名位置来计算得分，这使得它能够有效结合不同检索方法的结果，而不需要调整权重或归一化分数。此外，RRF方法简单且鲁棒，能够适应各种用户场景而无需大量参数调整。</p>
+</li>
+</ul>
+</li>
+</ul>
+
 <h3 class="relative group">2.2 混合检索 
     <div id="22-混合检索" class="anchor"></div>
     
@@ -2907,6 +2954,11 @@ print(f&#34;Response: {response}&#34;)
     target="_blank"
   >https://zhuanlan.zhihu.com/p/701763569</a>
 </li>
+<li><a
+  href="https://zhuanlan.zhihu.com/p/684994205"
+    target="_blank"
+  >https://zhuanlan.zhihu.com/p/684994205</a>
+</li>
 </ul>
 
           
@@ -3091,6 +3143,19 @@ print(f&#34;Response: {response}&#34;)
       </nav>
     
   
+   
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <div class="flex items-center justify-between">
+    <span id="busuanzi_container_site_pv" class="text-sm text-neutral-500 dark:text-neutral-400">
+      本站访问量：<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  &nbsp;
+  <span id="busuanzi_container_site_uv" class="text-sm text-neutral-500 dark:text-neutral-400">
+      您是本站第 <span id="busuanzi_value_site_uv"></span> 位访问者
+  </span>
+  </div>
+  
+  
   <div class="flex items-center justify-between">
     
     
@@ -3134,7 +3199,7 @@ print(f&#34;Response: {response}&#34;)
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-index-500"
-  data-url="http://localhost:1313/byteglow/">
+  data-url="http://localhost:62936/byteglow/">
   <div
     id="search-modal"
     class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">

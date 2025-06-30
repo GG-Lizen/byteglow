@@ -757,6 +757,31 @@ for doc in docs:
 >)
 >```
 
+#### 2.1.4 RAG-Fusion
+
+RAG-Fusion可以认为是[MultiQueryRetriever](https://link.zhihu.com/?target=https%3A//python.langchain.com/docs/modules/data_connection/retrievers/MultiQueryRetriever)的进化版，如下图所示，RAG-Fusion首先根据原始question从不同角度生成多个版本的新question，用以提升question的质量；然后针对每个question进行向量检索，到此步为止都是MultiQueryRetriever的功能；与之不同的是，RAG-Fusion在喂给LLM生成答案之前增加了一个排序的步骤。
+
+![img](https://picx.zhimg.com/v2-7ee6fdc5e000ba866f9540a39835fff3_1440w.jpg)
+
+排序包含两个动作：
+
+- 独立对每个question检索返回的内容根据相似度排序，确定每个返回chunk在各自候选集中的位置，相似度越高排名越靠前。
+
+- 对所有question 返回的内容利用倒数排序融合（Reciprocal Rank Fusion）综合排序。
+
+  - 具体来说，RRF是一种用于将来自多个信息源的结果进行排序融合的技术。在RAG（检索增强生成）系统中，RRF用于综合不同检索方法的结果，以生成最终的排序列表。它通过考虑每个文档在不同检索系统中的排名位置，而不是原始分数，来计算文档的综合得分。公式为：$score=\sum_{q \in queries}\frac{1}{k+rank(d \in result(q))}$
+
+    其中：
+
+    - d 是一个文档，
+    - result(q) 是查询 q 的结果集，
+    - rank(d∈result(q)) 是文档 d 在结果集 result(q) 中的排名，
+    - k 是一个常数平滑因子，通常取值为60。
+
+    RRF的优势在于它不依赖于不同模型的分数，而是基于文档在结果集中的排名位置来计算得分，这使得它能够有效结合不同检索方法的结果，而不需要调整权重或归一化分数。此外，RRF方法简单且鲁棒，能够适应各种用户场景而无需大量参数调整。
+
+
+
 ### 2.2 混合检索
 
 - 使用 Elasticsearch 作为传统搜索机制，并使用 faiss 作为向量数据库进行语义搜索。[代码](https://github.com/ndemir/machine-learning-projects/tree/main/hybrid-search)
@@ -1456,3 +1481,4 @@ if __name__ == "__main__":
 - https://docs.llamaindex.ai/en/stable/
 - https://python.langchain.com/docs/
 - https://zhuanlan.zhihu.com/p/701763569
+- https://zhuanlan.zhihu.com/p/684994205
