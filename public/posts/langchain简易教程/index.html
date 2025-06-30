@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="light"
-  data-auto-appearance="true"><head><script src="/byteglow/livereload.js?mindelay=10&amp;v=2&amp;port=62936&amp;path=byteglow/livereload" data-no-instant defer></script>
+  data-auto-appearance="true"><head><script src="/byteglow/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=byteglow/livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   
   <meta http-equiv="content-language" content="en" />
@@ -19,7 +19,7 @@
   
   
   
-  <link rel="canonical" href="http://localhost:62936/byteglow/posts/langchain%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/" />
+  <link rel="canonical" href="http://localhost:1313/byteglow/posts/langchain%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/" />
   
   
   
@@ -68,7 +68,7 @@
   
   
   
-  <meta property="og:url" content="http://localhost:62936/byteglow/posts/langchain%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/">
+  <meta property="og:url" content="http://localhost:1313/byteglow/posts/langchain%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/">
   <meta property="og:site_name" content="ByteGlow">
   <meta property="og:title" content="LangChain 简易教程">
   <meta property="og:locale" content="en">
@@ -76,9 +76,9 @@
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-06-05T15:26:20+08:00">
     <meta property="article:modified_time" content="2025-06-05T15:26:20+08:00">
-      <meta property="og:see_also" content="http://localhost:62936/byteglow/posts/%E9%AB%98%E7%BA%A7rag/">
-      <meta property="og:see_also" content="http://localhost:62936/byteglow/posts/llamaindex/">
-      <meta property="og:see_also" content="http://localhost:62936/byteglow/posts/langgraph/">
+      <meta property="og:see_also" content="http://localhost:1313/byteglow/posts/%E9%AB%98%E7%BA%A7rag/">
+      <meta property="og:see_also" content="http://localhost:1313/byteglow/posts/llamaindex/">
+      <meta property="og:see_also" content="http://localhost:1313/byteglow/posts/langgraph/">
 
   
   <meta name="twitter:card" content="summary">
@@ -97,7 +97,7 @@
     
     
     "inLanguage": "en",
-    "url" : "http:\/\/localhost:62936\/byteglow\/posts\/langchain%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B\/",
+    "url" : "http:\/\/localhost:1313\/byteglow\/posts\/langchain%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B\/",
     "author" : {
       "@type": "Person",
       "name": "Lizen"
@@ -111,7 +111,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "2600"
+    "wordCount": "2636"
   }]
   </script>
 
@@ -519,7 +519,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-06-05T15:26:20&#43;08:00">5 June 2025</time><span class="px-2 text-primary-500">&middot;</span><span>2600 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">13 mins</span>
+      <time datetime="2025-06-05T15:26:20&#43;08:00">5 June 2025</time><span class="px-2 text-primary-500">&middot;</span><span>2636 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">13 mins</span>
     
 
     
@@ -649,6 +649,7 @@
         <li><a href="#38-chains">3.8 Chains</a></li>
         <li><a href="#39-callback">3.9 Callback</a></li>
         <li><a href="#310-lcel">3.10 LCEL</a></li>
+        <li><a href="#311-结构化输出">3.11 结构化输出</a></li>
       </ul>
     </li>
     <li><a href="#4-ai-营销大模型实战"><strong>4. AI 营销大模型实战</strong></a>
@@ -724,6 +725,7 @@
         <li><a href="#38-chains">3.8 Chains</a></li>
         <li><a href="#39-callback">3.9 Callback</a></li>
         <li><a href="#310-lcel">3.10 LCEL</a></li>
+        <li><a href="#311-结构化输出">3.11 结构化输出</a></li>
       </ul>
     </li>
     <li><a href="#4-ai-营销大模型实战"><strong>4. AI 营销大模型实战</strong></a>
@@ -1725,6 +1727,31 @@ for model in models:
 </span></span><span class="line"><span class="cl"><span class="c1"># Batch: 批量输入</span>
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">chain</span><span class="o">.</span><span class="n">batch</span><span class="p">([{</span><span class="s2">&#34;topic&#34;</span><span class="p">:</span> <span class="s2">&#34;math&#34;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&#34;topic&#34;</span><span class="p">:</span> <span class="s2">&#34;English&#34;</span><span class="p">}]))</span>
 </span></span></code></pre></div>
+<h3 class="relative group">3.11 结构化输出 
+    <div id="311-结构化输出" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#311-%e7%bb%93%e6%9e%84%e5%8c%96%e8%be%93%e5%87%ba" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>为了方便让LLMs返回结构化输出，LangChain模型提供了一个公共接口：<code>.with_structured_output</code>。</p>
+<p>通过调用这个方法（并传递一个JSON模式或Pydantic模型），模型将添加任何必要的模型参数和输出解析器，以便获得结构化输出。可能有多种方法可以实现这一目标（例如函数调用vs JSON模式），你可以通过传递参数来配置使用哪种方法。</p>
+<pre tabindex="0"><code>from langchain_core.pydantic_v1 import BaseModel, Field
+class Joke(BaseModel):
+    setup: str = Field(description=&#34;笑话的设置部分&#34;)
+    punchline: str = Field(description=&#34;笑话的结尾部分&#34;)
+    
+model = ChatOpenAI(
+    model=&#34;qwen-plus&#34;,
+    api_key=os.environ[&#34;DASHSCOPE_API_KEY&#34;],
+    base_url=os.environ[&#34;ALIYUN_BASE_URL&#34;],
+    temperature=0
+)
+structured_llm = model.with_structured_output(Joke)
+structured_llm.invoke(&#34;给我讲一个关于猫的笑话&#34;)
+</code></pre>
 <h2 class="relative group"><strong>4. AI 营销大模型实战</strong> 
     <div id="4-ai-营销大模型实战" class="anchor"></div>
     
@@ -2676,6 +2703,23 @@ for model in models:
 </span></span><span class="line"><span class="cl"><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">result</span>
 </span></span></code></pre></div>
+<h1 class="relative group">参考 
+    <div id="参考" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%8f%82%e8%80%83" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<ul>
+<li><a
+  href="https://www.langchain.asia/"
+    target="_blank"
+  >https://www.langchain.asia/</a>
+</li>
+</ul>
+
           
           
           
@@ -2893,7 +2937,7 @@ for model in models:
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-index-500"
-  data-url="http://localhost:62936/byteglow/">
+  data-url="http://localhost:1313/byteglow/">
   <div
     id="search-modal"
     class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">

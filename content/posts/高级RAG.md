@@ -12,8 +12,6 @@ showTableOfContents='article.showTableOfContents'
 
 # 高级 RAG
 
-![](https://i-blog.csdnimg.cn/direct/908ca797c5ad4f8abf3fac7061b3db6a.png)
-
 ![rag-paradigms.png](https://www.aneasystone.com/usr/uploads/2024/06/680934063.png)
 
 
@@ -778,8 +776,6 @@ RAG-Fusion可以认为是[MultiQueryRetriever](https://link.zhihu.com/?target=ht
 
     RRF的优势在于它不依赖于不同模型的分数，而是基于文档在结果集中的排名位置来计算得分，这使得它能够有效结合不同检索方法的结果，而不需要调整权重或归一化分数。此外，RRF方法简单且鲁棒，能够适应各种用户场景而无需大量参数调整。
 
-
-
 ### 2.2 混合检索
 
 - 使用 Elasticsearch 作为传统搜索机制，并使用 faiss 作为向量数据库进行语义搜索。[代码](https://github.com/ndemir/machine-learning-projects/tree/main/hybrid-search)
@@ -795,13 +791,163 @@ RAG-Fusion可以认为是[MultiQueryRetriever](https://link.zhihu.com/?target=ht
         )
 ```
 
-## 3. 重新排序和过滤
+## 3. 路由
 
-### 3.1 过滤策略
+**Routing** 是指根据用户的查询内容，智能地选择最适合的检索路径或推理逻辑，以更高效地获取答案。这种动态选择的过程在多数据源、多检索器或多任务场景下尤为重要，能够显著提升系统的性能和准确性。
+
+### 3.1 Logical routing
+
+![v2-b29d3c902c564224050a4c37cf6e1ed1_1440w](https://pic2.zhimg.com/v2-b29d3c902c564224050a4c37cf6e1ed1_1440w.jpg)
+
+**逻辑路由**则基于明确的逻辑规则和查询模式，将输入路由到特定模块或知识库。它依赖于预定义的规则、结构化数据和逻辑推理。**对于具有function-calling功能的model来说，logical routing就是用model来做分类。**（分类）
+
+**特点**:
+
+- **规则驱动**: 依赖明确的规则和逻辑路径。
+- **高效明确**: 对于结构化或格式化的查询（如SQL风格的问题），能够快速匹配到目标。
+- **应用场景**:
+  - 处理特定格式的输入，如API调用、编码问题或数字计算。
+  - 系统内的多模块任务分配，例如将技术问题转交给工程模块，将法律问题转交给法律模块。
+
+**流程**:
+
+1. 检测输入是否符合某种模式（正则表达式、关键词、条件）。
+2. 匹配预定义的规则或路径。
+3. 路由到对应模块或执行相应操作。
+
+示例代码：
+
+```
+from typing import Literal
+
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.pydantic_v1 import BaseModel, Field
+from langchain_openai import ChatOpenAI
+
+# Data model
+class RouteQuery(BaseModel):
+    """Route a user query to the most relevant datasource."""
+
+    datasource: Literal["python_docs", "js_docs", "golang_docs"] = Field(
+        ...,
+        description="Given a user question choose which datasource would be most relevant for answering their question",
+    )
+
+# LLM with function call 
+llm = ChatOpenAI(
+    model="qwen-plus",
+    api_key=os.environ["DASHSCOPE_API_KEY"],
+    base_url=os.environ["ALIYUN_BASE_URL"],
+    temperature=0
+)
+structured_llm = llm.with_structured_output(RouteQuery)
+
+# Prompt 
+system = """You are an expert at routing a user question to the appropriate data source.
+
+Based on the programming language the question is referring to, route it to the relevant data source."""
+
+prompt = ChatPromptTemplate.from_messages(
+    [
+        ("system", system),
+        ("human", "{question}"),
+    ]
+)
+
+# Define router 
+router = prompt | structured_llm
+question = """Why doesn't the following code work:
+
+from langchain_core.prompts import ChatPromptTemplate
+
+prompt = ChatPromptTemplate.from_messages(["human", "speak in {language}"])
+prompt.invoke("french")
+"""
+
+result = router.invoke({"question": question})
+print(result)
+```
+
+### 3.2 Semantic routing
+
+![v2-41af3b87acf1f314888ab1a0bdd8bc63_1440w](https://pic2.zhimg.com/v2-41af3b87acf1f314888ab1a0bdd8bc63_1440w.jpg)
+
+**语义路由**关注查询的语义含义，通过对输入文本的深度理解，选择与用户需求最相关的知识库或模块。它依赖于自然语言处理和语义匹配技术。（语义匹配）
+
+**特点**:
+
+- **语义匹配**: 使用嵌入模型（如 BERT、Sentence Transformers）计算查询与知识库内容的语义相似性。
+- **模糊查询支持**: 能处理多样化、自然语言表述的查询。
+- **应用场景**:
+  - 用户问题被路由到正确的知识领域（例如技术支持、销售咨询）。
+  - 在大规模知识库中选择最相关的子集以优化检索。
+
+**流程**:
+
+1. 将输入的查询转换为向量表示。
+2. 使用嵌入空间比较查询与多个知识库、文档或模块的相似度。
+3. 根据语义相似度分数选择适合的知识库或文档。
+
+示例代码：
+
+```
+from langchain.vectorstores import FAISS
+# Step 1: Define Prompt Templates with Structured Outputs
+templates = {
+    "general_info": "You are a helpful assistant. Answer the following general question: {input}",
+    "technical_support": "You are a technical support agent. Solve the following technical issue: {input}",
+    "sales_query": "You are a sales representative. Provide information about the following product or service: {input}",
+}
+
+# Step 2: Create a Searchable Index for Templates
+prompt_descriptions = [
+    {"name": "general_info", "description": "General questions or information requests"},
+    {"name": "technical_support", "description": "Technical issues or troubleshooting support"},
+    {"name": "sales_query", "description": "Questions about product sales or pricing information"},
+]
+
+embeddings = AliyunEmbeddings(client)
+vector_store = FAISS.from_texts(
+    [desc["description"] for desc in prompt_descriptions],
+    embedding=embeddings
+)
+# Step 3: Define Semantic Routing Function
+def semantic_routing(user_input):
+    # Find the closest prompt with FAISS similarity search
+    closest_prompt = vector_store.similarity_search_with_score(user_input, k=1)
+    if not closest_prompt:
+        raise ValueError("No matching prompt found. Please refine the query.")
+    
+    # Extract the document index from the closest match
+    matched_index = closest_prompt[0][1]  # `closest_prompt` format: [(document, score)]
+    matched_prompt = prompt_descriptions[int(matched_index)]  # Convert index to integer
+    return matched_prompt["name"]
+
+# Step 4: Generate Structured Response with ChatOpenAI
+def generate_structured_response(user_input):
+    # Semantic routing to determine the best template
+    matched_template_name = semantic_routing(user_input)
+    prompt = templates[matched_template_name]
+    
+    return prompt
+
+# Step 5: Example Usage
+if __name__ == "__main__":
+    user_query = "营销平台的文本转 SQL 如何实现"
+    matched_template_name = semantic_routing(user_query)
+    print("\nmatched template name:\n", matched_template_name)
+
+```
+
+
+
+## 4. 重新排序和过滤
+
+### 4.1 过滤策略
 
 与查询相关性最高的信息可能被埋在大量的无关文档中，如果将所有这些文档都传递到大模型，可能导致更昂贵的调用费用，生成的响应也更差。
 
-#### 3.1.2 LlamaIndex
+#### 4.1.2 LlamaIndex
 
 使用示例：
 
@@ -873,7 +1019,7 @@ llamaIndex [Node Postprocessor](https://docs.llamaindex.ai/en/stable/module_guid
   - 这种方法确保得分最高（最相关）的节点位于列表的开头和结尾，得分较低的节点位于中间。
 
 
-#### 3.1.3 LangChain
+#### 4.1.3 LangChain
 
 LangChain 中上下文压缩同样解决此问了题。思路很简单：不是立即返回检索到的文档，而是使用给定查询的上下文对其进行压缩，以便只返回相关信息。这里的“压缩”既指单个文档内容的压缩，也指整个文档的过滤。上下文压缩检索器将查询传递给基本检索器，获取初始文档并将其通过文档压缩器传递。文档压缩器接受文档列表，通过减少文档内容或完全删除文档来缩短列表。
 
@@ -976,11 +1122,11 @@ pretty_print_docs(compressed_docs)
 
 
 
-### 3.2 重排序
+### 4.2 重排序
 
 在上面的过滤策略中，我们经常会用到 Embedding 来计算文档的相似性，然后根据相似性来对文档进行排序，这里的排序被称为 **粗排**，我们还可以使用一些专门的排序引擎对文档进一步排序和过滤，这被称为 **精排**。LlamaIndex 支持下面这些重排序策略：
 
-#### 3.2.1 LlamaIndex
+#### 4.2.1 LlamaIndex
 
 - [SentenceTransformerRerank](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/SentenceTransformerRerank/)：比如 [sentence-transformer](https://www.sbert.net/index.html) 包中的 **交叉编码器（Cross Encoder）** 可以用来重新排序节点。
 
@@ -1008,7 +1154,7 @@ pretty_print_docs(compressed_docs)
 
 - [RankLLMRerank](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/rankLLM/)：[RankLLM](https://github.com/castorini/rank_llm) 和 RankGPT 类似，也是利用大模型来实现重排，只不过它的重点放在与 [FastChat](https://github.com/lm-sys/FastChat?tab=readme-ov-file#supported-models) 兼容的开源大模型上，比如 Vicuna 和 Zephyr 等，并且对这些开源模型专门为重排任务进行了微调，比如 RankVicuna 和 RankZephyr 等。
 
-#### 3.2.2 Langchain
+#### 4.2.2 Langchain
 
 示例代码:
 
@@ -1041,7 +1187,7 @@ Bi-Encoder会用BERT对输入文本编码，再根据cosine相似度分数筛选
 
 - ContextualCompressionRetriever：创建压缩检索器
 
-## 4. 使用知识图谱改进 RAG 检索
+## 5. 使用知识图谱改进 RAG 检索
 
 知识图谱是使用图结构来表示实体及其在现实世界中的关系并对其进行建模的一种技术方法。它将信息组织为节点（实体）和边（关系），形成一个有机网络，可以有效地存储、查询和分析复杂的知识。知识图谱的核心在于它使用三元组 （entity-relationship-entity） 来描述实体之间的关联。
 
@@ -1114,7 +1260,7 @@ print(f"Response: {response}")
 
 ```
 
-## 5. 多模态RAG
+## 6. 多模态RAG
 
 ![image-20250616164742368](https://s2.loli.net/2025/06/20/MSdOLgq4KE9wT6r.png)
 
@@ -1130,13 +1276,13 @@ print(f"Response: {response}")
 
 使用多模态大语言模型（如 GPT-4V、LLaVA 或 FUYU-8b）从图像生成文本摘要嵌入并检索图像摘要（附带原始图像引用）将**原始图像和文本块传递给多模态大语言模型**进行答案合成
 
-## 6. 综合实战
+## 7. 综合实战
 
-### 6.1 数据集
+### 7.1 数据集
 
 数据集：使用数据为chinese-simplified-xlsum-v2新闻数据集，摘取`chinese_simplified_train.jsonl` 前八条
 
-### 6.2 数据加载与分块
+### 7.2 数据加载与分块
 
 >数据清洗分块:由于数据集为jsonl格式，直接按照每个json单元分块
 
@@ -1180,7 +1326,7 @@ class NewsJsonlDataLoader:
 
 **RecursiveCharacterTextSplitter 原理**：该工具以递归为核心机制。先按指定字符集顺序尝试分割文本，评估分割结果是否小于指定块大小，不满足则换用下一个字符，直到符合条件。
 
-### 6.3 向量存储
+### 7.3 向量存储
 
 ```python
     # # 构建向量数据库（首次运行）
@@ -1202,7 +1348,7 @@ class NewsJsonlDataLoader:
     )
 ```
 
-### 6.4 检索器系统
+### 7.4 检索器系统
 
 ```python
 class RetrievalSystem:
@@ -1231,7 +1377,7 @@ class RetrievalSystem:
         )
 ```
 
-### 6.5 重排
+### 7.5 重排
 
 ```Python
 class Reranker:
@@ -1256,7 +1402,7 @@ class Reranker:
 
 ```
 
-### 6.6 质量评估
+### 7.6 质量评估
 
 ```python
 class AnswerGrader:
@@ -1305,7 +1451,7 @@ class AnswerGrader:
 
 - answer_grader：确认答案是否回应问题
 
-### 6.7 RAG问答系统
+### 7.7 RAG问答系统
 
   ```python
 class RAGSystem:
@@ -1364,7 +1510,7 @@ class RAGSystem:
         return combined_response
   ```
 
-### 6.7 主程序
+### 7.7 主程序
 
 ```Python
 if __name__ == "__main__":
@@ -1472,6 +1618,10 @@ if __name__ == "__main__":
     print("\n问答系统完成")
 ```
 
+# 拓展
+
+![](https://i-blog.csdnimg.cn/direct/908ca797c5ad4f8abf3fac7061b3db6a.png)
+
 # 参考
 
 - https://juejin.cn/post/7400688776484798490
@@ -1480,3 +1630,6 @@ if __name__ == "__main__":
 - https://python.langchain.com/docs/
 - https://zhuanlan.zhihu.com/p/701763569
 - https://zhuanlan.zhihu.com/p/684994205
+- https://zhuanlan.zhihu.com/p/687808755
+- http://zhuanlan.zhihu.com/p/1894411202295224109
+

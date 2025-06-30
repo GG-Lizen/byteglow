@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="light"
-  data-auto-appearance="true"><head><script src="/byteglow/livereload.js?mindelay=10&amp;v=2&amp;port=62936&amp;path=byteglow/livereload" data-no-instant defer></script>
+  data-auto-appearance="true"><head><script src="/byteglow/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=byteglow/livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   
   <meta http-equiv="content-language" content="en" />
@@ -19,7 +19,7 @@
   
   
   
-  <link rel="canonical" href="http://localhost:62936/byteglow/posts/%E9%AB%98%E7%BA%A7rag/" />
+  <link rel="canonical" href="http://localhost:1313/byteglow/posts/%E9%AB%98%E7%BA%A7rag/" />
   
   
   
@@ -68,7 +68,7 @@
   
   
   
-  <meta property="og:url" content="http://localhost:62936/byteglow/posts/%E9%AB%98%E7%BA%A7rag/">
+  <meta property="og:url" content="http://localhost:1313/byteglow/posts/%E9%AB%98%E7%BA%A7rag/">
   <meta property="og:site_name" content="ByteGlow">
   <meta property="og:title" content="高级RAG">
   <meta property="og:locale" content="en">
@@ -76,9 +76,9 @@
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-06-20T15:24:15+08:00">
     <meta property="article:modified_time" content="2025-06-20T15:24:15+08:00">
-      <meta property="og:see_also" content="http://localhost:62936/byteglow/posts/langchain%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/">
-      <meta property="og:see_also" content="http://localhost:62936/byteglow/posts/llamaindex/">
-      <meta property="og:see_also" content="http://localhost:62936/byteglow/posts/langgraph/">
+      <meta property="og:see_also" content="http://localhost:1313/byteglow/posts/langchain%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B/">
+      <meta property="og:see_also" content="http://localhost:1313/byteglow/posts/llamaindex/">
+      <meta property="og:see_also" content="http://localhost:1313/byteglow/posts/langgraph/">
 
   
   <meta name="twitter:card" content="summary">
@@ -97,7 +97,7 @@
     
     
     "inLanguage": "en",
-    "url" : "http:\/\/localhost:62936\/byteglow\/posts\/%E9%AB%98%E7%BA%A7rag\/",
+    "url" : "http:\/\/localhost:1313\/byteglow\/posts\/%E9%AB%98%E7%BA%A7rag\/",
     "author" : {
       "@type": "Person",
       "name": "Lizen"
@@ -111,7 +111,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "3081"
+    "wordCount": "3494"
   }]
   </script>
 
@@ -659,7 +659,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-06-20T15:24:15&#43;08:00">20 June 2025</time><span class="px-2 text-primary-500">&middot;</span><span>3081 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">15 mins</span>
+      <time datetime="2025-06-20T15:24:15&#43;08:00">20 June 2025</time><span class="px-2 text-primary-500">&middot;</span><span>3494 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">17 mins</span>
     
 
     
@@ -787,34 +787,40 @@
         <li><a href="#22-混合检索">2.2 混合检索</a></li>
       </ul>
     </li>
-    <li><a href="#3-重新排序和过滤">3. 重新排序和过滤</a>
+    <li><a href="#3-路由">3. 路由</a>
       <ul>
-        <li><a href="#31-过滤策略">3.1 过滤策略</a>
+        <li><a href="#31-logical-routing">3.1 Logical routing</a></li>
+        <li><a href="#32-semantic-routing">3.2 Semantic routing</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-重新排序和过滤">4. 重新排序和过滤</a>
+      <ul>
+        <li><a href="#41-过滤策略">4.1 过滤策略</a>
           <ul>
-            <li><a href="#312-llamaindex">3.1.2 LlamaIndex</a></li>
-            <li><a href="#313-langchain">3.1.3 LangChain</a></li>
+            <li><a href="#412-llamaindex">4.1.2 LlamaIndex</a></li>
+            <li><a href="#413-langchain">4.1.3 LangChain</a></li>
           </ul>
         </li>
-        <li><a href="#32-重排序">3.2 重排序</a>
+        <li><a href="#42-重排序">4.2 重排序</a>
           <ul>
-            <li><a href="#321-llamaindex">3.2.1 LlamaIndex</a></li>
-            <li><a href="#322-langchain">3.2.2 Langchain</a></li>
+            <li><a href="#421-llamaindex">4.2.1 LlamaIndex</a></li>
+            <li><a href="#422-langchain">4.2.2 Langchain</a></li>
           </ul>
         </li>
       </ul>
     </li>
-    <li><a href="#4-使用知识图谱改进-rag-检索">4. 使用知识图谱改进 RAG 检索</a></li>
-    <li><a href="#5-多模态rag">5. 多模态RAG</a></li>
-    <li><a href="#6-综合实战">6. 综合实战</a>
+    <li><a href="#5-使用知识图谱改进-rag-检索">5. 使用知识图谱改进 RAG 检索</a></li>
+    <li><a href="#6-多模态rag">6. 多模态RAG</a></li>
+    <li><a href="#7-综合实战">7. 综合实战</a>
       <ul>
-        <li><a href="#61-数据集">6.1 数据集</a></li>
-        <li><a href="#62-数据加载与分块">6.2 数据加载与分块</a></li>
-        <li><a href="#63-向量存储">6.3 向量存储</a></li>
-        <li><a href="#64-检索器系统">6.4 检索器系统</a></li>
-        <li><a href="#65-重排">6.5 重排</a></li>
-        <li><a href="#66-质量评估">6.6 质量评估</a></li>
-        <li><a href="#67-rag问答系统">6.7 RAG问答系统</a></li>
-        <li><a href="#67-主程序">6.7 主程序</a></li>
+        <li><a href="#71-数据集">7.1 数据集</a></li>
+        <li><a href="#72-数据加载与分块">7.2 数据加载与分块</a></li>
+        <li><a href="#73-向量存储">7.3 向量存储</a></li>
+        <li><a href="#74-检索器系统">7.4 检索器系统</a></li>
+        <li><a href="#75-重排">7.5 重排</a></li>
+        <li><a href="#76-质量评估">7.6 质量评估</a></li>
+        <li><a href="#77-rag问答系统">7.7 RAG问答系统</a></li>
+        <li><a href="#77-主程序">7.7 主程序</a></li>
       </ul>
     </li>
   </ul>
@@ -853,34 +859,40 @@
         <li><a href="#22-混合检索">2.2 混合检索</a></li>
       </ul>
     </li>
-    <li><a href="#3-重新排序和过滤">3. 重新排序和过滤</a>
+    <li><a href="#3-路由">3. 路由</a>
       <ul>
-        <li><a href="#31-过滤策略">3.1 过滤策略</a>
+        <li><a href="#31-logical-routing">3.1 Logical routing</a></li>
+        <li><a href="#32-semantic-routing">3.2 Semantic routing</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-重新排序和过滤">4. 重新排序和过滤</a>
+      <ul>
+        <li><a href="#41-过滤策略">4.1 过滤策略</a>
           <ul>
-            <li><a href="#312-llamaindex">3.1.2 LlamaIndex</a></li>
-            <li><a href="#313-langchain">3.1.3 LangChain</a></li>
+            <li><a href="#412-llamaindex">4.1.2 LlamaIndex</a></li>
+            <li><a href="#413-langchain">4.1.3 LangChain</a></li>
           </ul>
         </li>
-        <li><a href="#32-重排序">3.2 重排序</a>
+        <li><a href="#42-重排序">4.2 重排序</a>
           <ul>
-            <li><a href="#321-llamaindex">3.2.1 LlamaIndex</a></li>
-            <li><a href="#322-langchain">3.2.2 Langchain</a></li>
+            <li><a href="#421-llamaindex">4.2.1 LlamaIndex</a></li>
+            <li><a href="#422-langchain">4.2.2 Langchain</a></li>
           </ul>
         </li>
       </ul>
     </li>
-    <li><a href="#4-使用知识图谱改进-rag-检索">4. 使用知识图谱改进 RAG 检索</a></li>
-    <li><a href="#5-多模态rag">5. 多模态RAG</a></li>
-    <li><a href="#6-综合实战">6. 综合实战</a>
+    <li><a href="#5-使用知识图谱改进-rag-检索">5. 使用知识图谱改进 RAG 检索</a></li>
+    <li><a href="#6-多模态rag">6. 多模态RAG</a></li>
+    <li><a href="#7-综合实战">7. 综合实战</a>
       <ul>
-        <li><a href="#61-数据集">6.1 数据集</a></li>
-        <li><a href="#62-数据加载与分块">6.2 数据加载与分块</a></li>
-        <li><a href="#63-向量存储">6.3 向量存储</a></li>
-        <li><a href="#64-检索器系统">6.4 检索器系统</a></li>
-        <li><a href="#65-重排">6.5 重排</a></li>
-        <li><a href="#66-质量评估">6.6 质量评估</a></li>
-        <li><a href="#67-rag问答系统">6.7 RAG问答系统</a></li>
-        <li><a href="#67-主程序">6.7 主程序</a></li>
+        <li><a href="#71-数据集">7.1 数据集</a></li>
+        <li><a href="#72-数据加载与分块">7.2 数据加载与分块</a></li>
+        <li><a href="#73-向量存储">7.3 向量存储</a></li>
+        <li><a href="#74-检索器系统">7.4 检索器系统</a></li>
+        <li><a href="#75-重排">7.5 重排</a></li>
+        <li><a href="#76-质量评估">7.6 质量评估</a></li>
+        <li><a href="#77-rag问答系统">7.7 RAG问答系统</a></li>
+        <li><a href="#77-主程序">7.7 主程序</a></li>
       </ul>
     </li>
   </ul>
@@ -968,19 +980,6 @@
     </span>        
     
 </h1>
-<p>
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="" src="https://i-blog.csdnimg.cn/direct/908ca797c5ad4f8abf3fac7061b3db6a.png">
-
-  
-</figure>
-</p>
 <p>
 
 
@@ -1980,33 +1979,221 @@ step_back()
             weights=[0.5, 0.5]
         )
 </code></pre>
-<h2 class="relative group">3. 重新排序和过滤 
-    <div id="3-重新排序和过滤" class="anchor"></div>
+<h2 class="relative group">3. 路由 
+    <div id="3-路由" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e9%87%8d%e6%96%b0%e6%8e%92%e5%ba%8f%e5%92%8c%e8%bf%87%e6%bb%a4" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e8%b7%af%e7%94%b1" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p><strong>Routing</strong> 是指根据用户的查询内容，智能地选择最适合的检索路径或推理逻辑，以更高效地获取答案。这种动态选择的过程在多数据源、多检索器或多任务场景下尤为重要，能够显著提升系统的性能和准确性。</p>
+
+<h3 class="relative group">3.1 Logical routing 
+    <div id="31-logical-routing" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#31-logical-routing" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="v2-b29d3c902c564224050a4c37cf6e1ed1_1440w" src="https://pic2.zhimg.com/v2-b29d3c902c564224050a4c37cf6e1ed1_1440w.jpg">
+
+  
+</figure>
+</p>
+<p><strong>逻辑路由</strong>则基于明确的逻辑规则和查询模式，将输入路由到特定模块或知识库。它依赖于预定义的规则、结构化数据和逻辑推理。<strong>对于具有function-calling功能的model来说，logical routing就是用model来做分类。</strong>（分类）</p>
+<p><strong>特点</strong>:</p>
+<ul>
+<li><strong>规则驱动</strong>: 依赖明确的规则和逻辑路径。</li>
+<li><strong>高效明确</strong>: 对于结构化或格式化的查询（如SQL风格的问题），能够快速匹配到目标。</li>
+<li><strong>应用场景</strong>:
+<ul>
+<li>处理特定格式的输入，如API调用、编码问题或数字计算。</li>
+<li>系统内的多模块任务分配，例如将技术问题转交给工程模块，将法律问题转交给法律模块。</li>
+</ul>
+</li>
+</ul>
+<p><strong>流程</strong>:</p>
+<ol>
+<li>检测输入是否符合某种模式（正则表达式、关键词、条件）。</li>
+<li>匹配预定义的规则或路径。</li>
+<li>路由到对应模块或执行相应操作。</li>
+</ol>
+<p>示例代码：</p>
+<pre tabindex="0"><code>from typing import Literal
+
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.pydantic_v1 import BaseModel, Field
+from langchain_openai import ChatOpenAI
+
+# Data model
+class RouteQuery(BaseModel):
+    &#34;&#34;&#34;Route a user query to the most relevant datasource.&#34;&#34;&#34;
+
+    datasource: Literal[&#34;python_docs&#34;, &#34;js_docs&#34;, &#34;golang_docs&#34;] = Field(
+        ...,
+        description=&#34;Given a user question choose which datasource would be most relevant for answering their question&#34;,
+    )
+
+# LLM with function call 
+llm = ChatOpenAI(
+    model=&#34;qwen-plus&#34;,
+    api_key=os.environ[&#34;DASHSCOPE_API_KEY&#34;],
+    base_url=os.environ[&#34;ALIYUN_BASE_URL&#34;],
+    temperature=0
+)
+structured_llm = llm.with_structured_output(RouteQuery)
+
+# Prompt 
+system = &#34;&#34;&#34;You are an expert at routing a user question to the appropriate data source.
+
+Based on the programming language the question is referring to, route it to the relevant data source.&#34;&#34;&#34;
+
+prompt = ChatPromptTemplate.from_messages(
+    [
+        (&#34;system&#34;, system),
+        (&#34;human&#34;, &#34;{question}&#34;),
+    ]
+)
+
+# Define router 
+router = prompt | structured_llm
+question = &#34;&#34;&#34;Why doesn&#39;t the following code work:
+
+from langchain_core.prompts import ChatPromptTemplate
+
+prompt = ChatPromptTemplate.from_messages([&#34;human&#34;, &#34;speak in {language}&#34;])
+prompt.invoke(&#34;french&#34;)
+&#34;&#34;&#34;
+
+result = router.invoke({&#34;question&#34;: question})
+print(result)
+</code></pre>
+<h3 class="relative group">3.2 Semantic routing 
+    <div id="32-semantic-routing" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#32-semantic-routing" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="v2-41af3b87acf1f314888ab1a0bdd8bc63_1440w" src="https://pic2.zhimg.com/v2-41af3b87acf1f314888ab1a0bdd8bc63_1440w.jpg">
+
+  
+</figure>
+</p>
+<p><strong>语义路由</strong>关注查询的语义含义，通过对输入文本的深度理解，选择与用户需求最相关的知识库或模块。它依赖于自然语言处理和语义匹配技术。（语义匹配）</p>
+<p><strong>特点</strong>:</p>
+<ul>
+<li><strong>语义匹配</strong>: 使用嵌入模型（如 BERT、Sentence Transformers）计算查询与知识库内容的语义相似性。</li>
+<li><strong>模糊查询支持</strong>: 能处理多样化、自然语言表述的查询。</li>
+<li><strong>应用场景</strong>:
+<ul>
+<li>用户问题被路由到正确的知识领域（例如技术支持、销售咨询）。</li>
+<li>在大规模知识库中选择最相关的子集以优化检索。</li>
+</ul>
+</li>
+</ul>
+<p><strong>流程</strong>:</p>
+<ol>
+<li>将输入的查询转换为向量表示。</li>
+<li>使用嵌入空间比较查询与多个知识库、文档或模块的相似度。</li>
+<li>根据语义相似度分数选择适合的知识库或文档。</li>
+</ol>
+<p>示例代码：</p>
+<pre tabindex="0"><code>from langchain.vectorstores import FAISS
+# Step 1: Define Prompt Templates with Structured Outputs
+templates = {
+    &#34;general_info&#34;: &#34;You are a helpful assistant. Answer the following general question: {input}&#34;,
+    &#34;technical_support&#34;: &#34;You are a technical support agent. Solve the following technical issue: {input}&#34;,
+    &#34;sales_query&#34;: &#34;You are a sales representative. Provide information about the following product or service: {input}&#34;,
+}
+
+# Step 2: Create a Searchable Index for Templates
+prompt_descriptions = [
+    {&#34;name&#34;: &#34;general_info&#34;, &#34;description&#34;: &#34;General questions or information requests&#34;},
+    {&#34;name&#34;: &#34;technical_support&#34;, &#34;description&#34;: &#34;Technical issues or troubleshooting support&#34;},
+    {&#34;name&#34;: &#34;sales_query&#34;, &#34;description&#34;: &#34;Questions about product sales or pricing information&#34;},
+]
+
+embeddings = AliyunEmbeddings(client)
+vector_store = FAISS.from_texts(
+    [desc[&#34;description&#34;] for desc in prompt_descriptions],
+    embedding=embeddings
+)
+# Step 3: Define Semantic Routing Function
+def semantic_routing(user_input):
+    # Find the closest prompt with FAISS similarity search
+    closest_prompt = vector_store.similarity_search_with_score(user_input, k=1)
+    if not closest_prompt:
+        raise ValueError(&#34;No matching prompt found. Please refine the query.&#34;)
+    
+    # Extract the document index from the closest match
+    matched_index = closest_prompt[0][1]  # `closest_prompt` format: [(document, score)]
+    matched_prompt = prompt_descriptions[int(matched_index)]  # Convert index to integer
+    return matched_prompt[&#34;name&#34;]
+
+# Step 4: Generate Structured Response with ChatOpenAI
+def generate_structured_response(user_input):
+    # Semantic routing to determine the best template
+    matched_template_name = semantic_routing(user_input)
+    prompt = templates[matched_template_name]
+    
+    return prompt
+
+# Step 5: Example Usage
+if __name__ == &#34;__main__&#34;:
+    user_query = &#34;营销平台的文本转 SQL 如何实现&#34;
+    matched_template_name = semantic_routing(user_query)
+    print(&#34;\nmatched template name:\n&#34;, matched_template_name)
+</code></pre>
+<h2 class="relative group">4. 重新排序和过滤 
+    <div id="4-重新排序和过滤" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#4-%e9%87%8d%e6%96%b0%e6%8e%92%e5%ba%8f%e5%92%8c%e8%bf%87%e6%bb%a4" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
 
-<h3 class="relative group">3.1 过滤策略 
-    <div id="31-过滤策略" class="anchor"></div>
+<h3 class="relative group">4.1 过滤策略 
+    <div id="41-过滤策略" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#31-%e8%bf%87%e6%bb%a4%e7%ad%96%e7%95%a5" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#41-%e8%bf%87%e6%bb%a4%e7%ad%96%e7%95%a5" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
 <p>与查询相关性最高的信息可能被埋在大量的无关文档中，如果将所有这些文档都传递到大模型，可能导致更昂贵的调用费用，生成的响应也更差。</p>
 
-<h4 class="relative group">3.1.2 LlamaIndex 
-    <div id="312-llamaindex" class="anchor"></div>
+<h4 class="relative group">4.1.2 LlamaIndex 
+    <div id="412-llamaindex" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#312-llamaindex" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#412-llamaindex" aria-label="Anchor">#</a>
     </span>        
     
 </h4>
@@ -2150,12 +2337,12 @@ time_similarity = (1 - self.time_decay) ** hours_passed
 </li>
 </ul>
 
-<h4 class="relative group">3.1.3 LangChain 
-    <div id="313-langchain" class="anchor"></div>
+<h4 class="relative group">4.1.3 LangChain 
+    <div id="413-langchain" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#313-langchain" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#413-langchain" aria-label="Anchor">#</a>
     </span>        
     
 </h4>
@@ -2249,23 +2436,23 @@ pretty_print_docs(compressed_docs)
 </span></span><span class="line"><span class="cl"><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">pretty_print_docs</span><span class="p">(</span><span class="n">compressed_docs</span><span class="p">)</span>
 </span></span></code></pre></div>
-<h3 class="relative group">3.2 重排序 
-    <div id="32-重排序" class="anchor"></div>
+<h3 class="relative group">4.2 重排序 
+    <div id="42-重排序" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#32-%e9%87%8d%e6%8e%92%e5%ba%8f" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#42-%e9%87%8d%e6%8e%92%e5%ba%8f" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
 <p>在上面的过滤策略中，我们经常会用到 Embedding 来计算文档的相似性，然后根据相似性来对文档进行排序，这里的排序被称为 <strong>粗排</strong>，我们还可以使用一些专门的排序引擎对文档进一步排序和过滤，这被称为 <strong>精排</strong>。LlamaIndex 支持下面这些重排序策略：</p>
 
-<h4 class="relative group">3.2.1 LlamaIndex 
-    <div id="321-llamaindex" class="anchor"></div>
+<h4 class="relative group">4.2.1 LlamaIndex 
+    <div id="421-llamaindex" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#321-llamaindex" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#421-llamaindex" aria-label="Anchor">#</a>
     </span>        
     
 </h4>
@@ -2348,12 +2535,12 @@ query_engine = index.as_query_engine(
 </li>
 </ul>
 
-<h4 class="relative group">3.2.2 Langchain 
-    <div id="322-langchain" class="anchor"></div>
+<h4 class="relative group">4.2.2 Langchain 
+    <div id="422-langchain" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#322-langchain" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#422-langchain" aria-label="Anchor">#</a>
     </span>        
     
 </h4>
@@ -2400,12 +2587,12 @@ query_engine = index.as_query_engine(
 </li>
 </ul>
 
-<h2 class="relative group">4. 使用知识图谱改进 RAG 检索 
-    <div id="4-使用知识图谱改进-rag-检索" class="anchor"></div>
+<h2 class="relative group">5. 使用知识图谱改进 RAG 检索 
+    <div id="5-使用知识图谱改进-rag-检索" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#4-%e4%bd%bf%e7%94%a8%e7%9f%a5%e8%af%86%e5%9b%be%e8%b0%b1%e6%94%b9%e8%bf%9b-rag-%e6%a3%80%e7%b4%a2" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#5-%e4%bd%bf%e7%94%a8%e7%9f%a5%e8%af%86%e5%9b%be%e8%b0%b1%e6%94%b9%e8%bf%9b-rag-%e6%a3%80%e7%b4%a2" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
@@ -2497,12 +2684,12 @@ query_engine = index.as_query_engine(
 response = query_engine.query(&#34;白龍馬身世?&#34;)
 print(f&#34;Response: {response}&#34;)
 </code></pre>
-<h2 class="relative group">5. 多模态RAG 
-    <div id="5-多模态rag" class="anchor"></div>
+<h2 class="relative group">6. 多模态RAG 
+    <div id="6-多模态rag" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#5-%e5%a4%9a%e6%a8%a1%e6%80%81rag" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#6-%e5%a4%9a%e6%a8%a1%e6%80%81rag" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
@@ -2526,33 +2713,33 @@ print(f&#34;Response: {response}&#34;)
 <p><strong>方案 3</strong>：</p>
 <p>使用多模态大语言模型（如 GPT-4V、LLaVA 或 FUYU-8b）从图像生成文本摘要嵌入并检索图像摘要（附带原始图像引用）将<strong>原始图像和文本块传递给多模态大语言模型</strong>进行答案合成</p>
 
-<h2 class="relative group">6. 综合实战 
-    <div id="6-综合实战" class="anchor"></div>
+<h2 class="relative group">7. 综合实战 
+    <div id="7-综合实战" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#6-%e7%bb%bc%e5%90%88%e5%ae%9e%e6%88%98" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#7-%e7%bb%bc%e5%90%88%e5%ae%9e%e6%88%98" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
 
-<h3 class="relative group">6.1 数据集 
-    <div id="61-数据集" class="anchor"></div>
+<h3 class="relative group">7.1 数据集 
+    <div id="71-数据集" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#61-%e6%95%b0%e6%8d%ae%e9%9b%86" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#71-%e6%95%b0%e6%8d%ae%e9%9b%86" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
 <p>数据集：使用数据为chinese-simplified-xlsum-v2新闻数据集，摘取<code>chinese_simplified_train.jsonl</code> 前八条</p>
 
-<h3 class="relative group">6.2 数据加载与分块 
-    <div id="62-数据加载与分块" class="anchor"></div>
+<h3 class="relative group">7.2 数据加载与分块 
+    <div id="72-数据加载与分块" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#62-%e6%95%b0%e6%8d%ae%e5%8a%a0%e8%bd%bd%e4%b8%8e%e5%88%86%e5%9d%97" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#72-%e6%95%b0%e6%8d%ae%e5%8a%a0%e8%bd%bd%e4%b8%8e%e5%88%86%e5%9d%97" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
@@ -2593,12 +2780,12 @@ print(f&#34;Response: {response}&#34;)
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span></code></pre></div><p><strong>RecursiveCharacterTextSplitter 原理</strong>：该工具以递归为核心机制。先按指定字符集顺序尝试分割文本，评估分割结果是否小于指定块大小，不满足则换用下一个字符，直到符合条件。</p>
 
-<h3 class="relative group">6.3 向量存储 
-    <div id="63-向量存储" class="anchor"></div>
+<h3 class="relative group">7.3 向量存储 
+    <div id="73-向量存储" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#63-%e5%90%91%e9%87%8f%e5%ad%98%e5%82%a8" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#73-%e5%90%91%e9%87%8f%e5%ad%98%e5%82%a8" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
@@ -2620,12 +2807,12 @@ print(f&#34;Response: {response}&#34;)
 </span></span><span class="line"><span class="cl">        <span class="n">embedding_function</span><span class="o">=</span><span class="n">embeddings</span>
 </span></span><span class="line"><span class="cl">    <span class="p">)</span>
 </span></span></code></pre></div>
-<h3 class="relative group">6.4 检索器系统 
-    <div id="64-检索器系统" class="anchor"></div>
+<h3 class="relative group">7.4 检索器系统 
+    <div id="74-检索器系统" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#64-%e6%a3%80%e7%b4%a2%e5%99%a8%e7%b3%bb%e7%bb%9f" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#74-%e6%a3%80%e7%b4%a2%e5%99%a8%e7%b3%bb%e7%bb%9f" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
@@ -2654,12 +2841,12 @@ print(f&#34;Response: {response}&#34;)
 </span></span><span class="line"><span class="cl">            <span class="n">weights</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl">        <span class="p">)</span>
 </span></span></code></pre></div>
-<h3 class="relative group">6.5 重排 
-    <div id="65-重排" class="anchor"></div>
+<h3 class="relative group">7.5 重排 
+    <div id="75-重排" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#65-%e9%87%8d%e6%8e%92" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#75-%e9%87%8d%e6%8e%92" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
@@ -2683,12 +2870,12 @@ print(f&#34;Response: {response}&#34;)
 </span></span><span class="line"><span class="cl">        <span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">compression_retriever</span>  <span class="c1"># 降级处理，直接返回原始检索器</span>
 </span></span></code></pre></div>
-<h3 class="relative group">6.6 质量评估 
-    <div id="66-质量评估" class="anchor"></div>
+<h3 class="relative group">7.6 质量评估 
+    <div id="76-质量评估" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#66-%e8%b4%a8%e9%87%8f%e8%af%84%e4%bc%b0" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#76-%e8%b4%a8%e9%87%8f%e8%af%84%e4%bc%b0" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
@@ -2742,12 +2929,12 @@ print(f&#34;Response: {response}&#34;)
 </li>
 </ul>
 
-<h3 class="relative group">6.7 RAG问答系统 
-    <div id="67-rag问答系统" class="anchor"></div>
+<h3 class="relative group">7.7 RAG问答系统 
+    <div id="77-rag问答系统" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#67-rag%e9%97%ae%e7%ad%94%e7%b3%bb%e7%bb%9f" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#77-rag%e9%97%ae%e7%ad%94%e7%b3%bb%e7%bb%9f" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
@@ -2806,12 +2993,12 @@ print(f&#34;Response: {response}&#34;)
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="n">combined_response</span>
 </span></span></code></pre></div>
-<h3 class="relative group">6.7 主程序 
-    <div id="67-主程序" class="anchor"></div>
+<h3 class="relative group">7.7 主程序 
+    <div id="77-主程序" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#67-%e4%b8%bb%e7%a8%8b%e5%ba%8f" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#77-%e4%b8%bb%e7%a8%8b%e5%ba%8f" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
@@ -2919,6 +3106,29 @@ print(f&#34;Response: {response}&#34;)
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">问答系统完成&#34;</span><span class="p">)</span>
 </span></span></code></pre></div>
+<h1 class="relative group">拓展 
+    <div id="拓展" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%8b%93%e5%b1%95" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="" src="https://i-blog.csdnimg.cn/direct/908ca797c5ad4f8abf3fac7061b3db6a.png">
+
+  
+</figure>
+</p>
+
 <h1 class="relative group">参考 
     <div id="参考" class="anchor"></div>
     
@@ -2958,6 +3168,16 @@ print(f&#34;Response: {response}&#34;)
   href="https://zhuanlan.zhihu.com/p/684994205"
     target="_blank"
   >https://zhuanlan.zhihu.com/p/684994205</a>
+</li>
+<li><a
+  href="https://zhuanlan.zhihu.com/p/687808755"
+    target="_blank"
+  >https://zhuanlan.zhihu.com/p/687808755</a>
+</li>
+<li><a
+  href="http://zhuanlan.zhihu.com/p/1894411202295224109"
+    target="_blank"
+  >http://zhuanlan.zhihu.com/p/1894411202295224109</a>
 </li>
 </ul>
 
@@ -3199,7 +3419,7 @@ print(f&#34;Response: {response}&#34;)
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-index-500"
-  data-url="http://localhost:62936/byteglow/">
+  data-url="http://localhost:1313/byteglow/">
   <div
     id="search-modal"
     class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">

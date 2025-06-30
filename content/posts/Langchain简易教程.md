@@ -583,6 +583,28 @@ for chunk in chain.stream({"topic": "math"}):
 print(chain.batch([{"topic": "math"}, {"topic": "English"}]))
 ```
 
+### 3.11 结构化输出
+
+为了方便让LLMs返回结构化输出，LangChain模型提供了一个公共接口：`.with_structured_output`。
+
+通过调用这个方法（并传递一个JSON模式或Pydantic模型），模型将添加任何必要的模型参数和输出解析器，以便获得结构化输出。可能有多种方法可以实现这一目标（例如函数调用vs JSON模式），你可以通过传递参数来配置使用哪种方法。
+
+```
+from langchain_core.pydantic_v1 import BaseModel, Field
+class Joke(BaseModel):
+    setup: str = Field(description="笑话的设置部分")
+    punchline: str = Field(description="笑话的结尾部分")
+    
+model = ChatOpenAI(
+    model="qwen-plus",
+    api_key=os.environ["DASHSCOPE_API_KEY"],
+    base_url=os.environ["ALIYUN_BASE_URL"],
+    temperature=0
+)
+structured_llm = model.with_structured_output(Joke)
+structured_llm.invoke("给我讲一个关于猫的笑话")
+```
+
 
 
 ## **4. AI 营销大模型实战**
@@ -1302,3 +1324,6 @@ result
 
 
 
+# 参考
+
+- https://www.langchain.asia/

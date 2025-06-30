@@ -4,6 +4,7 @@ title = 'LlamaIndex'
 series = ['学习笔记']
 series_weight=3
 showTableOfContents='article.showTableOfContents'
+tags=["LlamaIndex","RAG"]
 
 +++
 
@@ -1412,3 +1413,6 @@ LlamaIndex中不同索引类型对应的**检索器模式（Retriever Modes）**
 - **`llm`**：`DocumentSummaryIndexLLMRetriever`，通过LLM生成查询匹配摘要内容。  
 - **`embedding`**：`DocumentSummaryIndexEmbeddingRetrievers`，基于摘要的嵌入向量检索
 
+# 参考
+
+- https://aitutor.liduos.com/03-llamaIndex/03-2.html
