@@ -101,8 +101,6 @@ matching_documents = search(query_embedding, 'tag', 'update')
 print(matching_documents)
 ```
 
-
-
 ### 1.3 MultiVectorRetriever
 
 多向量检索器（[MultiVectorRetriever](https://zhida.zhihu.com/search?content_id=242272823&content_type=Article&match_order=1&q=MultiVectorRetriever&zhida_source=entity)）允许每个文档存储多个向量，这在多种情况下非常有用。LangChain提供了一个基础的MultiVectorRetriever，使得查询这类设置变得简单。这种设置的主要复杂性在于如何为每个文档创建多个向量。这篇笔记涵盖了一些常见的创建向量的方法，并展示了如何使用MultiVectorRetriever。
