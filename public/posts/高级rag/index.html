@@ -68,6 +68,12 @@
   
   
   
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  
+
+  
   <meta property="og:url" content="http://localhost:1313/byteglow/posts/%E9%AB%98%E7%BA%A7rag/">
   <meta property="og:site_name" content="ByteGlow">
   <meta property="og:title" content="高级RAG">
@@ -111,7 +117,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "2683"
+    "wordCount": "3048"
   }]
   </script>
 
@@ -659,7 +665,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-06-20T15:24:15&#43;08:00">20 June 2025</time><span class="px-2 text-primary-500">&middot;</span><span>2683 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">13 mins</span>
+      <time datetime="2025-06-20T15:24:15&#43;08:00">20 June 2025</time><span class="px-2 text-primary-500">&middot;</span><span>3048 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">15 mins</span>
     
 
     
@@ -684,7 +690,10 @@
       
       
 
+
       
+
+
 
       
 
@@ -733,7 +742,10 @@
         
 
       
-
+      
+      
+        <span id="busuanzi_container_page_pv">本文阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+      
     </header>
 
     <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
@@ -787,7 +799,12 @@
             <li><a href="#313-langchain">3.1.3 LangChain</a></li>
           </ul>
         </li>
-        <li><a href="#32-重排序">3.2 重排序</a></li>
+        <li><a href="#32-重排序">3.2 重排序</a>
+          <ul>
+            <li><a href="#321-llamaindex">3.2.1 LlamaIndex</a></li>
+            <li><a href="#322-langchain">3.2.2 Langchain</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#4-使用知识图谱改进-rag-检索">4. 使用知识图谱改进 RAG 检索</a></li>
@@ -847,7 +864,12 @@
             <li><a href="#313-langchain">3.1.3 LangChain</a></li>
           </ul>
         </li>
-        <li><a href="#32-重排序">3.2 重排序</a></li>
+        <li><a href="#32-重排序">3.2 重排序</a>
+          <ul>
+            <li><a href="#321-llamaindex">3.2.1 LlamaIndex</a></li>
+            <li><a href="#322-langchain">3.2.2 Langchain</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#4-使用知识图谱改进-rag-检索">4. 使用知识图谱改进 RAG 检索</a></li>
@@ -949,6 +971,19 @@
     </span>        
     
 </h1>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="" src="https://i-blog.csdnimg.cn/direct/908ca797c5ad4f8abf3fac7061b3db6a.png">
+
+  
+</figure>
+</p>
 <p>
 
 
@@ -1305,6 +1340,19 @@ RAPTOR 树的两种查询策略：</p>
   
 </figure>
 </p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="CleanShot 2025-06-29 at 17.05.58" src="https://s2.loli.net/2025/06/29/67XTIuZznEj3yaM.png">
+
+  
+</figure>
+</p>
 <blockquote>
 <p>(a) 基于表示的相似性 (Representation-based Similarity): 在这种方法中,文档片段通过某些深度神经网络进行离线编码 (即预先处理),而查询片段则以类似的方式进行在线编码 (即实时处理)。然后计算查询与所有文档之间的成对相似性（通常是cos相似度）得分,并返回得分最高的几个文档。</p>
 <p>(b) 查询-文档交互 (Query-Document Interaction): 在这种方法中,通过使用 n-gram (即连续的 n 个词组成的序列) 计算查询和文档中所有单词之间的词语和短语级关系,作为一种特征工程的形式。这些关系被转换为交互矩阵,然后作为输入提供给卷积网络。</p>
@@ -1330,6 +1378,24 @@ RAPTOR 树的两种查询策略：</p>
 查询“What is BGE?”与文档“BGE is a model”对比。ColBERT 能直接匹配“BGE”与“BGE”，避免整体平均带来的模糊。换句话说，可以理解成他是匹配局部与局部之间的相关性。</p>
 </li>
 </ul>
+<p><strong>ColBERT 的查询编码过程</strong>：</p>
+<p>假设有一个查询 Q，其标记（token）为 q1， q2， &hellip;， ql，处理步骤如下:</p>
+<ul>
+<li>将 Q 转换为 BERT 使用的 WordPiece 标记（token） (一种子词分词方法)。</li>
+<li>在序列开头添加一个特殊的 [Q] 标记（token），紧随 BERT 的 [CLS] 标记（token）之后，用于标识查询的开始。</li>
+<li>如果查询长度不足预设的 Nq 个标记（token），用 [mask] 标记（token）填充；若超过则截断。</li>
+<li>将处理后的序列输入 BERT，然后通过卷积神经网络 (CNN) 处理，最后进行归一化。</li>
+</ul>
+<p>最终输出的查询嵌入向量集合 Eq 可表示为:</p>
+<p>$Eq := Normalize(BERT([Q]， q0， q1， …， ql， [mask]， [mask]， …， [mask]))$</p>
+<p><strong>ColBERT 的文档编码过程</strong>：</p>
+<p>对于包含标记 d1， d2， &hellip;， dn 的文档 D，处理步骤类似:</p>
+<ul>
+<li>在序列开头添加 [D] 标记，标识文档开始。</li>
+<li>无需填充，直接输入 BERT 进行处理。</li>
+</ul>
+<p>文档嵌入向量集合 Ed 可表示为:$ Ed := Filter(Normalize(BERT([D]， d0， d1， &hellip;， dn)))$</p>
+<p>Filter用于去除与标点符号对应的嵌入，从而提升分析速度。这里的查询填充策略 (论文中称为&quot;查询增强&quot;)确保了所有查询长度一致，有利于批量处理。而 [Q] 和 [D] 标记则帮助模型区分输入类型，提高了处理效率。</p>
 <p><strong>使用 ColBERT 查找最相关的前 K 个文档计算过程包括</strong>:</p>
 <ul>
 <li>
@@ -1339,7 +1405,10 @@ RAPTOR 树的两种查询策略：</p>
 <p>最大池化 (max-pooling):在文档词语上进行操作,找出每个查询词语的最高相似度。</p>
 </li>
 <li>
-<p>求和:对查询词语的相似度分数进行累加,得出文档的总体相关性分数。</p>
+<p>求和:对查询词语的相似度分数进行累加,得出文档的总体相关性分数，公式如下：</p>
+<ul>
+<li>$$ S_{q,d} := \sum_{i \in [\vert E_q \vert]} \max_{j \in [\vert E_d \vert]} E_{q_i} \cdot E_{d_j}^T \tag{3} $$</li>
+</ul>
 </li>
 <li>
 <p>排序:根据总分对文档进行排序。</p>
@@ -1894,6 +1963,14 @@ step_back()
     </span>        
     
 </h4>
+<p>使用示例：</p>
+<pre tabindex="0"><code>postprocessor = SimilarityPostprocessor(similarity_cutoff=0.7)
+query_engine = index.as_query_engine(node_postprocessors=[postprocessor])
+</code></pre><p>llamaIndex <a
+  href="https://docs.llamaindex.ai/en/stable/module_guides/querying/node_postprocessors/node_postprocessors/#node-postprocessor-modules"
+    target="_blank"
+  >Node Postprocessor</a>
+ 包含以下内容：</p>
 <ul>
 <li>
 <p>SimilarityPostprocessor：为每个检索结果按相似度打分，然后通过设置一个分数阈值进行过滤。</p>
@@ -1909,6 +1986,11 @@ step_back()
     target="_blank"
   >spacy</a>
  的 短语匹配器（PhraseMatcher）对检索结果进行检查，<strong>按包含或不包含特定的关键字进行过滤</strong>。</p>
+<ul>
+<li>
+<pre tabindex="0"><code>postprocessor = KeywordNodePostprocessor(required_keywords=[&#34;keyword&#34;]
+</code></pre></li>
+</ul>
 </li>
 <li>
 <p><a
@@ -1935,7 +2017,7 @@ step_back()
 <p><strong>显式时间标注</strong>：通过<code>file_metadata</code>为每个文档节点附加时间</p>
 <ul>
 <li>
-<pre tabindex="0"><code>ocuments = SimpleDirectoryReader(
+<pre tabindex="0"><code>documents = SimpleDirectoryReader(
     input_files=[
     		....
     ],
@@ -2030,33 +2112,96 @@ time_similarity = (1 - self.time_decay) ** hours_passed
     </span>        
     
 </h4>
-<p>LangChain 也支持 <a
-  href="https://python.langchain.com/v0.1/docs/modules/data_connection/retrievers/long_context_reorder/"
-    target="_blank"
-  >Long-Context Reorder</a>
-。</p>
-<p>此外，LangChain 中的 <a
-  href="https://python.langchain.com/v0.1/docs/modules/data_connection/retrievers/contextual_compression/"
-    target="_blank"
-  >ContextualCompressionRetriever</a>
- 也支持一些不同的过滤策略：</p>
+<p>LangChain 中上下文压缩同样解决此问了题。思路很简单：不是立即返回检索到的文档，而是使用给定查询的上下文对其进行压缩，以便只返回相关信息。这里的“压缩”既指单个文档内容的压缩，也指整个文档的过滤。上下文压缩检索器将查询传递给基本检索器，获取初始文档并将其通过文档压缩器传递。文档压缩器接受文档列表，通过减少文档内容或完全删除文档来缩短列表。</p>
+<p>示例代码：</p>
+<pre tabindex="0"><code>from langchain.retrievers import ContextualCompressionRetriever
+from langchain.retrievers.document_compressors import LLMChainExtractor
+from langchain_openai import OpenAI
+ 
+llm = OpenAI(temperature=0)
+compressor = LLMChainExtractor.from_llm(llm)
+compression_retriever = ContextualCompressionRetriever(
+    base_compressor=compressor, base_retriever=retriever
+)
+ 
+compressed_docs = compression_retriever.get_relevant_documents(
+    &#34;What did the president say about Ketanji Jackson Brown&#34;
+)
+pretty_print_docs(compressed_docs)
+</code></pre><p><strong>LangChain 中的compressor</strong>：</p>
 <ul>
-<li>LLMChainExtractor</li>
-</ul>
-<p>这个过滤器依次将检索文档丢给大模型，让大模型从文档中抽取出和用户问题相关的片段，从而实现过滤的功能。</p>
+<li>
+<p>LLMChainExtractor：这个过滤器依次将检索文档和用户查询给大模型，让大模型从文档中抽取出和用户问题相关的片段，从而实现过滤的功能。</p>
 <ul>
-<li>LLMChainFilter</li>
+<li>
+<pre tabindex="0"><code>from langchain.retrievers import ContextualCompressionRetriever
+from langchain.retrievers.document_compressors import LLMChainExtractor
+from langchain_openai import ChatOpenAI
+from langchain.chains.summarize import load_summarize_chain
+# 初始化 LLM
+llm =ChatOpenAI(
+        openai_api_key=os.getenv(&#34;DASHSCOPE_API_KEY&#34;),
+        base_url=os.getenv(&#34;ALIYUN_BASE_URL&#34;),
+        model=&#39;qwen-plus&#39;,
+    )
+# 创建提取器
+compressor = LLMChainExtractor.from_llm(llm)
+# 提取关键信息
+compression_retriever = ContextualCompressionRetriever(
+    base_compressor=compressor, base_retriever=retriever
+)
+compressed_docs = compression_retriever.get_relevant_documents(
+    &#34;What did the president say about Ketanji Jackson Brown&#34;
+)
+pretty_print_docs(compressed_docs)
+</code></pre></li>
 </ul>
-<p>这个过滤器相比 <code>LLMChainExtractor</code> 稍微简单一点，它直接让大模型判断文档和用户问题是否相关，而不是抽取片段，这样做不仅消耗更少的 token，而且处理速度更快，而且可以防止大模型对文档原始内容进行篡改。</p>
+</li>
+<li>
+<p>LLMChainFilter：这个过滤器相比 <code>LLMChainExtractor</code> 稍微简单一点，它直接让大模型判断文档和用户问题是否相关，而不是抽取片段，这样做不仅消耗更少的 token，而且处理速度更快，而且可以防止大模型对文档原始内容进行篡改。</p>
 <ul>
-<li>EmbeddingsFilter</li>
-</ul>
-<p>和 LlamaIndex 的 <code>SimilarityPostprocessor</code> 类似，计算每个文档和用户问题的相似度分数，然后通过设置一个分数阈值进行过滤。</p>
-<ul>
-<li>EmbeddingsRedundantFilter</li>
-</ul>
-<p>这个过滤器虽然名字和 <code>EmbeddingsFilter</code> 类似，但是实现原理是不一样的，它不是计算文档和用户问题之间的相似度，而是计算文档之间的相似度，然后把相似的文档过滤掉，有点像 LlamaIndex 的 <code>EmbeddingRecencyPostprocessor</code>。</p>
+<li>
+<pre tabindex="0"><code>from langchain.retrievers.document_compressors import LLMChainFilter
 
+_filter = LLMChainFilter.from_llm(llm)
+compression_retriever = ContextualCompressionRetriever(
+    base_compressor=_filter, base_retriever=retriever
+)
+
+compressed_docs = compression_retriever.get_relevant_documents(
+    &#34;What did the president say about Ketanji Jackson Brown&#34;
+)
+pretty_print_docs(compressed_docs)
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p>EmbeddingsFilter：和 LlamaIndex 的 <code>SimilarityPostprocessor</code> 类似，计算<strong>每个文档和用户问题</strong>的相似度分数，然后通过设置一个分数阈值进行过滤。</p>
+</li>
+<li>
+<p>EmbeddingsRedundantFilter: 这个过滤器虽然名字和 <code>EmbeddingsFilter</code> 类似，但是实现原理是不一样的，它不是计算文档和用户问题之间的相似度，而是<strong>计算文档之间的相似度，然后把相似的文档过滤掉</strong>。</p>
+</li>
+</ul>
+<p><strong>将多个压缩器依次组合在一起</strong>：</p>
+<p>使用<code>DocumentCompressorPipeline</code>，我们还可以轻松地将多个压缩器依次组合在一起。</p>
+<p>在下面的示例中，我们首先将文档拆分为较小的块，然后删除冗余文档，然后根据与查询相关性进行过滤。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain.retrievers.document_compressors</span> <span class="kn">import</span> <span class="n">DocumentCompressorPipeline</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain_community.document_transformers</span> <span class="kn">import</span> <span class="n">EmbeddingsRedundantFilter</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain_text_splitters</span> <span class="kn">import</span> <span class="n">CharacterTextSplitter</span>
+</span></span><span class="line"><span class="cl"><span class="n">splitter</span> <span class="o">=</span> <span class="n">CharacterTextSplitter</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">chunk_overlap</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s2">&#34;. &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">redundant_filter</span> <span class="o">=</span> <span class="n">EmbeddingsRedundantFilter</span><span class="p">(</span><span class="n">embeddings</span><span class="o">=</span><span class="n">embeddings</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">relevant_filter</span> <span class="o">=</span> <span class="n">EmbeddingsFilter</span><span class="p">(</span><span class="n">embeddings</span><span class="o">=</span><span class="n">embeddings</span><span class="p">,</span> <span class="n">similarity_threshold</span><span class="o">=</span><span class="mf">0.76</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pipeline_compressor</span> <span class="o">=</span> <span class="n">DocumentCompressorPipeline</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">transformers</span><span class="o">=</span><span class="p">[</span><span class="n">splitter</span><span class="p">,</span> <span class="n">redundant_filter</span><span class="p">,</span> <span class="n">relevant_filter</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">compression_retriever</span> <span class="o">=</span> <span class="n">ContextualCompressionRetriever</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">base_compressor</span><span class="o">=</span><span class="n">pipeline_compressor</span><span class="p">,</span> <span class="n">base_retriever</span><span class="o">=</span><span class="n">retriever</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">compressed_docs</span> <span class="o">=</span> <span class="n">compression_retriever</span><span class="o">.</span><span class="n">get_relevant_documents</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;What did the president say about Ketanji Jackson Brown&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pretty_print_docs</span><span class="p">(</span><span class="n">compressed_docs</span><span class="p">)</span>
+</span></span></code></pre></div>
 <h3 class="relative group">3.2 重排序 
     <div id="32-重排序" class="anchor"></div>
     
@@ -2066,8 +2211,106 @@ time_similarity = (1 - self.time_decay) ** hours_passed
     </span>        
     
 </h3>
-<p>在 RAG 工作流中，从检索器（Retriever）返回的候选文档通常包含冗余或无关的内容。通过重新排序（Reranking）和过滤，可以提升模型生成的最终答案的准确性和相关性。重新排序步骤主要依赖于预训练的交叉编码器模型（Cross Encoder），该模型能根据输入和上下文之间的语义相关性重新调整候选文档的优先级。</p>
-<p>示例代码</p>
+<p>在上面的过滤策略中，我们经常会用到 Embedding 来计算文档的相似性，然后根据相似性来对文档进行排序，这里的排序被称为 <strong>粗排</strong>，我们还可以使用一些专门的排序引擎对文档进一步排序和过滤，这被称为 <strong>精排</strong>。LlamaIndex 支持下面这些重排序策略：</p>
+
+<h4 class="relative group">3.2.1 LlamaIndex 
+    <div id="321-llamaindex" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#321-llamaindex" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li>
+<p><a
+  href="https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/SentenceTransformerRerank/"
+    target="_blank"
+  >SentenceTransformerRerank</a>
+：比如 <a
+  href="https://www.sbert.net/index.html"
+    target="_blank"
+  >sentence-transformer</a>
+ 包中的 <strong>交叉编码器（Cross Encoder）</strong> 可以用来重新排序节点。</p>
+<ul>
+<li>
+<pre tabindex="0"><code>from llama_index.core.postprocessor import SentenceTransformerRerank
+
+# 初始化重排器（使用交叉编码器模型，保留前3个节点）
+rerank = SentenceTransformerRerank(
+    model=&#34;cross-encoder/ms-marco-MiniLM-L-2-v2&#34;, 
+    top_n=3
+)
+
+# 将重排器添加到查询引擎的后处理器链中
+query_engine = index.as_query_engine(
+    similarity_top_k=10, 
+    node_postprocessors=[rerank]
+)
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p><a
+  href="https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/ColbertRerank/"
+    target="_blank"
+  >Colbert Reranker</a>
+:另一种实现本地重排序的是 <a
+  href="https://github.com/stanford-futuredata/ColBERT"
+    target="_blank"
+  >ColBERT</a>
+ 模型，它是一种快速准确的检索模型，可以在几十毫秒内对大文本集合进行基于 BERT 的搜索。</p>
+</li>
+<li>
+<p><a
+  href="https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/LLMReranker-Gatsby/"
+    target="_blank"
+  >LLM Rerank</a>
+：我们还可以使用大模型来做重排序，将文档丢给大模型，然后让大模型对文档的相关性进行评分，从而实现文档的重排序。下面是 LlamaIndex 内置的用于重排序的 Prompt：</p>
+</li>
+<li>
+<p><a
+  href="https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/rankGPT/"
+    target="_blank"
+  >RankGPT</a>
+：RankGPT 是 Weiwei Sun 等人在论文 <a
+  href="https://arxiv.org/abs/2304.09542"
+    target="_blank"
+  >Is ChatGPT Good at Search? Investigating Large Language Models as Re-Ranking Agents</a>
+ 中提出的一种基于大模型的 zero-shot 重排方法，它采用了排列生成方法和滑动窗口策略来高效地对段落进行重排序，具体内容可以参考 <a
+  href="https://github.com/sunnweiwei/RankGPT"
+    target="_blank"
+  >RankGPT 的源码</a>
+。</p>
+</li>
+<li>
+<p><a
+  href="https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/rankLLM/"
+    target="_blank"
+  >RankLLMRerank</a>
+：<a
+  href="https://github.com/castorini/rank_llm"
+    target="_blank"
+  >RankLLM</a>
+ 和 RankGPT 类似，也是利用大模型来实现重排，只不过它的重点放在与 <a
+  href="https://github.com/lm-sys/FastChat?tab=readme-ov-file#supported-models"
+    target="_blank"
+  >FastChat</a>
+ 兼容的开源大模型上，比如 Vicuna 和 Zephyr 等，并且对这些开源模型专门为重排任务进行了微调，比如 RankVicuna 和 RankZephyr 等。</p>
+</li>
+</ul>
+
+<h4 class="relative group">3.2.2 Langchain 
+    <div id="322-langchain" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#322-langchain" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>示例代码:</p>
 <p>以下代码展示了如何实现基于 <code>HuggingFaceCrossEncoder</code> 的文档重新排序器：</p>
 <pre tabindex="0"><code>    def local_reranker(retriever, top_n=3):
         model = HuggingFaceCrossEncoder(model_name=&#34;BAAI/bge-reranker-base&#34;)
@@ -2076,7 +2319,40 @@ time_similarity = (1 - self.time_decay) ** hours_passed
             base_compressor=compressor,
             base_retriever=retriever
         )
-</code></pre>
+</code></pre><p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="" src="https://s2.loli.net/2025/06/20/UD8Z37uTiYEmRSn.png">
+
+  
+</figure>
+</p>
+<p>Bi-Encoder会用BERT对输入文本编码，再根据cosine相似度分数筛选文本。Cross-Encoder会直接计算两个句子的相关性分数。</p>
+<ul>
+<li>
+<p>有一组预先定义好的句子对，并想对其进行打分时，就可以使用cross-Encoder</p>
+</li>
+<li>
+<p>需要在向量空间中获得句子嵌入以进行高效比较的情况，使用BiEncoder</p>
+</li>
+<li>
+<p>ContextualCompressionRetriever：将交叉编码器包装为 <code>Compressor</code> 对象，负责对检索结果重排并截断。</p>
+<ul>
+<li>接收基础检索器返回的文档列表。</li>
+<li>用交叉编码器计算每个文档相对于查询的相关性得分。</li>
+<li>按得分降序排序，保留前 <code>top_n</code> 个文档。</li>
+</ul>
+</li>
+<li>
+<p>ContextualCompressionRetriever：创建压缩检索器</p>
+</li>
+</ul>
+
 <h2 class="relative group">4. 使用知识图谱改进 RAG 检索 
     <div id="4-使用知识图谱改进-rag-检索" class="anchor"></div>
     
@@ -2359,40 +2635,7 @@ print(f&#34;Response: {response}&#34;)
 </span></span><span class="line"><span class="cl">            <span class="n">base_compressor</span><span class="o">=</span><span class="n">compressor</span><span class="p">,</span> <span class="n">base_retriever</span><span class="o">=</span><span class="n">retriever</span>
 </span></span><span class="line"><span class="cl">        <span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">compression_retriever</span>  <span class="c1"># 降级处理，直接返回原始检索器</span>
-</span></span></code></pre></div><p>
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="" src="https://s2.loli.net/2025/06/20/UD8Z37uTiYEmRSn.png">
-
-  
-</figure>
-</p>
-<p>Bi-Encoder会用BERT对输入文本编码，再根据cosine相似度分数筛选文本。Cross-Encoder会直接计算两个句子的相关性分数。</p>
-<ul>
-<li>
-<p>有一组预先定义好的句子对，并想对其进行打分时，就可以使用cross-Encoder</p>
-</li>
-<li>
-<p>需要在向量空间中获得句子嵌入以进行高效比较的情况，使用BiEncoder</p>
-</li>
-<li>
-<p>ContextualCompressionRetriever：将交叉编码器包装为 <code>Compressor</code> 对象，负责对检索结果重排并截断。</p>
-<ul>
-<li>接收基础检索器返回的文档列表。</li>
-<li>用交叉编码器计算每个文档相对于查询的相关性得分。</li>
-<li>按得分降序排序，保留前 <code>top_n</code> 个文档。</li>
-</ul>
-</li>
-<li>
-<p>ContextualCompressionRetriever：创建压缩检索器</p>
-</li>
-</ul>
-
+</span></span></code></pre></div>
 <h3 class="relative group">6.6 质量评估 
     <div id="66-质量评估" class="anchor"></div>
     
@@ -2629,6 +2872,43 @@ print(f&#34;Response: {response}&#34;)
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">问答系统完成&#34;</span><span class="p">)</span>
 </span></span></code></pre></div>
+<h1 class="relative group">参考 
+    <div id="参考" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%8f%82%e8%80%83" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<ul>
+<li><a
+  href="https://juejin.cn/post/7400688776484798490"
+    target="_blank"
+  >https://juejin.cn/post/7400688776484798490</a>
+</li>
+<li><a
+  href="https://www.aneasystone.com/archives/2024/06/advanced-rag-notes.html"
+    target="_blank"
+  >https://www.aneasystone.com/archives/2024/06/advanced-rag-notes.html</a>
+</li>
+<li><a
+  href="https://docs.llamaindex.ai/en/stable/"
+    target="_blank"
+  >https://docs.llamaindex.ai/en/stable/</a>
+</li>
+<li><a
+  href="https://python.langchain.com/docs/"
+    target="_blank"
+  >https://python.langchain.com/docs/</a>
+</li>
+<li><a
+  href="https://zhuanlan.zhihu.com/p/701763569"
+    target="_blank"
+  >https://zhuanlan.zhihu.com/p/701763569</a>
+</li>
+</ul>
+
           
           
           
@@ -2849,6 +3129,7 @@ print(f&#34;Response: {response}&#34;)
     integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
   
   
+
 </footer>
 <div
   id="search-wrapper"
