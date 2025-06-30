@@ -1,0 +1,6 @@
+baseURL = 'https://Lizen.github.io/byteglow'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'

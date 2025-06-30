@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+Sitemap: http://localhost:62936/byteglow/sitemap.xml
