@@ -12,6 +12,8 @@ showTableOfContents='article.showTableOfContents'
 
 # 高级 RAG
 
+![](https://i-blog.csdnimg.cn/direct/908ca797c5ad4f8abf3fac7061b3db6a.png)
+
 ![rag-paradigms.png](https://www.aneasystone.com/usr/uploads/2024/06/680934063.png)
 
 
@@ -974,8 +976,6 @@ pretty_print_docs(compressed_docs)
         node_postprocessors=[rerank]
     )
     ```
-
-    
 
 - [Colbert Reranker](https://docs.llamaindex.ai/en/stable/examples/node_postprocessor/ColbertRerank/):另一种实现本地重排序的是 [ColBERT](https://github.com/stanford-futuredata/ColBERT) 模型，它是一种快速准确的检索模型，可以在几十毫秒内对大文本集合进行基于 BERT 的搜索。
 
