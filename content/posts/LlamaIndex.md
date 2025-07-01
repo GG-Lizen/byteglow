@@ -2,7 +2,7 @@
 date = '2025-06-20T15:26:15+08:00'
 title = 'LlamaIndex'
 series = ['学习笔记']
-series_weight=3
+series_weight=1
 showTableOfContents='article.showTableOfContents'
 tags=["LlamaIndex","RAG"]
 

@@ -3,7 +3,7 @@ date = '2025-06-20T15:24:15+08:00'
 draft = false
 title = '高级RAG'
 series =[ '学习笔记']
-series_weight=2
+series_weight=3
 toc = true
 showTableOfContents='article.showTableOfContents'
 
@@ -426,7 +426,7 @@ withRewrite(query)
 
 #### 2.1.1 假设文档嵌入（HyDE）
 
-论文《Precise Zero-Shot Dense Retrieval without Relevance Labels》提出了一种基于假设文档嵌入（HyDE）的方法，主要过程如图2所示：
+论文《Precise Zero-Shot Dense Retrieval without Relevance Labels》提出了一种基于假设文档嵌入（HyDE）的方法，主要过程如图所示：
 
 ![img](https://pica.zhimg.com/v2-088baf0a7573bd16dcb2f81223b8b6b4_1440w.jpg)
 
@@ -539,7 +539,7 @@ STEP-BACK PROMPING是一种简单的提示技术，使LLM能够从包含特定�
 - **抽象**：最初，我们提示LLM提出一个关于高级概念或原理的广泛问题，而不是直接响应查询。然后，我们检索关于所述概念或原理的相关事实。
 - **推理**：LLM可以根据这些关于高级概念或原理的事实推导出原始问题的答案。我们称之为抽象推理。
 
-例如，如果查询包含大量细节，LLM很难检索相关事实来解决任务。如图5中的第一个例子所示，对于物理问题“如果温度增加2倍，体积增加8倍，理想气体的压力P会发生什么？”在直接推理该问题时，LLM可能会偏离理想气体定律的第一原理。
+例如，如果查询包含大量细节，LLM很难检索相关事实来解决任务。如图中的第一个例子所示，对于物理问题“如果温度增加2倍，体积增加8倍，理想气体的压力P会发生什么？”在直接推理该问题时，LLM可能会偏离理想气体定律的第一原理。
 
 同样，由于特定的时间范围限制，“Estella Leopold在1954年8月至1954年11月期间上过哪所学校？”这个问题很难直接解决。
 
