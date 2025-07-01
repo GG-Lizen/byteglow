@@ -818,6 +818,166 @@ The release date of LangGraph is January 17, 2024. Let me know if you need any f
 通过使用图表的 `get_state_history` 方法获取检查点来回退graph。然后，你可以在这个先前的时间点恢复执行。
 
 ```
-
+from langchain_community.chat_models.tongyi import ChatTongyi  # 替换为千问模型
+llm = ChatTongyi(
+    model_name="qwen-turbo",  # 也可使用 qwen-plus 或 qwen-max
+    dashscope_api_key=os.getenv("DASHSCOPE_API_KEY")  # 替换为真实的API密钥
+)
 ```
 
+构建图：
+
+```
+from typing import Annotated
+
+from langchain_tavily import TavilySearch
+from langchain_core.messages import BaseMessage
+from typing_extensions import TypedDict
+
+from langgraph.checkpoint.memory import MemorySaver
+from langgraph.graph import StateGraph, START, END
+from langgraph.graph.message import add_messages
+from langgraph.prebuilt import ToolNode, tools_condition
+
+class State(TypedDict):
+    messages: Annotated[list, add_messages]
+
+graph_builder = StateGraph(State)
+
+tool = TavilySearch(max_results=2)
+tools = [tool]
+llm_with_tools = llm.bind_tools(tools)
+
+def chatbot(state: State):
+    return {"messages": [llm_with_tools.invoke(state["messages"])]}
+
+graph_builder.add_node("chatbot", chatbot)
+
+tool_node = ToolNode(tools=[tool])
+graph_builder.add_node("tools", tool_node)
+
+graph_builder.add_conditional_edges(
+    "chatbot",
+    tools_condition,
+)
+graph_builder.add_edge("tools", "chatbot")
+graph_builder.add_edge(START, "chatbot")
+
+memory = MemorySaver()
+graph = graph_builder.compile(checkpointer=memory)
+```
+
+### 添加步骤
+
+向图中添加步骤。每个步骤都将在其状态历史记录中进行检查点记录：
+
+```
+config = {"configurable": {"thread_id": "1"}}
+events = graph.stream(
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": (
+                    "I'm learning LangGraph. "
+                    "Could you do some research on it for me?"
+                ),
+            },
+        ],
+    },
+    config,
+    stream_mode="values",
+)
+for event in events:
+    if "messages" in event:
+        event["messages"][-1].pretty_print()
+```
+
+```
+events = graph.stream(
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": (
+                    "Ya that's helpful. Please "
+                    "search and build an autonomous agent with it!"
+                ),
+            },
+        ],
+    },
+    config,
+    stream_mode="values",
+)
+for event in events:
+    if "messages" in event:
+        event["messages"][-1].pretty_print()
+```
+
+### 回放完整状态历史记录
+
+在为聊天机器人添加了步骤后，就可以 replay 完整状态历史记录，以查看发生的所有事情。
+
+```
+to_replay = None
+for state in graph.get_state_history(config):
+    print("Num Messages: ", len(state.values["messages"]), "Next: ", state.next)
+    print("-" * 80)
+    if len(state.values["messages"]) == 6:
+        # We are somewhat arbitrarily selecting a specific state based on the number of chat messages in the state.
+        to_replay = state
+```
+
+输出：
+
+```
+Num Messages:  6 Next:  ()
+--------------------------------------------------------------------------------
+Num Messages:  5 Next:  ('chatbot',)
+--------------------------------------------------------------------------------
+Num Messages:  4 Next:  ('__start__',)
+--------------------------------------------------------------------------------
+Num Messages:  4 Next:  ()
+--------------------------------------------------------------------------------
+Num Messages:  3 Next:  ('chatbot',)
+--------------------------------------------------------------------------------
+Num Messages:  2 Next:  ('tools',)
+--------------------------------------------------------------------------------
+Num Messages:  1 Next:  ('chatbot',)
+--------------------------------------------------------------------------------
+Num Messages:  0 Next:  ('__start__',)
+--------------------------------------------------------------------------------
+```
+
+从 to_replay 状态恢复，该状态为Num Messages:  5 Next:  ('chatbot',)。从这一点恢复将接着调用 action 节点。
+
+```
+to_replay = None
+for state in graph.get_state_history(config):
+    print("Num Messages: ", len(state.values["messages"]), "Next: ", state.next)
+    print("-" * 80)
+    if len(state.values["messages"]) == 5:
+        # We are somewhat arbitrarily selecting a specific state based on the number of chat messages in the state.
+        to_replay = state
+```
+
+### 从某个时间点加载状态
+
+检查点的to_replay.config包含一个checkpoint_id时间戳。提供这个checkpoint_id值会告知LangGraph的检查点工具从该时间点加载状态。
+
+```
+# The `checkpoint_id` in the `to_replay.config` corresponds to a state we've persisted to our checkpointer.
+for event in graph.stream(None, to_replay.config, stream_mode="values"):
+    if "messages" in event:
+        event["messages"][-1].pretty_print()
+```
+
+## 工作流和智能体
+
+工作流是指通过预定义的代码路径来编排大语言模型（LLMs）和工具的系统。另一方面，智能体是指大语言模型动态指导自身流程和工具使用，对完成任务的方式保持控制的系统。
+
+![agent_workflow](https://langchain-ai.github.io/langgraph/concepts/img/agent_workflow.png)
+
+# 参考
+
+- https://langchain-ai.github.io/langgraph/tutorials
